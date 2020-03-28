@@ -176,7 +176,7 @@
           var pcolors = ['#6cbafa'];
           var borderColor = '#efefef';
           var bgColor = '#fff';
-          this.createPlotGraph("#website-stats", uploads, downloads, plabels, pcolors, borderColor, bgColor);
+          // this.createPlotGraph("#website-stats", uploads, downloads, plabels, pcolors, borderColor, bgColor);
 
           //Combine graph data
           var data24Hours = [
