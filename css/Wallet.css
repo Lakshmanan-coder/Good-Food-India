@@ -46,7 +46,7 @@ h3 {
 }
 
 .left {
-	background-color: #1882ef;
+	background-color: #589442;
 	width: 39%;
 	height: 457px;
 	border-radius: 5px 0 0 5px;
@@ -66,7 +66,7 @@ h3 {
 	line-height: 26px;
 	padding-top: 10px;
   padding-bottom: 15px;
-	border-bottom: 1px solid #3895f4;
+	border-bottom: 1px solid #71ad5c;
 	height: 15%;
 }
 
@@ -76,7 +76,7 @@ h3 {
 }
 
 .entry {
-	border-bottom: 1px solid #3895f4;
+	border-bottom:1px solid #71ad5c;
 	height: 15%;
 	overflow: hidden;
 	padding-top: 15px;
@@ -151,8 +151,10 @@ span {
 	line-height: 30px;
 }
 
-.message > h6 {
+.small-custom {
 	margin-top: 10px;
+	font-weight:300;
+	
 }
 
 .footer {

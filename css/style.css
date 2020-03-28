@@ -5213,3 +5213,12 @@ a.social_bt.google {
 .position-relative{
   position:relative;
 }
+
+.styling-each-tabs{
+  
+}
+
+.custom-card-profile{
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+  -9px -9px 16px rgba(255, 255, 255, 0.6);
+}
