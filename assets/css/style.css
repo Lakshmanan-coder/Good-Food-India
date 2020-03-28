@@ -4094,4 +4094,18 @@ File: Responsive
     display: none !important;
   }
 }
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-circle.order-pack-detail {
+  height: 100px;
+  border: none;
+}
+
+.menu_item {
+  border-bottom: 1px dashed #b3a7a7;
+  margin-bottom: 20px;
+}
 /*# sourceMappingURL=style.css.map */
