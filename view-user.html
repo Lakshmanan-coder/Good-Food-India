@@ -210,7 +210,7 @@
 
                 <div class="">
                     <div class="page-header-title">
-                        <h4 class="page-title">View Order</h4>
+                        <h4 class="page-title">View User</h4>
                     </div>
                 </div>
 
@@ -225,10 +225,9 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-8">
-                                                <h4 class="m-b-30 m-t-0">View Order Detail</h4>
+                                                <h4 class="m-b-30 m-t-0">View User Detail</h4>
                                             </div>
                                             <div class="col-sm-4 text-right">
-                                                <button class="btn btn-dark"  data-toggle="modal" data-target="#status-update">Update Status</button>
                                             </div>
                                         </div>
 
@@ -238,40 +237,8 @@
 
                                         
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <h4 class="m-b-30 m-t-0">Order Detail</h4>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <table class="table table-striped table-hover table-bordered">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th>Order ID</th>
-                                                                <td>#335001</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Pack Name</th>
-                                                                <td>Da Alfredo Menu</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Order Date & Time</th>
-                                                                <td>3/05/2020 08.00AM</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Status</th>
-                                                                <td class="bg-success text-white">Completed</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Latest Update Date</th>
-                                                                <td>3/05/2020 09.00AM</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
+                                       
+                                        <div class="col-sm-12">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <h4 class="m-b-30 m-t-0">User Detail</h4>
@@ -279,7 +246,7 @@
                                                 <div class="col-sm-12">
                                                     <div class="row">
                                                         <div class="col-sm-3 text-center">
-                                                            <img class="img img-thumbnail img-responsive img-circle order-pack-detail"
+                                                            <img class="img img-thumbnail img-responsive  order-pack-detail"
                                                             src="http://gif.nyxwolves.xyz/img/avatar4.jpg">
                                                             <br>
     
@@ -288,8 +255,12 @@
                                                            <table class="table table-striped table-borderless">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <th>Name</th>
-                                                                        <td>John Doe</td>
+                                                                        <th>First Name</th>
+                                                                        <td>John </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Last Name</th>
+                                                                        <td>Doe </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>Email</th>
@@ -299,14 +270,18 @@
                                                                         <th>Phone No</th>
                                                                         <td>+91 98765 31210</td>
                                                                     </tr>
+                                                                   
+                                                                    <tr>
+                                                                        <th>Total Orders</th>
+                                                                        <td>2</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Total Subscriptions</th>
+                                                                        <td>3</td>
+                                                                    </tr>
                                                                     <tr>
                                                                         <th>Address</th>
                                                                         <td>17/5 GuruGothai Appts., <br>New Colony, Chromepet 600044</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td colspan="2">
-                                                                             <a href="/view-user.html" class="btn btn-outline-primary">View More Details</a>    
-                                                                        </td>
                                                                     </tr>
                                                                   
                                                                 </tbody>
@@ -324,71 +299,112 @@
 
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h4 class="m-b-30 m-t-0">Pack Detail</h4>
+                                                <h4 class="m-b-30 m-t-0">Order History</h4>
                                             </div>
                                             <div class="col-sm-12">
-                                                <div class="row">
+                                                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; width: 100%;">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Pack Name</th>
+                                                        <th>Date</th>
+                                                        <th>Quantity</th>
+                                                        <th>Status</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
 
-                                                    <div class="col-sm-2 text-center">
-                                                        <img class="img img-thumbnail img-responsive img-circle order-pack-detail"
-                                                            src="https://www.flatironsquare.co.uk/content/_mobile/Food_Hero_Image.jpg">
-                                                            <br>
-                                                        <a href="/view-pack-detail.html" class="btn btn-outline-success">View More Details</a>    
+                                                        <td>chicken dinner</td>
+                                                        <td>02/3/2020</td> 
+                                                        <td>12</td>
+                                                        <td>Completed</td>
+                                                        <td>
+                                                            <a href="/view-order.html" class="btn btn-primary">View Order</a>
+                                                            <button class="btn btn-outline-danger del-btn">Delete Order </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
+                                                        
+                                                        <td>chicken dinner</td>
+                                                        <td>02/3/2020</td> 
+                                                        <td>12</td>
+                                                        <td>Completed</td>
+                                                        <td>
+                                                            <a href="/view-order.html" class="btn btn-primary">View Order</a>
+                                                            <button class="btn btn-outline-danger del-btn">Delete Order </button>
+                                                        </td>
+                                                    </tr>
+                                                  
+                                                   
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <hr>
 
-                                                    </div>
-                                                    <div class="col-sm-10">
-                                                            <h2>Da Alfredo Menu</h2>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="m-b-30 m-t-0">Subscription History</h4>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <table id="datatable-responsive" class=" datatable-responsive table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; width: 100%;">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Pack Name</th>
+                                                        <th> Plan Start</th>
+                                                        <th> Plan End</th>
+                                                        <th>Status</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
 
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <h3>Starters</h3>
-                                                                <div class="menu_item">
-                                                                    <em>Qty: 9</em>
-                                                                    <h4>Imported Salmon Steak</h4>
-                                                                    <p>Base de arroz, aguacate, salmón noruego, semillas
-                                                                        de sésamo, edamame, wakame y soja light</p>
-                                                                </div>
-                                                                <div class="menu_item">
-                                                                    <em>Qty: 8</em>
-                                                                    <h4>Poke bol</h4>
-                                                                    <p>Queso de cabra light, dátiles, jamón serrano y
-                                                                        rúcula</p>
-                                                                </div>
-                                                                <div class="menu_item">
-                                                                    <em>Qty: 7</em>
-                                                                    <h4>Ensalada cesar</h4>
-                                                                    <p>lechuga, tomate, espinacas, pollo asado,
-                                                                        picatostes, queso proteínico y salsa césar 0%
-                                                                    </p>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <h3>Main Course</h3>
-                                                                <div class="menu_item">
-                                                                    <em>Qty: 7</em>
-                                                                    <h4>Oriental</h4>
-                                                                    <p>Cama de tabule con taquitos de pollo a la mostaza
-                                                                        light</p>
-                                                                </div>
-                                                                <div class="menu_item">
-                                                                    <em>Qty: 5</em>
-                                                                    <h4>Vegan Burguer</h4>
-                                                                    <p>Medio pollo asado acompañado de arroz o patatas
-                                                                        al toque masala</p>
-                                                                </div>
-                                                                <div class="menu_item">
-                                                                    <em>Qty: 4</em>
-                                                                    <h4>Indio Fit</h4>
-                                                                    <p>lechuga, tomate, espinacas, pollo asado,
-                                                                        picatostes, queso proteínico y salsa césar 0%
-                                                                    </p>
-                                                                </div>
-                                                            </div>
+                                                        <td>Hot Brunch</td>
+                                                        <td>02/3/2020</td> 
+                                                        <td>12/3/2020</td> 
+                                                        <td class="bg-success">ACTIVE</td>
+                                                        <td>
+                                                            <a href="/view-subscription.html" class="btn btn-primary">View Subscription</a>
+                                                            <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
+                                                        </td>
+                                                    </tr>
+                                                 
+                                                    <tr>
+                                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
 
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                        <td>ANDRA LUNCH</td>
+                                                        <td>02/3/2020</td> 
+                                                        <td>12/3/2020</td> 
+                                                        <td class="bg-danger text-white">INACTIVE</td>
+                                                        <td>
+                                                            <a href="/view-subscription.html" class="btn btn-primary">View Subscription</a>
+                                                            <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
+
+                                                        <td>Mugal Lunch</td>
+                                                        <td>02/3/2020</td> 
+                                                        <td>12/3/2020</td> 
+                                                        <td class="bg-warning">END TODAY</td>
+                                                        <td>
+                                                            <a href="/view-subscription.html" class="btn btn-primary">View Subscription</a>
+                                                            <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
+                                                        </td>
+                                                    </tr>
+
+                                                  
+                                                   
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
 

@@ -11,8 +11,15 @@
 
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+  <!-- DataTables -->
+  <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/datatables/fixedHeader.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/plugins/datatables/scroller.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <!-- Sweet Alert -->
+  <link href="assets/plugins/sweetalert2/sweetalert2.css" rel="stylesheet" type="text/css">
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
@@ -161,7 +168,7 @@
                                
                             </ul>
                         </li>
-                         <li>
+                        <li>
                             <a href="users.html" class="waves-effect"><i class="ti-user"></i><span> Users </span></a>
                         </li>
                          <li>
@@ -186,7 +193,7 @@
 
                 <div class="">
                     <div class="page-header-title">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Users</h4>
                     </div>
                 </div>
 
@@ -194,87 +201,88 @@
 
                     <div class="container-fluid">
 
+                     
                         <div class="row">
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-heading p-4">
-                                        <div>
-                                            <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                            <div class="float-right">
-                                                <h2 class="text-primary mb-0">8952</h2>
-                                                <p class="text-muted mb-0 mt-2">Total Orders</p>
-                                            </div>
-                                            <!-- <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-heading p-4">
-                                        <div>
-                                            <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                            <div class="float-right">
-                                                <h2 class="text-info mb-0">521</h2>
-                                                <p class="text-muted mb-0 mt-2">New Orders</p>
-                                            </div>
-                                            <!-- <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-heading p-4">
-                                        <div>
-                                            <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                            <div class="float-right">
-                                                <h2 class="text-primary mb-0">426</h2>
-                                                <p class="text-muted mb-0 mt-2">Total Users</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-heading p-4">
-                                        <div>
-                                            <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                            <div class="float-right">
-                                                <h2 class="text-info mb-0">621</h2>
-                                                <p class="text-muted mb-0 mt-2">Plans</p>
-                                            </div>
-                                            <!-- <span class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xl-7">
+                            <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="m-t-0 m-b-30">Overall Statistics</h4>
-                                        <div id="combine-chart-container" class="flot-chart" style="height: 360px"></div>
+
+                                        <h4 class="m-b-30 m-t-0">Manage Users</h4>
+
+                                        <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; width: 100%;">
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>First name</th>
+                                                <th>E-mail</th>
+                                                <th>Contact No</th>
+                                                <th>Total Orders</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
+                                                <td>John Doe</td>
+                                                <td>John@doe.com</td>
+                                                <td>98765412302</td>
+                                                <td>12</td>
+                                                <td>
+                                                    <a href="/view-user.html" class="btn btn-primary">View Detail</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
+                                                <td>John Doe</td>
+                                                <td>John@doe.com</td>
+                                                <td>98765412302</td>
+                                                <td>12</td>
+                                                <td>
+                                                    <a href="/view-user.html" class="btn btn-primary">View Detail</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
+                                                <td>John Doe</td>
+                                                <td>John@doe.com</td>
+                                                <td>98765412302</td>
+                                                <td>12</td>
+                                                <td>
+                                                    <a href="/view-user.html" class="btn btn-primary">View Detail</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
+                                                <td>John Doe</td>
+                                                <td>John@doe.com</td>
+                                                <td>98765412302</td>
+                                                <td>12</td>
+                                                <td>
+                                                    <a href="/view-user.html" class="btn btn-primary">View Detail</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
+                                                <td>John Doe</td>
+                                                <td>John@doe.com</td>
+                                                <td>98765412302</td>
+                                                <td>12</td>
+                                                <td>
+                                                    <a href="/view-user.html" class="btn btn-primary">View Detail</a>
+                                                </td>
+                                            </tr>
+                                      
+                                           
+                                           
+                                            </tbody>
+                                        </table>
+
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-xl-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="m-t-0 m-b-30">Sales Statistics</h4>
-                                        <div id="pie-chart-container" class="flot-chart" style="height: 360px"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        </div> <!-- End Row -->
 
-                        </div>
                         <!-- end row -->
 
 
@@ -308,25 +316,52 @@
     <script src="assets/js/jquery.nicescroll.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-    <!--Morris Chart-->
-    <script src="assets/plugins/morris/morris.min.js"></script>
-    <script src="assets/plugins/raphael/raphael.min.js"></script>
+        <!-- Required datatable js-->
+        <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+        
+        <script src="assets/plugins/datatables/jszip.min.js"></script>
+        <script src="assets/plugins/datatables/pdfmake.min.js"></script>
+        <script src="assets/plugins/datatables/vfs_fonts.js"></script>
+        <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="assets/plugins/datatables/buttons.print.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/plugins/datatables/dataTables.scroller.min.js"></script>
 
-    <!-- KNOB JS -->
-    <script src="assets/plugins/jquery-knob/excanvas.js"></script>
-    <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+        <!-- Responsive examples -->
+        <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
 
-    <script src="assets/plugins/flot-chart/jquery.flot.min.js"></script>
-    <script src="assets/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
-    <script src="assets/plugins/flot-chart/jquery.flot.resize.js"></script>
-    <script src="assets/plugins/flot-chart/jquery.flot.pie.js"></script>
-    <script src="assets/plugins/flot-chart/jquery.flot.selection.js"></script>
-    <script src="assets/plugins/flot-chart/jquery.flot.stack.js"></script>
-    <script src="assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>
+        <!-- Datatable init js -->
+        <script src="assets/pages/datatables.init.js"></script>
 
-    <script src="assets/pages/dashboard.js"></script>
+         <!-- Sweet-Alert  -->
+         <script src="assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+
 
     <script src="assets/js/app.js"></script>
+    <script>
+          //Success Message
+          $('.del-btn').click(function () {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#5eed6a",
+                cancelButtonColor: "#6cbafa",
+                confirmButtonText: "Yes, delete it!"
+              }).then(function (result) {
+                if (result.value) {
+                  Swal.fire("Deleted!", "Your Order  has been deleted.", "success");
+                }
+            });
+        });
+    </script>
 
 </body>
 
