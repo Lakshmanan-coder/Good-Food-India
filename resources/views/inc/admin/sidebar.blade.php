@@ -2,7 +2,7 @@
     <li class="menu-title">Main</li>
 
     <li>
-        <a href="/admin" class="waves-effect"><i class="ti-home"></i><span> Dashboard <span class="badge badge-primary float-right">1</span></span></a>
+        <a href="/admin" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
     </li>
 
    
@@ -29,6 +29,6 @@
         <a href="/admin/calender" class="waves-effect"><i class="ti-calendar"></i><span> Calendar </span></a>
     </li>
      <li>
-        <a href="/subscriptions" class="waves-effect"><i class="ti-layout-slider-alt"></i><span> Subscriptions </span></a>
+        <a href="/admin/subscriptions" class="waves-effect"><i class="ti-layout-slider-alt"></i><span> Subscriptions </span></a>
     </li>
 </ul>

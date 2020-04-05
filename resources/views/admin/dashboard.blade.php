@@ -101,3 +101,23 @@
 </div><!-- container-fluid -->
 
 @endsection
+
+@section('extra_scripts')
+      <!--Morris Chart-->
+      <script src="/assets/plugins/morris/morris.min.js"></script>
+      <script src="/assets/plugins/raphael/raphael.min.js"></script>
+  
+      <!-- KNOB JS -->
+      <script src="/assets/plugins/jquery-knob/excanvas.js"></script>
+      <script src="/assets/plugins/jquery-knob/jquery.knob.js"></script>
+  
+      <script src="/assets/plugins/flot-chart/jquery.flot.min.js"></script>
+      <script src="/assets/plugins/flot-chart/jquery.flot.tooltip.min.js"></script>
+      <script src="/assets/plugins/flot-chart/jquery.flot.resize.js"></script>
+      <script src="/assets/plugins/flot-chart/jquery.flot.pie.js"></script>
+      <script src="/assets/plugins/flot-chart/jquery.flot.selection.js"></script>
+      <script src="/assets/plugins/flot-chart/jquery.flot.stack.js"></script>
+      <script src="/assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>
+  
+      <script src="/assets/pages/dashboard.js"></script>
+@endsection
