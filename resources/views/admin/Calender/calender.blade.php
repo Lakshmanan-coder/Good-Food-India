@@ -1,5 +1,9 @@
 @extends('layouts.admin')
-@section('pagetitle','View Users')
+@section('pagetitle','Calender')
+@section('extra_styles')
+      <!--calendar css-->
+      <link href="/assets/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+@endsection
 @section('content')
 <div class="content">
 
@@ -13,93 +17,50 @@
     <div class="page-content-wrapper ">
 
         <div class="container-fluid">
-
-         
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
+                            <div class="row">
+                                <!-- <div class="col-xl-2 col-md-3">
 
-                            <h4 class="m-b-30 m-t-0">Manage Users</h4>
+                                    <h4 class="m-t-5 m-b-15">Created Events</h4>
+                                    <form method="post" id="add_event_form" class="m-t-5">
+                                        <input type="text" class="form-control new-event-form" placeholder="Add new event..." />
+                                    </form>
 
-                            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; width: 100%;">
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>First name</th>
-                                    <th>E-mail</th>
-                                    <th>Contact No</th>
-                                    <th>Total Orders</th>
-                                    <th>Actions</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                          
-                               
-                               
-                                </tbody>
-                            </table>
+                                    <div id='external-events'>
+                                        <h4 class="m-b-15">Draggable Events</h4>
+                                        <div class='fc-event'>My Event 1</div>
+                                        <div class='fc-event'>My Event 2</div>
+                                        <div class='fc-event'>My Event 3</div>
+                                        <div class='fc-event'>My Event 4</div>
+                                        <div class='fc-event'>My Event 5</div>
+                                    </div>
+                                    <div class="checkbox checkbox-custom">
+                                        <input id="drop-remove" type="checkbox">
+                                        <label for="drop-remove">
+                                            Remove after drop
+                                        </label>
+                                    </div>
+                                </div> -->
 
+                                <div id='calendar' class="col-xl-12 col-md-12"></div>
+
+                            </div>
+                            <!-- end row -->
                         </div>
                     </div>
                 </div>
-
-            </div> <!-- End Row -->
-
+            </div>
             <!-- end row -->
 
+        </div><!-- container-fluid -->
 
-</div><!-- container-fluid -->
+    </div> <!-- Page content Wrapper -->
+
+
+
 
 </div> <!-- Page content Wrapper -->
 
@@ -107,4 +68,12 @@
 
 
 </div>
+@endsection
+
+
+@section('extra_scripts')
+        <script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script src="/assets/plugins/moment/moment.js"></script>
+        <script src='/assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
+        <script src="/assets/pages/calendar-init.js"></script>
 @endsection
