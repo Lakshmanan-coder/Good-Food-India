@@ -118,7 +118,7 @@
                                             <td>12</td>
                                             <td>Completed</td>
                                             <td>
-                                                <a href="/view-order.html" class="btn btn-primary">View Order</a>
+                                                <a href="order-detail" class="btn btn-primary">View Order</a>
                                                 <button class="btn btn-outline-danger del-btn">Delete Order </button>
                                             </td>
                                         </tr>
@@ -130,7 +130,7 @@
                                             <td>12</td>
                                             <td>Completed</td>
                                             <td>
-                                                <a href="/view-order.html" class="btn btn-primary">View Order</a>
+                                                <a href="order-detail" class="btn btn-primary">View Order</a>
                                                 <button class="btn btn-outline-danger del-btn">Delete Order </button>
                                             </td>
                                         </tr>
@@ -167,7 +167,7 @@
                                             <td>12/3/2020</td> 
                                             <td class="bg-success">ACTIVE</td>
                                             <td>
-                                                <a href="/view-subscription.html" class="btn btn-primary">View Subscription</a>
+                                                <a href="view-subscription-detail" class="btn btn-primary">View Subscription</a>
                                                 <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
                                             </td>
                                         </tr>
@@ -180,7 +180,7 @@
                                             <td>12/3/2020</td> 
                                             <td class="bg-danger text-white">INACTIVE</td>
                                             <td>
-                                                <a href="/view-subscription.html" class="btn btn-primary">View Subscription</a>
+                                                <a href="view-subscription-detail" class="btn btn-primary">View Subscription</a>
                                                 <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
                                             </td>
                                         </tr>
@@ -192,7 +192,7 @@
                                             <td>12/3/2020</td> 
                                             <td class="bg-warning">END TODAY</td>
                                             <td>
-                                                <a href="/view-subscription.html" class="btn btn-primary">View Subscription</a>
+                                                <a href="view-subscription-detail" class="btn btn-primary">View Subscription</a>
                                                 <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
                                             </td>
                                         </tr>
@@ -224,4 +224,25 @@
     </div> <!-- Page content Wrapper -->
 
 </div>
+@endsection
+
+@section('extra_scripts')
+<script>
+    //Success Message
+    $('.del-btn').click(function () {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#5eed6a",
+            cancelButtonColor: "#6cbafa",
+            confirmButtonText: "Yes, delete it!"
+        }).then(function (result) {
+            if (result.value) {
+                Swal.fire("Deleted!", "Your Subscriptions has been deleted.", "success");
+            }
+        });
+    });
+</script>
 @endsection
