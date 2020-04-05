@@ -128,9 +128,32 @@
 @endsection
 
 @section('extra_scripts')
-       <!-- Sweet-Alert  -->
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"></script>
-       <!-- Bootstrap File Style -->
-       <script src="/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
-       <script src="/assets/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"></script>
+<!-- Bootstrap File Style -->
+<script src="/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+    // setup the repeater
+    $(document).ready(function () {
+        $('.repeater').repeater({
+            show: function () {
+                $(this).slideDown();
+            },
+            hide: function (deleteElement) {
+                if(confirm('Are you sure you want to delete this element?')) {
+                    $(this).slideUp(deleteElement);
+                }
+            },
+            isFirstItemUndeletable: true
+
+        });
+
+        $("#submitbtn").click(function(){
+            // alert("hi");
+            Swal.fire("Good Job !", "Your Plan Added Successfully.", "success");
+        });
+
+    });
+
+</script>
 @endsection
