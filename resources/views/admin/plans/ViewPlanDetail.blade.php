@@ -40,74 +40,26 @@
                                             <tbody>
                                                 <tr>
                                                     <th>Plan ID</th>
-                                                    <td>#335001</td>
+                                                    <td>#{{$plan->id}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Pack Name</th>
-                                                    <td>Da Alfredo Menu</td>
+                                                    <td>{{$plan->plan_name}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Price</th>
-                                                    <td>Rs.500</td>
+                                                    <td>Rs.{{$plan->price}}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Type</th>
-                                                    <td class="bg-success text-white">Veg</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Latest Menu Update Date</th>
-                                                    <td>3/05/2020 09.00AM</td>
+                                                    <th>Tags</th>
+                                                    <td>{{$plan->tags}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <h4 class="m-b-30 m-t-0">Plan Detail</h4>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-3 text-center">
-                                                <img class="img img-thumbnail img-responsive img-circle order-pack-detail"
-                                                src="http://gif.nyxwolves.xyz/img/avatar4.jpg">
-                                                <br>
-
-                                            </div>
-                                            <div class="col-sm-9">
-                                               <table class="table table-striped table-borderless">
-                                                    <tbody>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <td>John Doe</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Email</th>
-                                                            <td>someone@example.compact</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Phone No</th>
-                                                            <td>+91 98765 31210</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Address</th>
-                                                            <td>17/5 GuruGothai Appts., <br>New Colony, Chromepet 600044</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                 <a href="/view-user.html" class="btn btn-outline-primary">View More Details</a>    
-                                                            </td>
-                                                        </tr>
-                                                      
-                                                    </tbody>
-                                               </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                        
                         </div>
                          
 
@@ -122,61 +74,82 @@
                                     <div class="row">
 
                                         <div class="col-sm-2 text-center">
-                                            <img class="img img-thumbnail img-responsive img-circle order-pack-detail"
-                                                src="https://www.flatironsquare.co.uk/content/_mobile/Food_Hero_Image.jpg">
-                                                <br>
-                                            <!-- <a href="/view-pack-detail.html" class="btn btn-outline-success">View More Details</a>     -->
-
+                                          @if (count($planpictures))
+                                              @foreach ($planpictures as $picture)
+                                              <img class="img img-thumbnail img-responsive img-circle order-pack-detail"
+                                        src="/storage/plan_picture/{{$picture->path}}" style="height:100px; width:100px;">
+                                              @endforeach
+                                          @endif
                                         </div>
                                         <div class="col-sm-10">
-                                                <h2>Da Alfredo Menu</h2>
+                                                <h2>{{$plan->title}}</h2>
 
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <h3>Starters</h3>
-                                                    <div class="menu_item">
-                                                        <em>Qty: 9</em>
-                                                        <h4>Imported Salmon Steak</h4>
-                                                        <p>Base de arroz, aguacate, salmón noruego, semillas
-                                                            de sésamo, edamame, wakame y soja light</p>
+                                                    @if (count($starters)>0)
+                                                      @foreach ($starters as $starter)
+                                                      <div class="menu_item">
+                                                      <em>Qty: {{$starter->quantity}}</em>
+                                                        <h4>{{$starter->title}}</h4>
+                                                        <p>{{$starter->description}}</p>
                                                     </div>
-                                                    <div class="menu_item">
-                                                        <em>Qty: 8</em>
-                                                        <h4>Poke bol</h4>
-                                                        <p>Queso de cabra light, dátiles, jamón serrano y
-                                                            rúcula</p>
-                                                    </div>
-                                                    <div class="menu_item">
-                                                        <em>Qty: 7</em>
-                                                        <h4>Ensalada cesar</h4>
-                                                        <p>lechuga, tomate, espinacas, pollo asado,
-                                                            picatostes, queso proteínico y salsa césar 0%
-                                                        </p>
-                                                    </div>
+                                                      @endforeach  
+                                                    @endif
+                                               
+                                                  
                                                     
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <h3>Main Course</h3>
-                                                    <div class="menu_item">
-                                                        <em>Qty: 7</em>
-                                                        <h4>Oriental</h4>
-                                                        <p>Cama de tabule con taquitos de pollo a la mostaza
-                                                            light</p>
+                                                    <h3>Main Courses</h3>
+                                                    @if (count($maincourses)>0)
+                                                      @foreach ($maincourses as $maincourse)
+                                                      <div class="menu_item">
+                                                      <em>Qty: {{$maincourse->quantity}}</em>
+                                                        <h4>{{$maincourse->title}}</h4>
+                                                        <p>{{$maincourse->description}}</p>
                                                     </div>
-                                                    <div class="menu_item">
-                                                        <em>Qty: 5</em>
-                                                        <h4>Vegan Burguer</h4>
-                                                        <p>Medio pollo asado acompañado de arroz o patatas
-                                                            al toque masala</p>
-                                                    </div>
-                                                    <div class="menu_item">
-                                                        <em>Qty: 4</em>
-                                                        <h4>Indio Fit</h4>
-                                                        <p>lechuga, tomate, espinacas, pollo asado,
-                                                            picatostes, queso proteínico y salsa césar 0%
-                                                        </p>
-                                                    </div>
+                                                      @endforeach  
+                                                    @endif
+                                               
+                                                  
+                                                    
                                                 </div>
+                                              
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h3>Dessert</h3>
+                                                    @if (count($desserts)>0)
+                                                      @foreach ($desserts as $dessert)
+                                                      <div class="menu_item">
+                                                      <em>Qty: {{$dessert->quantity}}</em>
+                                                        <h4>{{$dessert->title}}</h4>
+                                                        <p>{{$dessert->description}}</p>
+                                                    </div>
+                                                      @endforeach  
+                                                    @endif
+                                               
+                                                  
+                                                    
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    @if (count($specials)>0)
+                                                    <h3>Special Offers</h3>
+                                                      @foreach ($specials as $special)
+                                                      <div class="menu_item">
+                                                      <em>Qty: {{$special->quantity}}</em>
+                                                        <h4>{{$special->title}}</h4>
+                                                        <p>{{$special->description}}</p>
+                                                    </div>
+                                                      @endforeach  
+                                                    @endif
+                                               
+                                                  
+                                                    
+                                                </div>
+                                              
 
                                             </div>
                                         </div>

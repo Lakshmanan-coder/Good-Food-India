@@ -33,12 +33,8 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/add-plan','PlanController@addPlan');
     Route::post('/add-plan','PlanController@addPlanPost');
-    Route::get('/view-plans', function () {
-        return view ('admin.plans.ViewPlans');
-    });
-    Route::get('/view-plan-detail', function () {
-        return view ('admin.plans.ViewPlanDetail');
-    });
+    Route::get('/view-plans', 'PlanController@ViewPlan');
+    Route::get('/view-plan-detail/{id}', 'PlanController@ViewPlanDetail');
 
 
 

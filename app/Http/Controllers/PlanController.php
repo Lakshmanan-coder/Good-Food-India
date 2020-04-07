@@ -56,4 +56,30 @@ class PlanController extends Controller
 
 
     }
+
+    public function ViewPlan()
+    {
+        $plans=Plans::where('status','active')->get();
+        return view ('admin.plans.ViewPlans')->with('plans',$plans);
+    }
+
+
+    public function ViewPlanDetail($id)
+    {
+        $plan=Plans::findOrFail($id); 
+      $starters=Menu::where('plan_id',$plan->id)->where('type','Starters')->get();
+      $maincourses=Menu::where('plan_id',$plan->id)->where('type','MainCourse')->get();
+      $desserts=Menu::where('plan_id',$plan->id)->where('type','Dessert')->get();
+      $specials=Menu::where('plan_id',$plan->id)->where('type','SpecialOffers')->get();
+       $planpictures=PlanPictures::where('plan_id',$plan->id)->get();
+        return view ('admin.plans.ViewPlanDetail')->with([
+            'plan'=>$plan,
+            'starters'=>$starters,
+            'maincourses'=>$maincourses,
+            'desserts'=>$desserts,
+            'specials'=>$specials,
+            'planpictures'=>$planpictures,
+        ]);
+
+    }
 }

@@ -34,57 +34,30 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>Andhra Brunch</td>
-                                    <td>Meals,spice</td>
-                                    <td>Rs.500</td>
-                                    <td>7</td>
-                                    <td>
-                                        <a href="view-plan-detail" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>Western BreakFast</td>
-                                    <td>Burger,sandwich</td>
-                                    <td>Rs.300</td>
-                                    <td>2</td>
-                                    <td>
-                                        <a href="view-plan-detail" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>Continental Lunch</td>
-                                    <td>Pulav,Fried rice</td>
-                                    <td>Rs.300</td>
-                                    <td>2</td>
-                                    <td>
-                                        <a href="view-plan-detail" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>Mughal Lunch</td>
-                                    <td>Biriyani,Beef</td>
-                                    <td>Rs.500</td>
-                                    <td>2</td>
-                                    <td>
-                                        <a href="view-plan-detail" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>Italian Dinner</td>
-                                    <td>Lasagne,Pizza</td>
-                                    <td>Rs.700</td>
-                                    <td>2</td>
-                                    <td>
-                                        <a href="view-plan-detail" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                          
+                                   
+                                    @if (count($plans)>0)
+                                        @foreach ($plans as $plan)
+                                            @php $menus=App\Menu::where('plan_id',$plan->id)->get(); $planpicture=App\PlanPictures::where('plan_id',$plan->id)->first(); @endphp
+
+                                            <tr>
+                                            <td class="text-center"><img src="/storage/plan_picture/{{$planpicture->path}}" class="img img-thumbnail img-responsive img-circle" style="height:50px; width:50px;" alt=""></td>
+                                                <td>{{$plan->plan_name}}</td>
+                                                <td>{{$plan->tags}}</td>
+                                                <td>{{$plan->price}}</td>
+                                                <td>{{count($menus)}}</td>
+                                                <td>
+                                                    <a href="view-plan-detail/{{$plan->id}}" class="btn btn-primary">View Detail</a>
+                                                </td>
+                                            </tr>
+
+
+                                        @endforeach
+                                    @endif
+
+
+
+                               
+                            
                                
                                
                                 </tbody>
