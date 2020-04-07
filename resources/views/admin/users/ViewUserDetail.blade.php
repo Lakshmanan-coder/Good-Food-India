@@ -43,7 +43,7 @@
                                         <div class="row">
                                             <div class="col-sm-3 text-center">
                                                 <img class="img img-thumbnail img-responsive  order-pack-detail"
-                                                src="http://gif.nyxwolves.xyz/img/avatar4.jpg">
+                                            src="/storage/profile_picture/{{$user->profile_picture}}">
                                                 <br>
 
                                             </div>
@@ -51,20 +51,16 @@
                                                <table class="table table-striped table-borderless">
                                                     <tbody>
                                                         <tr>
-                                                            <th>First Name</th>
-                                                            <td>John </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Last Name</th>
-                                                            <td>Doe </td>
+                                                            <th>Name</th>
+                                                            <td>{{$user->name}} </td>
                                                         </tr>
                                                         <tr>
                                                             <th>Email</th>
-                                                            <td>someone@example.compact</td>
+                                                            <td>{{$user->email}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Phone No</th>
-                                                            <td>+91 98765 31210</td>
+                                                            <td>{{$user->phoneno}}</td>
                                                         </tr>
                                                        
                                                         <tr>

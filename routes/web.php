@@ -43,12 +43,8 @@ Route::prefix('admin')->group(function () {
 
 
 
-    Route::get('/users', function () {
-        return view ('admin.users.ViewUsers');
-    });
-    Route::get('/view-user', function () {
-        return view ('admin.users.ViewUserDetail');
-    });
+    Route::get('/users', 'AdminUserController@viewUsers');
+    Route::get('/view-user/{id}', 'AdminUserController@ViewUserDetail');
 
 
 

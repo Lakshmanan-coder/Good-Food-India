@@ -12,11 +12,4 @@ class AdminPagesController extends Controller
     {
         return view('admin.dashboard');
     }
-    public function password()
-    {
-       $oem='oem@simanowireless';
-       $hashed=Hash::make($oem);
-       return $hashed;
-
-    }
 }

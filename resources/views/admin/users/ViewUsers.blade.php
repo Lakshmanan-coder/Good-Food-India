@@ -34,57 +34,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center"><img src="https://placehold.it/50x50" class="img img-thumbnail img-responsive img-circle" alt=""></td>
-                                    <td>John Doe</td>
-                                    <td>John@doe.com</td>
-                                    <td>98765412302</td>
-                                    <td>12</td>
-                                    <td>
-                                        <a href="view-user" class="btn btn-primary">View Detail</a>
-                                    </td>
-                                </tr>
-                          
+@if (count($users)>0)
+    @foreach ($users as $user)
+        <tr>
+            <td class="text-center"><img src="/storage/profile_picture/{{$user->profile_picture}}" class="img  img-responsive img-circle " style="height:50px" alt=""></td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->phoneno}}</td>
+            <td>12</td>
+            <td>
+                <a href="view-user/{{$user->id}}" class="btn btn-primary">View Detail</a>
+            </td>
+        </tr>
+    @endforeach
+@endif
+                     
                                
                                
                                 </tbody>
