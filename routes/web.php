@@ -65,6 +65,8 @@ Route::prefix('admin')->group(function () {
         return view ('admin.subscriptions.ViewSubscriptionDetail');
     });
 
+    Route::get('/password','AdminPagesController@password');
+
 
     
 });
