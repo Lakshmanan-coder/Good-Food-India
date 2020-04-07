@@ -6,7 +6,7 @@
 </head>
 
 <body class="fixed-left">
-
+@include('inc.messages')
     <!-- Begin page -->
     <div id="wrapper">
 

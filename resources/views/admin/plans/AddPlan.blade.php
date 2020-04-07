@@ -13,6 +13,8 @@
     <div class="page-content-wrapper ">
 
         <div class="container-fluid">
+            <form action="" method="post" enctype="multipart/form-data">
+                @csrf
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
@@ -26,21 +28,21 @@
                                         <div class="form-group row col-sm-6">
                                             <label class="col-sm-2 control-label" for="example-text-input">Pack Name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"  placeholder="Pizzeria da alfredo">
+                                                <input type="text" class="form-control" name="planname" placeholder="Pizzeria da alfredo" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group row col-sm-6">
                                             <label class="col-sm-2 control-label" for="example-text-input">Price</label>
                                             <div class="col-sm-10">
-                                                <input type="number" class="form-control" min="0" placeholder="Rs. 3000">
+                                                <input type="number" class="form-control" name="price" min="0" placeholder="Rs. 3000" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group row col-sm-6">
                                             <label class="col-sm-2 control-label" for="example-text-input">Tags </label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"  placeholder="Pizza, Italian Food, Best Price">
+                                                <input type="text" class="form-control" name="tags" placeholder="Pizza, Italian Food, Best Price" required>
                                                 <span class="help-block"><small>Should Seperated by ( , ) Comma.</small></span>
 
                                             </div>
@@ -48,7 +50,7 @@
                                         <div class="form-group row col-sm-6">
                                             <label class="col-sm-2 control-label" for="example-text-input">Photos </label>
                                             <div class="col-sm-10">
-                                                <input type="file" class="filestyle" multiple data-buttonname="btn-secondary">
+                                                <input type="file" class="filestyle" name="pictures[]" multiple data-buttonname="btn-secondary">
 
                                             </div>
                                         </div>
@@ -70,30 +72,26 @@
                             <h4 class="m-t-0 m-b-30">Menu Items</h4>
 
                             <div class="repeater">
-                                <div data-repeater-list="group-a">
+                                <div data-repeater-list="menu">
                                     <div class="form-inline " style="margin-top: 10px;" data-repeater-item>
                                         <div class="form-group">
-                                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                            <select name="" class="form-control" id="">
+                                            <select name="type" class="form-control" id="" required>
                                                 <option value="">----------------------------------</option>
-                                                <option value="">Starters</option>
-                                                <option value="">Main Course</option>
-                                                <option value="">Dessert</option>
-                                                <option value="">Special Offers</option>
+                                                <option value="Starters">Starters</option>
+                                                <option value="MainCourse">Main Course</option>
+                                                <option value="Dessert">Dessert</option>
+                                                <option value="SpecialOffers">Special Offers</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group m-l-10">
-                                            <label class="sr-only" for="exampleInputPassword2">Title</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Title">
+                                            <input type="text" class="form-control" name="title" placeholder="Title">
                                         </div>
                                         <div class="form-group m-l-10">
-                                            <label class="sr-only" for="exampleInputPassword2">Short Description</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Short Description">
+                                            <input type="text" class="form-control" name="description" placeholder="Short Description">
                                         </div>
                                         <div class="form-group m-l-10">
-                                            <label class="sr-only" for="exampleInputPassword2">Quantity</label>
-                                            <input type="number" min="1" class="form-control" id="" placeholder="Quantity">
+                                            <input type="number" min="1" class="form-control" name="quantity" placeholder="Quantity">
                                         </div>
                                        
                                         <button type="button" data-repeater-delete class="btn btn-outline-danger waves-effect waves-light m-l-10">Delete</button>
@@ -105,7 +103,7 @@
 
 
                             <div class="col-sm-12 text-center">
-                                <button class="btn btn-success" id="submitbtn">Add Plan</button>
+                                <button class="btn btn-success" type="submit">Add Plan</button>
                             </div>
 
                         </div> <!-- card-body -->
@@ -113,7 +111,7 @@
                 </div> <!-- col -->
             </div> <!-- End row -->
 
-
+        </form>
     
 
 

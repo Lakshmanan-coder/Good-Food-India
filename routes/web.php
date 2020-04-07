@@ -31,9 +31,8 @@ Route::prefix('admin')->group(function () {
     });
 
 
-    Route::get('/add-plan', function () {
-        return view ('admin.plans.AddPlan');
-    });
+    Route::get('/add-plan','PlanController@addPlan');
+    Route::post('/add-plan','PlanController@addPlanPost');
     Route::get('/view-plans', function () {
         return view ('admin.plans.ViewPlans');
     });
