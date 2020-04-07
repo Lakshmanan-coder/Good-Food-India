@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::any('/login-redirect', 'AdminPagesController@loginRedirect');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::prefix('admin')->group(function () {
     Route::get('/','AdminPagesController@dashboard');
@@ -35,29 +33,33 @@ Route::prefix('admin')->group(function () {
     Route::post('/add-plan','PlanController@addPlanPost');
     Route::get('/view-plans', 'PlanController@ViewPlan');
     Route::get('/view-plan-detail/{id}', 'PlanController@ViewPlanDetail');
-
-
-
+    
+    
+    
     Route::get('/users', 'AdminUserController@viewUsers');
     Route::get('/view-user/{id}', 'AdminUserController@ViewUserDetail');
-
-
-
+    
+    
+    
     Route::get('/calender', function () {
         return view ('admin.calender.Calender');
     });
-
-
-
+    
+    
+    
     Route::get('/subscriptions', function () {
         return view ('admin.subscriptions.ViewSubscriptions');
     });
     Route::get('/view-subscription-detail', function () {
         return view ('admin.subscriptions.ViewSubscriptionDetail');
     });
-
+    
     Route::get('/password','AdminPagesController@password');
-
+    
 
     
 });
+
+
+
+Route::get('/', 'HomeController@index')->name('home');
