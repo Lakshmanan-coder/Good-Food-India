@@ -29,4 +29,8 @@ class HomeController extends Controller
     {
         return view('user.plans');
     }
+    public function planDetail()
+    {
+        return view('user.plan-detail');
+    }
 }

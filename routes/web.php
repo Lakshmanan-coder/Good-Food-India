@@ -64,3 +64,4 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/plans', 'HomeController@plans')->name('plans');
+Route::get('/plan-detail', 'HomeController@planDetail')->name('plans');
