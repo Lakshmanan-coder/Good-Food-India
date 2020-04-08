@@ -45,4 +45,16 @@ class HomeController extends Controller
     {
         return view('user.calender');
     }
+    public function subscribe()
+    {
+        return view('user.subscribe');
+    }
+    public function checkout()
+    {
+        return view('user.checkout');
+    }
+    public function confirmed()
+    {
+        return view('user.confirmed');
+    }
 }
