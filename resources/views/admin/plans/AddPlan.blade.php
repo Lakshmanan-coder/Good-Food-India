@@ -31,14 +31,6 @@
                                                 <input type="text" class="form-control" name="planname" placeholder="Pizzeria da alfredo" required>
                                             </div>
                                         </div>
-
-                                        <div class="form-group row col-sm-6">
-                                            <label class="col-sm-2 control-label" for="example-text-input">Price</label>
-                                            <div class="col-sm-10">
-                                                <input type="number" class="form-control" name="price" min="0" placeholder="Rs. 3000" required>
-                                            </div>
-                                        </div>
-
                                         <div class="form-group row col-sm-6">
                                             <label class="col-sm-2 control-label" for="example-text-input">Tags </label>
                                             <div class="col-sm-10">
@@ -47,6 +39,34 @@
 
                                             </div>
                                         </div>
+
+                                        <div class="form-group row col-sm-6">
+                                            <label class="col-sm-2 control-label" for="example-text-input">One Day Price</label>
+                                            <div class="col-sm-10">
+                                                <input type="number" class="form-control" name="one_price" min="0" placeholder="Rs. 3000" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row col-sm-6">
+                                            <label class="col-sm-2 control-label" for="example-text-input">7 Days Price</label>
+                                            <div class="col-sm-10">
+                                                <input type="number" class="form-control" name="seven_price" min="0" placeholder="Rs. 3000" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row col-sm-6">
+                                            <label class="col-sm-2 control-label" for="example-text-input">15 Days Price</label>
+                                            <div class="col-sm-10">
+                                                <input type="number" class="form-control" name="fifteen_price" min="0" placeholder="Rs. 3000" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row col-sm-6">
+                                            <label class="col-sm-2 control-label" for="example-text-input">30 Days Price</label>
+                                            <div class="col-sm-10">
+                                                <input type="number" class="form-control" name="month_price" min="0" placeholder="Rs. 3000" required>
+                                            </div>
+                                        </div>
+
+                                     
                                         <div class="form-group row col-sm-6">
                                             <label class="col-sm-2 control-label" for="example-text-input">Photos </label>
                                             <div class="col-sm-10">
@@ -74,24 +94,12 @@
                             <div class="repeater">
                                 <div data-repeater-list="menu">
                                     <div class="form-inline " style="margin-top: 10px;" data-repeater-item>
-                                        <div class="form-group">
-                                            <select name="type" class="form-control" id="" required>
-                                                <option value="">----------------------------------</option>
-                                                <option value="Starters">Starters</option>
-                                                <option value="MainCourse">Main Course</option>
-                                                <option value="Dessert">Dessert</option>
-                                                <option value="SpecialOffers">Special Offers</option>
-                                            </select>
-                                        </div>
 
                                         <div class="form-group m-l-10">
                                             <input type="text" class="form-control" name="title" placeholder="Title">
                                         </div>
                                         <div class="form-group m-l-10">
                                             <input type="text" class="form-control" name="description" placeholder="Short Description">
-                                        </div>
-                                        <div class="form-group m-l-10">
-                                            <input type="number" min="1" class="form-control" name="quantity" placeholder="Quantity">
                                         </div>
                                        
                                         <button type="button" data-repeater-delete class="btn btn-outline-danger waves-effect waves-light m-l-10">Delete</button>

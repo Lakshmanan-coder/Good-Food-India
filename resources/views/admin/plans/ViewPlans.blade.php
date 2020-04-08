@@ -28,7 +28,10 @@
                                     <th></th>
                                     <th>Pack name</th>
                                     <th>Tags</th>
-                                    <th>Price</th>
+                                    <th>1 Day Price</th>
+                                    <th>7 Days Price</th>
+                                    <th>15 Days Price</th>
+                                    <th>30 Days Price</th>
                                     <th>Menu items</th>
                                     <th>Actions</th>
                                 </tr>
@@ -43,7 +46,10 @@
                                             <td class="text-center"><img src="/storage/plan_picture/{{$planpicture->path}}" class="img img-thumbnail img-responsive img-circle" style="height:50px; width:50px;" alt=""></td>
                                                 <td>{{$plan->plan_name}}</td>
                                                 <td>{{$plan->tags}}</td>
-                                                <td>{{$plan->price}}</td>
+                                                <td>{{$plan->one_price}}</td>
+                                                <td>{{$plan->seven_price}}</td>
+                                                <td>{{$plan->fifteen_price}}</td>
+                                                <td>{{$plan->month_price}}</td>
                                                 <td>{{count($menus)}}</td>
                                                 <td>
                                                     <a href="view-plan-detail/{{$plan->id}}" class="btn btn-primary">View Detail</a>

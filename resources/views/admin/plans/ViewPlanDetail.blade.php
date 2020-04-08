@@ -33,7 +33,7 @@
 
                             
                         <div class="row">
-                            <div class="col-sm-6 m-auto">
+                            <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <table class="table table-striped table-hover table-bordered">
@@ -46,14 +46,40 @@
                                                     <th>Pack Name</th>
                                                     <td>{{$plan->plan_name}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <th>Price</th>
-                                                    <td>Rs.{{$plan->price}}</td>
-                                                </tr>
+                                            
                                                 <tr>
                                                     <th>Tags</th>
                                                     <td>{{$plan->tags}}</td>
                                                 </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <tbody>
+                                               
+                                                <tr>
+                                                    <th>1 Day Price</th>
+                                                    <td>Rs.{{$plan->one_price}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>7 Days Price</th>
+                                                    <td>Rs.{{$plan->seven_price}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>15 Days Price</th>
+                                                    <td>Rs.{{$plan->fifteen_price}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>30 Days Price</th>
+                                                    <td>Rs.{{$plan->month_price}}</td>
+                                                </tr>
+                                               
                                             </tbody>
                                         </table>
                                     </div>
@@ -85,14 +111,12 @@
                                                 <h2>{{$plan->title}}</h2>
 
                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                    <h3>Starters</h3>
-                                                    @if (count($starters)>0)
-                                                      @foreach ($starters as $starter)
+                                                <div class="col-sm-12">
+                                                    @if (count($menus)>0)
+                                                      @foreach ($menus as $menu)
                                                       <div class="menu_item">
-                                                      <em>Qty: {{$starter->quantity}}</em>
-                                                        <h4>{{$starter->title}}</h4>
-                                                        <p>{{$starter->description}}</p>
+                                                        <h4>{{$menu->title}}</h4>
+                                                        <p>{{$menu->description}}</p>
                                                     </div>
                                                       @endforeach  
                                                     @endif
@@ -100,55 +124,7 @@
                                                   
                                                     
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <h3>Main Courses</h3>
-                                                    @if (count($maincourses)>0)
-                                                      @foreach ($maincourses as $maincourse)
-                                                      <div class="menu_item">
-                                                      <em>Qty: {{$maincourse->quantity}}</em>
-                                                        <h4>{{$maincourse->title}}</h4>
-                                                        <p>{{$maincourse->description}}</p>
-                                                    </div>
-                                                      @endforeach  
-                                                    @endif
                                                
-                                                  
-                                                    
-                                                </div>
-                                              
-
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <h3>Dessert</h3>
-                                                    @if (count($desserts)>0)
-                                                      @foreach ($desserts as $dessert)
-                                                      <div class="menu_item">
-                                                      <em>Qty: {{$dessert->quantity}}</em>
-                                                        <h4>{{$dessert->title}}</h4>
-                                                        <p>{{$dessert->description}}</p>
-                                                    </div>
-                                                      @endforeach  
-                                                    @endif
-                                               
-                                                  
-                                                    
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    @if (count($specials)>0)
-                                                    <h3>Special Offers</h3>
-                                                      @foreach ($specials as $special)
-                                                      <div class="menu_item">
-                                                      <em>Qty: {{$special->quantity}}</em>
-                                                        <h4>{{$special->title}}</h4>
-                                                        <p>{{$special->description}}</p>
-                                                    </div>
-                                                      @endforeach  
-                                                    @endif
-                                               
-                                                  
-                                                    
-                                                </div>
                                               
 
                                             </div>

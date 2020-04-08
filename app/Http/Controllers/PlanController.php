@@ -19,7 +19,10 @@ class PlanController extends Controller
         // return $request;
         $plan=new Plans;
         $plan->plan_name=$request->planname;
-        $plan->price=$request->price;
+        $plan->one_price=$request->one_price;
+        $plan->seven_price=$request->seven_price;
+        $plan->fifteen_price=$request->fifteen_price;
+        $plan->month_price=$request->month_price;
         $plan->tags=$request->tags;
         $plan->save();
 
@@ -28,10 +31,8 @@ class PlanController extends Controller
         foreach ($menus as $menuitem) {
             $menu=new Menu;
             $menu->plan_id=$plan->id;
-            $menu->type=$menuitem["type"];
             $menu->title=$menuitem["title"];
             $menu->description=$menuitem["description"];
-            $menu->quantity=$menuitem["quantity"];
             $menu->save();
         }
 
@@ -67,17 +68,12 @@ class PlanController extends Controller
     public function ViewPlanDetail($id)
     {
         $plan=Plans::findOrFail($id); 
-      $starters=Menu::where('plan_id',$plan->id)->where('type','Starters')->get();
-      $maincourses=Menu::where('plan_id',$plan->id)->where('type','MainCourse')->get();
-      $desserts=Menu::where('plan_id',$plan->id)->where('type','Dessert')->get();
-      $specials=Menu::where('plan_id',$plan->id)->where('type','SpecialOffers')->get();
+      $menus=Menu::where('plan_id',$plan->id)->get();
+
        $planpictures=PlanPictures::where('plan_id',$plan->id)->get();
         return view ('admin.plans.ViewPlanDetail')->with([
             'plan'=>$plan,
-            'starters'=>$starters,
-            'maincourses'=>$maincourses,
-            'desserts'=>$desserts,
-            'specials'=>$specials,
+            'menus'=>$menus,
             'planpictures'=>$planpictures,
         ]);
 
