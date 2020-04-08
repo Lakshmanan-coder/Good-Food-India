@@ -68,6 +68,6 @@ Route::get('/plan-detail/{id}', 'HomeController@planDetail')->name('plandetail')
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/wallet', 'HomeController@wallet')->name('wallet');
 Route::get('/calender', 'HomeController@calender')->name('calender');
-Route::get('/subscribe', 'HomeController@subscribe')->name('subscribe');
-Route::get('/checkout', 'HomeController@checkout')->name('checkout');
+Route::post('/subscribe', 'HomeController@subscribe')->name('subscribe');
+Route::post('/checkout', 'HomeController@checkout')->name('checkout');
 Route::get('/confirmed', 'HomeController@confirmed')->name('confirmed');

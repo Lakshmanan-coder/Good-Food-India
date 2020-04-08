@@ -7,6 +7,7 @@
     
         <!-- YOUR CUSTOM CSS -->
         <link href="/css/custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/date-picker.css">
 @endsection
 @section('header_type','header_in element_to_stick')
 @section('content')
@@ -18,25 +19,27 @@
                 <div class="box_booking_2">
                     <div class="head">
                         <div class="title">
-                        <h3>Plan 1</h3>
+                        <h3>{{$plan->plan_name}}</h3>
                       
                     </div>
                     </div>
                     <!-- /head -->
                     <div class="main">
-                        <h6>Subsciption Form</h6>
-                        
-                        <div class="form-group d-flex margin-2rem">
-                            <label class=" col-form-label">Select Plan</label>
-                            <select class="form-control ">
-                                <option value="">Plan 1</options>
-                                <option value="">Plan 2</options>
-                                <option value="">Plan 3</options>
-                            </select>
-                            
+                        <h6>Pack  Detail</h6>
+                        <div class="text-center">
+                        <img src="/storage/plan_picture/{{$picture->path}}" class="img-circle img img-responsive img-thumbnail" style="height:150px; width:150px; border-radius:50%" alt="">
                         </div>
+                        <div class="form-group">
+                            <label for="">Plan Name</label>
+                            <input class="form-control disabled" disabled value="{{$plan->plan_name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Menu Items</label>
+                            <input class="form-control disabled" disabled value="{{count($menus)}}">
+                        </div>
+                        
                     
-                        <div class="d-flex justify-content-between">
+                        {{-- <div class="d-flex justify-content-between">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                             <label class="form-check-label" for="inlineCheckbox1">Mon</label>
@@ -66,23 +69,23 @@
                             <label class="form-check-label" for="inlineCheckbox3">Sun</label>
                           </div>
 
-                        </div>
+                        </div> --}}
                         <hr>
                         <h6>Personal details</h6>
                         <div class="form-group">
-                            <input class="form-control" placeholder="First and Last Name">
+                            <input class="form-control disabled" disabled value="{{Auth::user()->name}}">
                             <i class="icon_pencil"></i>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="Email Address">
+                            <input class="form-control" disabled value="{{Auth::user()->email}}">
                             <i class="icon_mail"></i>
                         </div>
                         <div class="form-group add_bottom_15">
-                            <input class="form-control" placeholder="Phone">
+                            <input class="form-control" disabled value="{{Auth::user()->phoneno}}">
                             <i class="icon_phone"></i>
                         </div>
-                        <a href="CheckOut.html" class="btn_1 full-width mb_5">Reserve Now</a>		                    
-                       <div class="text-center"><small>No money charged on this steps</small></div>
+                        {{-- <a href="CheckOut.html" class="btn_1 full-width mb_5">Subscribe Now</a>		                     --}}
+                       {{-- <div class="text-center"><small>No money charged on this steps</small></div> --}}
                     </div>
                 </div>
                 <!-- /box_booking -->
@@ -91,98 +94,30 @@
            
             <div class="col-lg-4" id="sidebar_fixed">
                 <div class="box_booking">
+                    <form action="/checkout" method="post">
+                        @csrf
+                    <input type="hidden" name="plan_id" value="{{$plan->id}}">
                     <div class="head">
-                        <h3>Book your Dates</h3>
-                        <div class="offer">Up to -40% off on first sub</div>
+                        <h3>Select your Dates</h3>
                     </div>
                     <!-- /head -->
                     <div class="main">
-                        <input type="text" id="datepicker_field">
-                        <div id="DatePicker"></div>
-                        <div class="dropdown time">
-                            <a href="#" data-toggle="dropdown">Hour <span id="selected_time"></span></a>
-                            <div class="dropdown-menu">
-                                <div class="dropdown-menu-content">
-                                    <h4>Lunch</h4>
-                                    <div class="radio_select add_bottom_15">
-                                        <ul>
-                                            <li>
-                                                <input type="radio" id="time_1" name="time" value="12.00am">
-                                                <label for="time_1">12.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_2" name="time" value="08.30pm">
-                                                <label for="time_2">12.30<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_3" name="time" value="09.00pm">
-                                                <label for="time_3">1.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_4" name="time" value="09.30pm">
-                                                <label for="time_4">1.30<em>-40%</em></label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /time_select -->
-                                    <h4>Dinner</h4>
-                                    <div class="radio_select">
-                                        <ul>
-                                            <li>
-                                                <input type="radio" id="time_5" name="time" value="08.00pm">
-                                                <label for="time_1">20.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_6" name="time" value="08.30pm">
-                                                <label for="time_2">20.30<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_7" name="time" value="09.00pm">
-                                                <label for="time_3">21.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_8" name="time" value="09.30pm">
-                                                <label for="time_4">21.30<em>-40%</em></label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /time_select -->
-                                </div>
-                            </div>
+                        <div class="form-group  margin-2rem">
+                            <label for="">Duration</label>
+                            <select class="form-control " name="duration">
+                                <option value="1">One Day</option>
+                                <option value="7">7 Days</option>
+                                <option value="15">15 Days</option>
+                                <option value="30">30 Days</option>
+                            </select>
                         </div>
-                        <!-- /dropdown -->
-                        <div class="dropdown people">
-                            <a href="#" data-toggle="dropdown">People <span id="selected_people"></span></a>
-                            <div class="dropdown-menu">
-                                <div class="dropdown-menu-content">
-                                    <h4>How many people?</h4>
-                                    <div class="radio_select">
-                                        <ul>
-                                            <li>
-                                                <input type="radio" id="people_1" name="people" value="1">
-                                                <label for="people_1">1<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="people_2" name="people" value="2">
-                                                <label for="people_2">2<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="people_3" name="people" value="3">
-                                                <label for="people_3">3<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="people_4" name="people" value="4">
-                                                <label for="people_4">4<em>-40%</em></label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /people_select -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /dropdown -->
-                       
+                        <label for="">Dates</label>
+                        <input type="text" class="form-control date" name="date" placeholder="Pick the multiple dates">
+                    <br>
+                        <button type="submit" class="btn_1 full-width mb_5">Subscribe Now</button>		                    
                     </div>
+                </form>
+                    
                 </div>
         </div>
         <!-- /container -->
@@ -197,8 +132,15 @@
 
 @section('extra_scripts')
           <!-- SPECIFIC SCRIPTS -->
-          <script src="js/sticky_sidebar.min.js"></script>
-          <script src="js/specific_detail.js"></script>
-          <script src="js/datepicker.min.js"></script>
-          <script src="js/datepicker_func_1.js"></script>
+          <script src="/js/sticky_sidebar.min.js"></script>
+          <script src="/js/specific_detail.js"></script>
+          <script src="/js/datepicker.min.js"></script>
+          <script src="/js/datepicker_func_1.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<script>
+$('.date').datepicker({
+multidate: true,
+format: 'dd-mm-yyyy'
+});
+</script>
 @endsection

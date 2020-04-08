@@ -28,7 +28,7 @@
 		
     <div class="container margin_detail">
         <div class="row">
-            <div class="col-lg-2"></div>
+            {{-- <div class="col-lg-2"></div> --}}
             <div class="col-lg-8">
                 <div class="detail_page_head clearfix margin-2rem">
                     <div class="breadcrumbs">
@@ -145,8 +145,12 @@
                                     </div>
                                     @endif
                                    
-                                    <div class="d-flex justify-content-center w-100">
-                                        <a href="/subscribe" class="show_hide button-sub-custom " data-content="toggle-text">Subscribe</a></div>
+                                    {{-- <div class="d-flex justify-content-center w-100">
+                                        <form action="/subscribe" method="post">
+                                        <button type="submit" class="show_hide button-sub-custom ">Subscribe</button>
+                                        </form>
+                                    </div> --}}
+                                    
 
                                     <!-- /special_offers -->
 
@@ -163,109 +167,71 @@
             </div>
             <!-- /col -->
 
-            {{-- <div class="col-lg-4" id="sidebar_fixed">
-                <div class="box_booking">
+            <div class="col-lg-4" id="sidebar_fixed">
+                <div class="box_booking " style="margin-top:140px">
                     <div class="head">
-                        <h3>Book your table</h3>
-                        <div class="offer">Up to -40% off</div>
+                        <h3>Subscribe your Plan</h3>
+                        {{-- <div class="offer">Up to -40% off</div> --}}
                     </div>
                     <!-- /head -->
                     <div class="main">
-                        <input type="text" id="datepicker_field">
-                        <div id="DatePicker"></div>
-                        <div class="dropdown time">
-                            <a href="#" data-toggle="dropdown">Hour <span id="selected_time"></span></a>
-                            <div class="dropdown-menu">
-                                <div class="dropdown-menu-content">
-                                    <h4>Lunch</h4>
-                                    <div class="radio_select add_bottom_15">
-                                        <ul>
-                                            <li>
-                                                <input type="radio" id="time_1" name="time" value="12.00am">
-                                                <label for="time_1">12.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_2" name="time" value="08.30pm">
-                                                <label for="time_2">12.30<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_3" name="time" value="09.00pm">
-                                                <label for="time_3">1.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_4" name="time" value="09.30pm">
-                                                <label for="time_4">1.30<em>-40%</em></label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /time_select -->
-                                    <h4>Dinner</h4>
-                                    <div class="radio_select">
-                                        <ul>
-                                            <li>
-                                                <input type="radio" id="time_5" name="time" value="08.00pm">
-                                                <label for="time_1">20.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_6" name="time" value="08.30pm">
-                                                <label for="time_2">20.30<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_7" name="time" value="09.00pm">
-                                                <label for="time_3">21.00<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="time_8" name="time" value="09.30pm">
-                                                <label for="time_4">21.30<em>-40%</em></label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /time_select -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /dropdown -->
-                        <div class="dropdown people">
-                            <a href="#" data-toggle="dropdown">People <span id="selected_people"></span></a>
-                            <div class="dropdown-menu">
-                                <div class="dropdown-menu-content">
-                                    <h4>How many people?</h4>
-                                    <div class="radio_select">
-                                        <ul>
-                                            <li>
-                                                <input type="radio" id="people_1" name="people" value="1">
-                                                <label for="people_1">1<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="people_2" name="people" value="2">
-                                                <label for="people_2">2<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="people_3" name="people" value="3">
-                                                <label for="people_3">3<em>-40%</em></label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="people_4" name="people" value="4">
-                                                <label for="people_4">4<em>-40%</em></label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- /people_select -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /dropdown -->
-                        <a href="Subscribe.html" class="btn_1 full-width mb_5">Reserve Now</a>
-                      
+                       <form action="/subscribe" method="post">
+                        @csrf
+                       <input type="hidden" value="{{$plan->id}}" name="plan_id">
+                        <button type="submit" class="btn_1 full-width mb_5">Reserve Now</button>
+                        </form>
                     </div>
                 </div>
                 <!-- /box_booking -->
-                <ul class="share-buttons">
+                {{-- <ul class="share-buttons">
                     <li><a class="fb-share" href="#0"><i class="social_facebook"></i> Share</a></li>
                     <li><a class="twitter-share" href="#0"><i class="social_twitter"></i> Share</a></li>
                     <li><a class="gplus-share" href="#0"><i class="social_googleplus"></i> Share</a></li>
-                </ul>
-            </div> --}}
+                </ul> --}}
+
+                <div class="box_booking " >
+                    <div class="head">
+                        <h3>Recent Plans</h3>
+                        {{-- <div class="offer">Up to -40% off</div> --}}
+                    </div>
+                    <!-- /head -->
+                    <div class="main">
+                        @if (count($plans=App\Plans::orderBy('id','desc')->paginate(3)))
+                        @foreach ($plans as $plan)
+                @php $menus=App\Menu::where('plan_id',$plan->id)->get(); $planpicture=App\PlanPictures::where('plan_id',$plan->id)->first(); @endphp
+    
+                        <div class="list_home">
+                            <ul>
+                                <li>
+                                    <a href="/plan-detail/{{$plan->id}}">
+                                        <figure>
+                                            <img src="/storage/plan_picture/{{$planpicture->path}}" data-src="/storage/plan_picture/{{$planpicture->path}}" alt=""
+                                                class="lazy" style=" ">
+                                        </figure>
+                                        {{-- <div class="score"><strong>9.5</strong></div> --}}
+                                        <em>{{count($menus)}} Delicious Menu</em>
+                                        <h3>{{$plan->plan_name}}</h3>
+                                        <small></small>
+                                        <ul>
+                                            {{-- <li><span class="ribbon off">-30%</span></li> --}}
+                                        <li>Price Rs. {{$plan->price}}</li>
+                                        </ul>
+                                    </a>
+                                </li>
+                             
+                          
+                            </ul>
+                        </div>
+        
+                        @endforeach
+                    @endif
+                    </div>
+                </div>
+
+            
+               
+
+            </div>
 
         </div>
         <!-- /row -->

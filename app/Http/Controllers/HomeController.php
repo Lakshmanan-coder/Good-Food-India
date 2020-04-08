@@ -64,12 +64,21 @@ class HomeController extends Controller
     {
         return view('user.calender');
     }
-    public function subscribe()
+    public function subscribe(Request $request)
     {
-        return view('user.subscribe');
+        $plan=Plans::findOrFail($request->plan_id); 
+        $planpicture=PlanPictures::where('plan_id',$plan->id)->first();
+        $menus=Menu::where('plan_id',$plan->id)->get();
+        return view('user.subscribe')->with([
+            'plan'=>$plan,
+            'picture'=>$planpicture,
+            'menus'=>$menus,
+
+        ]);
     }
-    public function checkout()
+    public function checkout(Request $request)
     {
+        return $request;
         return view('user.checkout');
     }
     public function confirmed()
