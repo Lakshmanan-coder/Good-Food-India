@@ -1,24 +1,23 @@
 @extends('layouts.user')
+@section('header_type','header element_to_stick')
 
 @section('content')
-    
-    <!--hero section-->
-    <div class="hero_single inner_pages background-image" data-background="url(img/hero_submit.jpg)">
-        <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-9 col-lg-10 col-md-8">
-                        <h1>Attract New Customers</h1>
-                        <p>More bookings from diners around the corner</p>
-                    </div>
+      
+ <!--hero section-->
+ <div class="hero_single inner_pages background-image" data-background="url(img/hero_submit.jpg)">
+    <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-9 col-lg-10 col-md-8">
+                    <h1>Attract New Customers</h1>
+                    <p>More bookings from diners around the corner</p>
                 </div>
-                <!-- /row -->
             </div>
+            <!-- /row -->
         </div>
     </div>
-    <!-- /hero_single -->
-    
-
+</div>
+<!-- /hero_single -->
     <!-- View plans -->
 <main>
 	<div class="container margin_60_40">
@@ -30,7 +29,7 @@
                     <span><em></em></span>
                     <h2>Popular Plans</h2>
                     <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-                    <a href="#0">View All</a>
+                    {{-- <a href="#0">View All</a> --}}
                 </div>
             </div>
             <div class="col-md-6">

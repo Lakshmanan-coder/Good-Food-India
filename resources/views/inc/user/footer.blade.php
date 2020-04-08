@@ -53,7 +53,7 @@
         <hr>
         <div class="row add_bottom_25">
             <div class="col-lg-6">
-                <ul class="footer-selector clearfix">
+                {{-- <ul class="footer-selector clearfix">
                     <li>
                         <div class="styled-select lang-selector">
                             <select>
@@ -73,7 +73,7 @@
                         </div>
                     </li>
                     <li><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/cards_all.svg" alt="" width="198" height="30" class="lazy"></li>
-                </ul>
+                </ul> --}}
             </div>
             <div class="col-lg-6">
                 <ul class="additional_links">

@@ -1,4 +1,5 @@
 @extends('layouts.user')
+@section('header_type','header element_to_stick')
 @section('content')
 
 <!--SLIDER-->

@@ -33,4 +33,16 @@ class HomeController extends Controller
     {
         return view('user.plan-detail');
     }
+    public function profile()
+    {
+        return view('user.profile');
+    }
+    public function wallet()
+    {
+        return view('user.wallet');
+    }
+    public function calender()
+    {
+        return view('user.calender');
+    }
 }

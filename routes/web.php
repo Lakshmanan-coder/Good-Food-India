@@ -64,4 +64,7 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/plans', 'HomeController@plans')->name('plans');
-Route::get('/plan-detail', 'HomeController@planDetail')->name('plans');
+Route::get('/plan-detail', 'HomeController@planDetail')->name('plandetail');
+Route::get('/profile', 'HomeController@profile')->name('profile');
+Route::get('/wallet', 'HomeController@wallet')->name('wallet');
+Route::get('/calender', 'HomeController@calender')->name('calender');

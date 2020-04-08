@@ -1,4 +1,5 @@
-<header class="header clearfix element_to_stick">
+<header class=" @yield("header_type") clearfix ">
+{{-- <header class="header_in clearfix element_to_stick"> --}}
     <div class="container">
     <div id="logo">
         <a href="index.html">
