@@ -50,7 +50,8 @@
                                 <small></small>
                                 <ul>
                                     {{-- <li><span class="ribbon off">-30%</span></li> --}}
-                                <li>Price Rs. {{$plan->price}}</li>
+                                    <li>Price Rs. {{$plan->one_price}} - {{$plan->month_price}}</li>
+
                                 </ul>
                             </a>
                         </li>

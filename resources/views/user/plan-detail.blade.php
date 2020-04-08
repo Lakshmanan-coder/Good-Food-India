@@ -74,9 +74,9 @@
                         <li class="nav-item">
                             <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Information</a>
                         </li>
-                        {{-- <li class="nav-item">
-                            <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Reviews</a>
-                        </li> --}}
+                        <li class="nav-item">
+                            <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Prices</a>
+                        </li>
                     </ul>
 
                     <div class="tab-content" role="tablist">
@@ -91,59 +91,79 @@
                             <div id="collapse-A" class="collapse" role="tabpanel" aria-labelledby="heading-A">
                                 <div class="card-body info_content">
                                     <h2>{{$plan->plan_name}} Menu</h2>
-                                    <h3>Starters</h3>
-                                    @if (count($starters))
-                                        @foreach ($starters as $starter)
+                                    @if (count($menus)>0)
+                                        @foreach ($menus as $menu)
                                         <div class="menu_item">
-                                            <em>Qty: {{$starter->quantity}}</em>
-                                            <h4>{{$starter->title}}</h4>
-                                            <p>{{$starter->description}}</p>
+                                            <h4>{{$menu->title}}</h4>
+                                            <p>{{$menu->description}}</p>
                                         </div>
                                         @endforeach
                                     @endif
                                    
                                    
                                     <hr>
-                                    <h3>Main Course</h3>
-                                    @if (count($maincourses)>0)
-                                    @foreach ($maincourses as $maincourse)
-                                    <div class="menu_item">
-                                    <em>Qty: {{$maincourse->quantity}}</em>
-                                      <h4>{{$maincourse->title}}</h4>
-                                      <p>{{$maincourse->description}}</p>
-                                  </div>
-                                    @endforeach  
-                                  @endif
-
-                                    <hr>
-                                    <h3>Dessert</h3>
-                              
-                                    @if (count($desserts)>0)
-                                    @foreach ($desserts as $dessert)
-                                    <div class="menu_item">
-                                    <em>Qty: {{$dessert->quantity}}</em>
-                                      <h4>{{$dessert->title}}</h4>
-                                      <p>{{$dessert->description}}</p>
-                                  </div>
-                                    @endforeach  
-                                  @endif
+                                    
                                     <!-- /content_more -->
                                    
                                     <div class="add_bottom_45"></div>
 
-                                    @if (count($specials)>0)
-                                    <div class="special_offers add_bottom_45">
-                                        <h2>Special Offers</h2>
-                                        @foreach ($specials as $special)
-                                        <div class="menu_item">
-                                        <em>Qty: {{$special->quantity}}</em>
-                                          <h4>{{$special->title}}</h4>
-                                          <p>{{$special->description}}</p>
-                                      </div>
-                                        @endforeach  
-                                       
+                                    
+                                   
+                                    {{-- <div class="d-flex justify-content-center w-100">
+                                        <form action="/subscribe" method="post">
+                                        <button type="submit" class="show_hide button-sub-custom ">Subscribe</button>
+                                        </form>
+                                    </div> --}}
+                                    
+
+                                    <!-- /special_offers -->
+
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pane-B" class="card tab-pane fade show " role="tabpanel" aria-labelledby="tab-B">
+                            <div class="card-header" role="tab" id="heading-B">
+                                <h5>
+                                    <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="true" aria-controls="collapse-A">
+                                        Prices
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse-B" class="collapse" role="tabpanel" aria-labelledby="heading-B">
+                                <div class="card-body info_content">
+                                   
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th>1 Day</th>
+                                                    <td>{{$plan->one_price}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>7 Days</th>
+                                                    <td>{{$plan->seven_price}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>15 Days</th>
+                                                    <td>{{$plan->fifteen_price}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>30 Days</th>
+                                                    <td>{{$plan->month_price}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div>
-                                    @endif
+                                   
+                                   
+                                    <hr>
+                                    
+                                    <!-- /content_more -->
+                                   
+                                    <div class="add_bottom_45"></div>
+
+                                    
                                    
                                     {{-- <div class="d-flex justify-content-center w-100">
                                         <form action="/subscribe" method="post">
@@ -178,7 +198,7 @@
                        <form action="/subscribe" method="post">
                         @csrf
                        <input type="hidden" value="{{$plan->id}}" name="plan_id">
-                        <button type="submit" class="btn_1 full-width mb_5">Reserve Now</button>
+                        <button type="submit" class="btn_1 full-width mb_5">Subscribe Now</button>
                         </form>
                     </div>
                 </div>
@@ -214,7 +234,7 @@
                                         <small></small>
                                         <ul>
                                             {{-- <li><span class="ribbon off">-30%</span></li> --}}
-                                        <li>Price Rs. {{$plan->price}}</li>
+                                        <li>Price Rs. {{$plan->one_price}} - {{$plan->month_price}}</li>
                                         </ul>
                                     </a>
                                 </li>

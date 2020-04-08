@@ -38,17 +38,12 @@ class HomeController extends Controller
     public function planDetail($id)
     {
         $plan=Plans::findOrFail($id); 
-        $starters=Menu::where('plan_id',$plan->id)->where('type','Starters')->get();
-        $maincourses=Menu::where('plan_id',$plan->id)->where('type','MainCourse')->get();
-        $desserts=Menu::where('plan_id',$plan->id)->where('type','Dessert')->get();
-        $specials=Menu::where('plan_id',$plan->id)->where('type','SpecialOffers')->get();
+        $menus=Menu::where('plan_id',$plan->id)->get();
+  
          $planpictures=PlanPictures::where('plan_id',$plan->id)->get();
           return view ('user.plan-detail')->with([
               'plan'=>$plan,
-              'starters'=>$starters,
-              'maincourses'=>$maincourses,
-              'desserts'=>$desserts,
-              'specials'=>$specials,
+              'menus'=>$menus,
               'planpictures'=>$planpictures,
           ]);
     }
