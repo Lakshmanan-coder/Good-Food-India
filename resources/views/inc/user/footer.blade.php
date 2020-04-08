@@ -5,12 +5,16 @@
                 <h3 data-target="#collapse_1">Quick Links</h3>
                 <div class="collapse dont-collapse-sm links" id="collapse_1">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="plan.html">Plan</a></li>
-                        <li><a href="profile.html">My account</a></li>
-                        <li><a href="wallet.html">Wallet</a></li>
-                        <li><a href="calendar.html">Calendar</a></li>
-                        
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/plans">Plan</a></li>
+                        @auth
+                        <li><a href="/profile">My account</a></li>
+                        <li><a href="/wallet">Wallet</a></li>
+                        <li><a href="/calender">Calendar</a></li>
+                        @else
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        @endauth
                     </ul>
                 </div>
             </div>
