@@ -22,8 +22,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-10 col-md-8">
-                        <h1>Attract New Customers</h1>
-                        <p>More bookings from diners around the corner</p>
+                        <h1 style="color:#fff !important">My Profile</h1>
+                        {{-- <p>More bookings from diners around the corner</p> --}}
                     </div>
                 </div>
                 <!-- /row -->
@@ -44,7 +44,7 @@
         <div class="w-100 mt-3">
          
                 <div class="form-group text-center">
-                    <img src="img/avatar4.jpg" alt="cat" class="rounded-circle" width="100px" height="100px">
+                <img src="/storage/profile_picture/{{Auth::user()->profile_picture}}" alt="cat" class="rounded-circle" width="100px" height="100px">
                 </div>
             
             
@@ -92,48 +92,36 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Name</label>
-                             <p>Test</p>
+                             <p>{{Auth::user()->name}}</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Last name</label>
-                            <p>Name</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /row-->
-                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Telephone</label>
-                            <p>752654129</p>
+                            <p>{{Auth::user()->phoneno}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row-->
+                <div class="row">
+                
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <p>{{Auth::user()->email}}</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Email</label>
-                            <p>test@gmail.com</p>
+                            <label>Total Orders</label>
+                            <p>6</p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                      <div class="form-group">
-                          <label>Total Orders</label>
-                          <p>6</p>
-                      </div>
-                  </div>
-                
-              </div>
+            
                 <!-- /row-->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Personal info</label>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores inventore culpa explicabo voluptatum corporis nam nesciunt dolorum, quia nihil natus esse perferendis, est quis rem error doloremque laudantium veritatis eveniet.</p>
-                        </div>
-
                         <div class="container">
                             <button id="btn" type="button"  class=" edit-button neu-light btn-action" onclick="location.href='/Profile.html'">Edit</button>
                         </div>

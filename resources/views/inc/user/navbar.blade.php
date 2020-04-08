@@ -2,9 +2,9 @@
 {{-- <header class="header_in clearfix element_to_stick"> --}}
     <div class="container">
     <div id="logo">
-        <a href="index.html">
-            <img src="img/logo.svg" width="140" height="35" alt="" class="logo_normal">
-            <img src="img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky">
+        <a href="/">
+            <img src="/img/logo.svg" width="140" height="35" alt="" class="logo_normal">
+            <img src="/img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky">
         </a>
     </div>
     @guest
@@ -31,7 +31,7 @@
             <a href="#0" class="open_close">
                 <i class="icon_close"></i><span>Menu</span>
             </a>
-            <a href="index.html"><img src="img/logo.svg" width="140" height="35" alt=""></a>
+            <a href="/"><img src="/img/logo.svg" width="140" height="35" alt=""></a>
         </div>
         <ul>
             <li class="submenu">

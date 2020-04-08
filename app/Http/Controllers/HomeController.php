@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Plans;
+use App\PlanPictures;
+use App\User;
+use App\Menu;
 
 class HomeController extends Controller
 {
@@ -23,15 +27,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.home');
+        $plans=Plans::orderBy('id','desc')->paginate(6);
+        return view('user.home')->with('plans',$plans);
     }
     public function plans()
     {
-        return view('user.plans');
+        $plans=Plans::orderBy('id','desc')->get();
+        return view('user.plans')->with('plans',$plans);
     }
-    public function planDetail()
+    public function planDetail($id)
     {
-        return view('user.plan-detail');
+        $plan=Plans::findOrFail($id); 
+        $starters=Menu::where('plan_id',$plan->id)->where('type','Starters')->get();
+        $maincourses=Menu::where('plan_id',$plan->id)->where('type','MainCourse')->get();
+        $desserts=Menu::where('plan_id',$plan->id)->where('type','Dessert')->get();
+        $specials=Menu::where('plan_id',$plan->id)->where('type','SpecialOffers')->get();
+         $planpictures=PlanPictures::where('plan_id',$plan->id)->get();
+          return view ('user.plan-detail')->with([
+              'plan'=>$plan,
+              'starters'=>$starters,
+              'maincourses'=>$maincourses,
+              'desserts'=>$desserts,
+              'specials'=>$specials,
+              'planpictures'=>$planpictures,
+          ]);
     }
     public function profile()
     {

@@ -8,12 +8,12 @@
 @section('content')
 
     <!--hero section-->
-    <div class="hero_single inner_pages background-image" data-background="url(img/hero_submit.jpg)">
+    <div class="hero_single inner_pages background-image" data-background="url(/img/hero_submit.jpg)">
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-10 col-md-8">
-                        <h1>Attract New Customers</h1>
+                        <h1>{{$plan->plan_name}}</h1>
                         <p>More bookings from diners around the corner</p>
                     </div>
                 </div>
@@ -34,35 +34,38 @@
                     <div class="breadcrumbs">
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Category</a></li>
-                            <li>Page active</li>
+                            <li><a href="#">Plans</a></li>
+                            <li>{{$plan->plan_name}}</li>
                         </ul>
                     </div>
                     <div class="title">
-                        <h1>Pizzeria da Alfredo</h1>
-                        27 Old Gloucester St, 4530 London - <a href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+H%C3%B4pitaux+de+Paris+(AP-HP)+-+Si%C3%A8ge!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="blank">Get directions</a>
+                        <h1>{{$plan->plan_name}}</h1>
                         <ul class="tags">
-                            <li><a href="#0">Pizza</a></li>
-                            <li><a href="#0">Italian Food</a></li>
-                            <li><a href="#0">Best Price</a></li>
+                            @php
+                            $results= explode(",",$plan->tags);
+                            @endphp
+                            @foreach ($results as $result)
+                            <li><a href="#0">{{$result}}</a></li>
+
+                            @endforeach
                         </ul>
                     </div>
-                    <div class="rating">
+                    {{-- <div class="rating">
                         <div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- /detail_page_head -->
 
                 <div class="owl-carousel owl-theme carousel_1 magnific-gallery">
-                    <div class="item">
-                        <a href="img/location_1.jpg" title="Photo title" data-effect="mfp-zoom-in"><img src="img/detail_1.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="img/location_1.jpg" title="Photo title" data-effect="mfp-zoom-in"><img src="img/lazy-placeholder-detail.png" data-src="img/detail_2.jpg" class="owl-lazy" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="img/location_1.jpg" title="Photo title" data-effect="mfp-zoom-in"><img src="img/lazy-placeholder-detail.png" data-src="img/detail_3.jpg" class="owl-lazy" alt=""></a>
-                    </div>
+                    @if (count($planpictures)>0)
+                        @foreach ($planpictures as $picture)
+                        <div class="item">
+                        <a  title="Photo title" data-effect="mfp-zoom-in"><img src="/storage/plan_picture/{{$picture->path}}" alt=""></a>
+                        </div>
+                        @endforeach
+                    @endif
+                  
+                   
                 </div>
                 <!-- /carousel -->
 
@@ -71,9 +74,9 @@
                         <li class="nav-item">
                             <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Information</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Reviews</a>
-                        </li>
+                        </li> --}}
                     </ul>
 
                     <div class="tab-content" role="tablist">
@@ -87,134 +90,63 @@
                             </div>
                             <div id="collapse-A" class="collapse" role="tabpanel" aria-labelledby="heading-A">
                                 <div class="card-body info_content">
-                                    <h2>Da Alfredo Menu</h2>
+                                    <h2>{{$plan->plan_name}} Menu</h2>
                                     <h3>Starters</h3>
-                                    <div class="menu_item">
-                                        <em>Qty: 9</em>
-                                        <h4>Imported Salmon Steak</h4>
-                                        <p>Base de arroz, aguacate, salmón noruego, semillas de sésamo, edamame, wakame y soja light</p>
-                                    </div>
-                                    <div class="menu_item">
-                                        <em>Qty: 8</em>
-                                        <h4>Poke bol</h4>
-                                        <p>Queso de cabra light, dátiles, jamón serrano y rúcula</p>
-                                    </div>
-                                    <div class="menu_item">
-                                        <em>Qty: 7</em>
-                                        <h4>Ensalada cesar</h4>
-                                        <p>lechuga, tomate, espinacas, pollo asado, picatostes, queso proteínico y salsa césar 0%</p>
-                                    </div>
+                                    @if (count($starters))
+                                        @foreach ($starters as $starter)
+                                        <div class="menu_item">
+                                            <em>Qty: {{$starter->quantity}}</em>
+                                            <h4>{{$starter->title}}</h4>
+                                            <p>{{$starter->description}}</p>
+                                        </div>
+                                        @endforeach
+                                    @endif
+                                   
+                                   
                                     <hr>
                                     <h3>Main Course</h3>
+                                    @if (count($maincourses)>0)
+                                    @foreach ($maincourses as $maincourse)
                                     <div class="menu_item">
-                                        <em>Qty: 7</em>
-                                        <h4>Oriental</h4>
-                                        <p>Cama de tabule con taquitos de pollo a la mostaza light</p>
-                                    </div>
-                                    <div class="menu_item">
-                                        <em>Qty: 5</em>
-                                        <h4>Vegan Burguer</h4>
-                                        <p>Medio pollo asado acompañado de arroz o patatas al toque masala</p>
-                                    </div>
-                                    <div class="menu_item">
-                                        <em>Qty: 4</em>
-                                        <h4>Indio Fit</h4>
-                                        <p>lechuga, tomate, espinacas, pollo asado, picatostes, queso proteínico y salsa césar 0%</p>
-                                    </div>
-                                    <div class="content_more">
-                                        <div class="menu_item">
-                                            <em>Qty: 2</em>
-                                            <h4>Oriental</h4>
-                                            <p>Cama de tabule con taquitos de pollo a la mostaza light</p>
-                                        </div>
-                                        <div class="menu_item">
-                                            <em>Qty: 1</em>
-                                            <h4>Vegan Burguer</h4>
-                                            <p>Medio pollo asado acompañado de arroz o patatas al toque masala</p>
-                                        </div>
-                                        <div class="menu_item">
-                                            <em>Qty: 2</em>
-                                            <h4>Indio Fit</h4>
-                                            <p>lechuga, tomate, espinacas, pollo asado, picatostes, queso proteínico y salsa césar 0%</p>
-                                        </div>
-                                    </div>
-                                    <!-- /content_more -->
-                                    <a href="#0" class="show_hide" data-content="toggle-text">Read More</a>
+                                    <em>Qty: {{$maincourse->quantity}}</em>
+                                      <h4>{{$maincourse->title}}</h4>
+                                      <p>{{$maincourse->description}}</p>
+                                  </div>
+                                    @endforeach  
+                                  @endif
+
                                     <hr>
                                     <h3>Dessert</h3>
+                              
+                                    @if (count($desserts)>0)
+                                    @foreach ($desserts as $dessert)
                                     <div class="menu_item">
-                                        <em>Qty: 5</em>
-                                        <h4>Oriental</h4>
-                                        <p>Cama de tabule con taquitos de pollo a la mostaza light</p>
-                                    </div>
-                                    <div class="menu_item">
-                                        <em>Qty: 3</em>
-                                        <h4>Vegan Burguer</h4>
-                                        <p>Medio pollo asado acompañado de arroz o patatas al toque masala</p>
-                                    </div>
-                                    <div class="menu_item">
-                                        <em>Qty: 6</em>
-                                        <h4>Indio Fit</h4>
-                                        <p>lechuga, tomate, espinacas, pollo asado, picatostes, queso proteínico y salsa césar 0%</p>
-                                    </div>
-                                    <div class="content_more">
-                                        <div class="menu_item">
-                                            <em>Qty: 5</em>
-                                            <h4>Oriental</h4>
-                                            <p>Cama de tabule con taquitos de pollo a la mostaza light</p>
-                                        </div>
-                                        <div class="menu_item">
-                                            <em>Qty: 2</em>
-                                            <h4>Vegan Burguer</h4>
-                                            <p>Medio pollo asado acompañado de arroz o patatas al toque masala</p>
-                                        </div>
-                                        <div class="menu_item">
-                                            <em>Qty: 3</em>
-                                            <h4>Indio Fit</h4>
-                                            <p>lechuga, tomate, espinacas, pollo asado, picatostes, queso proteínico y salsa césar 0%</p>
-                                        </div>
-                                    </div>
+                                    <em>Qty: {{$dessert->quantity}}</em>
+                                      <h4>{{$dessert->title}}</h4>
+                                      <p>{{$dessert->description}}</p>
+                                  </div>
+                                    @endforeach  
+                                  @endif
                                     <!-- /content_more -->
                                    
                                     <div class="add_bottom_45"></div>
-                                    <h2>Pictures from our users</h2>
-                                    <div class="pictures magnific-gallery clearfix">
-                                        <figure><a href="img/detail_gallery/detail_1.jpg" title="Photo title" data-effect="mfp-zoom-in"><img src="img/thumb_detail_placeholder.jpg" data-src="img/thumb_detail_1.jpg" class="lazy" alt=""></a></figure>
-                                        <figure><a href="img/detail_gallery/detail_2.jpg" title="Photo title" data-effect="mfp-zoom-in"><img src="img/thumb_detail_placeholder.jpg" data-src="img/thumb_detail_2.jpg" class="lazy" alt=""></a></figure>
-                                        <figure><a href="img/detail_gallery/detail_3.jpg" title="Photo title" data-effect="mfp-zoom-in"><img src="img/thumb_detail_placeholder.jpg" data-src="img/thumb_detail_3.jpg" class="lazy" alt=""></a></figure>
-                                        <figure><a href="img/detail_gallery/detail_4.jpg" title="Photo title" data-effect="mfp-zoom-in"><img src="img/thumb_detail_placeholder.jpg" data-src="img/thumb_detail_4.jpg" class="lazy" alt=""></a></figure>
-                                        <figure><a href="img/detail_gallery/detail_5.jpg" title="Photo title" data-effect="mfp-zoom-in"><span class="d-flex align-items-center justify-content-center">+10</span><img src="img/thumb_detail_placeholder.jpg" data-src="img/thumb_detail_5.jpg" class="lazy" alt=""></a></figure>
-                                    </div>
-                                    <!-- /pictures -->
 
+                                    @if (count($specials)>0)
                                     <div class="special_offers add_bottom_45">
                                         <h2>Special Offers</h2>
+                                        @foreach ($specials as $special)
                                         <div class="menu_item">
-                                            <em>Qty: 2</em>
-                                            <h4>Indio Fit</h4>
-                                            <p>lechuga, tomate, espinacas, pollo asado, picatostes, queso proteínico y salsa césar 0%</p>
-                                        </div>
-                                        <div class="menu_item">
-                                            <em>Qty: 3</em>
-                                            <h4>Oriental</h4>
-                                            <p>Cama de tabule con taquitos de pollo a la mostaza light</p>
-                                        </div>
-                                        <div class="menu_item">
-                                            <em>Qty: 3</em>
-                                            <h4>Vegan Burguer</h4>
-                                            <p>Medio pollo asado acompañado de arroz o patatas al toque masala</p>
-                                        </div>
-                                        <div class="menu_item">
-                                            <em>Qty: 1</em>
-                                            <h4>Indio Fit</h4>
-                                            <p>lechuga, tomate, espinacas, pollo asado, picatostes, queso proteínico y salsa césar 0%</p>
-                                        </div>
-                                        <div class="d-flex justify-content-center w-100">
-                                        <a href="Subscribe.html" class="show_hide button-sub-custom " data-content="toggle-text">Subscribe</a></div>
+                                        <em>Qty: {{$special->quantity}}</em>
+                                          <h4>{{$special->title}}</h4>
+                                          <p>{{$special->description}}</p>
+                                      </div>
+                                        @endforeach  
+                                       
                                     </div>
-                                    
+                                    @endif
                                    
-                                   
+                                    <div class="d-flex justify-content-center w-100">
+                                        <a href="/subscribe" class="show_hide button-sub-custom " data-content="toggle-text">Subscribe</a></div>
 
                                     <!-- /special_offers -->
 
@@ -224,164 +156,6 @@
                         </div>
                         <!-- /tab -->
 
-                        <div id="pane-B" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-B">
-                            <div class="card-header" role="tab" id="heading-B">
-                                <h5>
-                                    <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="false" aria-controls="collapse-B">
-                                        Reviews
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapse-B" class="collapse" role="tabpanel" aria-labelledby="heading-B">
-                                <div class="card-body reviews">
-                                    <div class="row add_bottom_45 d-flex align-items-center">
-                                        <div class="col-md-3">
-                                            <div id="review_summary">
-                                                <strong>8.5</strong>
-                                                <em>Superb</em>
-                                                <small>Based on 4 reviews</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-9 reviews_sum_details">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <h6>Food Quality</h6>
-                                                    <div class="row">
-                                                        <div class="col-xl-10 col-lg-9 col-9">
-                                                            <div class="progress">
-                                                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-2 col-lg-3 col-3"><strong>9.0</strong></div>
-                                                    </div>
-                                                    <!-- /row -->
-                                                    <h6>Service</h6>
-                                                    <div class="row">
-                                                        <div class="col-xl-10 col-lg-9 col-9">
-                                                            <div class="progress">
-                                                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-2 col-lg-3 col-3"><strong>9.5</strong></div>
-                                                    </div>
-                                                    <!-- /row -->
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h6>Quantity</h6>
-                                                    <div class="row">
-                                                        <div class="col-xl-10 col-lg-9 col-9">
-                                                            <div class="progress">
-                                                                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-2 col-lg-3 col-3"><strong>6.0</strong></div>
-                                                    </div>
-                                                    <!-- /row -->
-                                                    <h6>Price</h6>
-                                                    <div class="row">
-                                                        <div class="col-xl-10 col-lg-9 col-9">
-                                                            <div class="progress">
-                                                                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-2 col-lg-3 col-3"><strong>6.0</strong></div>
-                                                    </div>
-                                                    <!-- /row -->
-                                                </div>
-                                            </div>
-                                            <!-- /row -->
-                                        </div>
-                                    </div>
-
-                                    <div id="reviews">
-                                        <div class="review_card">
-                                            <div class="row">
-                                                <div class="col-md-2 user_info">
-                                                    <figure><img src="img/avatar4.jpg" alt=""></figure>
-                                                    <h5>Lukas</h5>
-                                                </div>
-                                                <div class="col-md-10 review_content">
-                                                    <div class="clearfix add_bottom_15">
-                                                        <span class="rating">8.5<small>/10</small> <strong>Rating average</strong></span>
-                                                        <em>Published 54 minutes ago</em>
-                                                    </div>
-                                                    <h4>"Great Location!!"</h4>
-                                                    <p>Eos tollit ancillae ea, lorem consulatu qui ne, eu eros eirmod scaevola sea. Et nec tantas accusamus salutatus, sit commodo veritus te, erat legere fabulas has ut. Rebum laudem cum ea, ius essent fuisset ut. Viderer petentium cu his. Tollit molestie suscipiantur his et.</p>
-                                                    <ul>
-                                                        <li><a href="#0"><i class="icon_like"></i><span>Useful</span></a></li>
-                                                        <li><a href="#0"><i class="icon_dislike"></i><span>Not useful</span></a></li>
-                                                        <li><a href="#0"><i class="arrow_back"></i> <span>Reply</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /row -->
-                                        </div>
-                                        <!-- /review_card -->
-                                        <div class="review_card">
-                                            <div class="row">
-                                                <div class="col-md-2 user_info">
-                                                    <figure><img src="img/avatar6.jpg" alt=""></figure>
-                                                    <h5>Lukas</h5>
-                                                </div>
-                                                <div class="col-md-10 review_content">
-                                                    <div class="clearfix add_bottom_15">
-                                                        <span class="rating">8.5<small>/10</small> <strong>Rating average</strong></span>
-                                                        <em>Published 10 Oct. 2019</em>
-                                                    </div>
-                                                    <h4>"Awesome Experience"</h4>
-                                                    <p>Eos tollit ancillae ea, lorem consulatu qui ne, eu eros eirmod scaevola sea. Et nec tantas accusamus salutatus, sit commodo veritus te, erat legere fabulas has ut. Rebum laudem cum ea, ius essent fuisset ut. Viderer petentium cu his. Tollit molestie suscipiantur his et.</p>
-                                                    <ul>
-                                                        <li><a href="#0"><i class="icon_like"></i><span>Useful</span></a></li>
-                                                        <li><a href="#0"><i class="icon_dislike"></i><span>Not useful</span></a></li>
-                                                        <li><a href="#0"><i class="arrow_back"></i> <span>Reply</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /row -->
-                                        </div>
-                                        <!-- /review_card -->
-                                        <div class="review_card">
-                                            <div class="row">
-                                                <div class="col-md-2 user_info">
-                                                    <figure><img src="img/avatar1.jpg" alt=""></figure>
-                                                    <h5>Marika</h5>
-                                                </div>
-                                                <div class="col-md-10 review_content">
-                                                    <div class="clearfix add_bottom_15">
-                                                        <span class="rating">9.0<small>/10</small> <strong>Rating average</strong></span>
-                                                        <em>Published 11 Oct. 2019</em>
-                                                    </div>
-                                                    <h4>"Really great dinner!!"</h4>
-                                                    <p>Eos tollit ancillae ea, lorem consulatu qui ne, eu eros eirmod scaevola sea. Et nec tantas accusamus salutatus, sit commodo veritus te, erat legere fabulas has ut. Rebum laudem cum ea, ius essent fuisset ut. Viderer petentium cu his. Tollit molestie suscipiantur his et.</p>
-                                                    <ul>
-                                                        <li><a href="#0"><i class="icon_like"></i><span>Useful</span></a></li>
-                                                        <li><a href="#0"><i class="icon_dislike"></i><span>Not useful</span></a></li>
-                                                        <li><a href="#0"><i class="arrow_back"></i> <span>Reply</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /row -->
-                                            <div class="row reply">
-                                                <div class="col-md-2 user_info">
-                                                    <figure><img src="img/avatar.jpg" alt=""></figure>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="review_content">
-                                                        <strong>Reply from Foogra</strong>
-                                                        <em>Published 3 minutes ago</em>
-                                                        <p><br>Hi Monika,<br><br>Eos tollit ancillae ea, lorem consulatu qui ne, eu eros eirmod scaevola sea. Et nec tantas accusamus salutatus, sit commodo veritus te, erat legere fabulas has ut. Rebum laudem cum ea, ius essent fuisset ut. Viderer petentium cu his. Tollit molestie suscipiantur his et.<br><br>Thanks</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /reply -->
-                                        </div>
-                                        <!-- /review_card -->
-                                    </div>
-                                    <!-- /reviews -->
-                                    <div class="text-right"><a href="leave-review.html" class="btn_1">Leave a review</a></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!-- /tab-content -->
                 </div>
