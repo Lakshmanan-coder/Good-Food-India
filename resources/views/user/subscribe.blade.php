@@ -171,7 +171,8 @@
 $('.date').datepicker({
 multidate: true,
 format: 'dd-mm-yyyy',
-maxViewMode:0.3
+maxViewMode:0,
+startDate:"now"
 });
 
 
