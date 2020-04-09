@@ -48,9 +48,7 @@ Route::prefix('admin')->group(function () {
     
     
     Route::get('/subscriptions', 'SubscribeController@viewSubscriptions');
-    Route::get('/view-subscription-detail', function () {
-        return view ('admin.subscriptions.ViewSubscriptionDetail');
-    });
+    Route::get('/view-subscription-detail/{id}', 'SubscribeController@ViewSubscribeDetail');
     
     Route::get('/password','AdminPagesController@password');
     
