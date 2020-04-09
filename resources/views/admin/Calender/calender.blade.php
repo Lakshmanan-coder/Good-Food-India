@@ -75,5 +75,22 @@
         <script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
         <script src="/assets/plugins/moment/moment.js"></script>
         <script src='/assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
-        <script src="/assets/pages/calendar-init.js"></script>
+        {{-- <script src="/assets/pages/calendar-init.js"></script> --}}
+        <script>
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                editable: false,
+                events: [
+                    {
+                    title: 'Family Plan 04 - Praveenram Balachandran ',
+                    start: '2020-04-01'
+                    },
+              
+                ]
+            });
+        </script>
 @endsection
