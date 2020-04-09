@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Subscribe;
 class AdminUserController extends Controller
 {
     public function viewUsers()
@@ -15,6 +16,7 @@ class AdminUserController extends Controller
     public function ViewUserDetail($id)
     {
         $user=User::findOrFail($id);
-        return view('admin.users.ViewUserDetail')->with('user',$user);
+        $subscribes=Subscribe::where('user_id',$id)->get();
+        return view('admin.users.ViewUserDetail')->with(['user'=>$user,'subscribes'=>$subscribes]);
     }
 }

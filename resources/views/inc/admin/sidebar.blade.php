@@ -7,12 +7,12 @@
 
    
 
-    <li class="has_sub">
+    {{-- <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout"></i><span> Orders </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
         <ul class="list-unstyled">
             <li><a href="/admin/orders">Manage Orders</a></li>
         </ul>
-    </li>
+    </li> --}}
 
     <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Plans </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
