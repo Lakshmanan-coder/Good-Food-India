@@ -4,23 +4,32 @@
 <!-- SPECIFIC CSS -->
 <link href="/css/home.css" rel="stylesheet">
 <link href="/css/Calender.css" rel="stylesheet">
-<!-- FULL PAGE CALENDER -->
-<link href='./fullcalendar-4.4.0/packages/core/main.css' rel='stylesheet' />
-<link href='./fullcalendar-4.4.0/packages/daygrid/main.css' rel='stylesheet' />
-<script src='./fullcalendar-4.4.0/packages/core/main.js'></script>
-<script src='./fullcalendar-4.4.0/packages/interaction/main.js'></script>
-<script  src='./fullcalendar-4.4.0/packages/daygrid/main.js'></script>   
+
+<link href="/assets/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+<style>
+  .fc-content {
+    background: #589442;
+    border: #589442;
+    color: #fff;
+}
+</style>
 @endsection
 @section('content')
 <main>
 
     <div id='calendar'></div>
 </main>
+@php
+$data=json_encode($datas)    
+
+@endphp
 @endsection
 @section('extra_scripts')
-    
+<script src="/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/assets/plugins/moment/moment.js"></script>
+<script src='/assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
       <!--specific script for calender-->
-      <script>
+      {{-- <script>
         document.addEventListener('DOMContentLoaded', function() {
           var calendarEl = document.getElementById('calendar');
       
@@ -93,5 +102,33 @@
         
       
       
-            </script>
+            </script> --}}
+
+            @php
+            echo "<script>
+                const events=";
+                echo $data;
+                echo"</script>";
+    @endphp
+
+    {{-- <script>
+     const events=[
+                {
+                title: 'Family Plan 04 - Praveenram Balachandran ',
+                start: '2020-04-01'
+                },
+          
+            ]
+    </script> --}}
+    <script>
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'
+            },
+            editable: false,
+            events:events
+        });
+    </script>
 @endsection

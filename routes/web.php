@@ -60,7 +60,7 @@ Route::get('/plans', 'HomeController@plans')->name('plans');
 Route::get('/plan-detail/{id}', 'HomeController@planDetail')->name('plandetail');
 Route::get('/profile', 'HomeController@profile')->name('profile')->middleware('auth');
 Route::get('/wallet', 'HomeController@wallet')->name('wallet')->middleware('auth');
-Route::get('/calender', 'HomeController@calender')->name('calender')->middleware('auth');
+Route::get('/calender', 'CalenderController@usercalender')->name('calender')->middleware('auth');
 Route::post('/subscribe', 'HomeController@subscribe')->name('subscribe')->middleware('auth');
 Route::post('/checkout', 'HomeController@checkout')->name('checkout')->middleware('auth');
 Route::get('/confirmed', 'HomeController@confirmed')->name('confirmed')->middleware('auth');
