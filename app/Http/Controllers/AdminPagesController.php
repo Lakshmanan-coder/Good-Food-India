@@ -24,6 +24,9 @@ class AdminPagesController extends Controller
     
     public function dashboard()
     {
+        if (Auth::user()->user_type!='admin') {
+            abort(401);
+        }
         return view('admin.dashboard');
     }
 }

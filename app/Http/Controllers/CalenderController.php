@@ -11,6 +11,9 @@ class CalenderController extends Controller
 {
     public function adminCalender()
     {
+        if (Auth::user()->user_type!='admin') {
+            abort(401);
+        }
         $subscribes=Subscribe::orderBy('id','desc')->get();
         $data=[];
         foreach ($subscribes as $subscribe) {

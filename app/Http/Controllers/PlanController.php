@@ -7,15 +7,22 @@ use App\Plans;
 use App\PlanPictures;
 use App\User;
 use App\Menu;
+use Illuminate\Support\Facades\Auth;
 
 class PlanController extends Controller
 {
     public function addPlan()
     {
+        if (Auth::user()->user_type!='admin') {
+            abort(401);
+        }
        return view('admin.plans.AddPlan');
     }
     public function addPlanPost(Request $request)
     {
+        if (Auth::user()->user_type!='admin') {
+            abort(401);
+        }
         // return $request;
         $plan=new Plans;
         $plan->plan_name=$request->planname;
@@ -60,6 +67,9 @@ class PlanController extends Controller
 
     public function ViewPlan()
     {
+        if (Auth::user()->user_type!='admin') {
+            abort(401);
+        }
         $plans=Plans::where('status','active')->get();
         return view ('admin.plans.ViewPlans')->with('plans',$plans);
     }
@@ -67,6 +77,9 @@ class PlanController extends Controller
 
     public function ViewPlanDetail($id)
     {
+        if (Auth::user()->user_type!='admin') {
+            abort(401);
+        }
         $plan=Plans::findOrFail($id); 
       $menus=Menu::where('plan_id',$plan->id)->get();
 
