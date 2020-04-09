@@ -7,6 +7,9 @@ use App\Plans;
 use App\PlanPictures;
 use App\User;
 use App\Menu;
+use App\Subscribe;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -73,8 +76,23 @@ class HomeController extends Controller
     }
     public function checkout(Request $request)
     {
-        return $request;
-        return view('user.checkout');
+        // return $request;
+        $sub=new Subscribe;
+        $sub->plan_id=$request->product_id;
+        $sub->user_id=Auth::user()->id;
+        $sub->payment_id=$request->razorpay_payment_id;
+        $sub->totalamount=$request->totalAmount;
+        $sub->duration=$request->duration;
+        $sub->dates=$request->dates;
+        $sub->doorno=$request->doorno;
+        $sub->street=$request->street;
+        $sub->city=$request->city;
+        $sub->postelcode=$request->postelcode;
+        $sub->save();
+        // return redirect('/confirmed');
+        // return "success";
+        return response()->json(['succes'=>'stored']);
+        // return view('user.checkout');
     }
     public function confirmed()
     {

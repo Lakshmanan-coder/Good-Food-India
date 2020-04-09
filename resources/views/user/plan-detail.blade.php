@@ -138,19 +138,19 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th>1 Day</th>
-                                                    <td>{{$plan->one_price}}</td>
+                                                    <td>Rs. {{$plan->one_price}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>7 Days</th>
-                                                    <td>{{$plan->seven_price}}</td>
+                                                    <td>Rs. {{$plan->seven_price}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>15 Days</th>
-                                                    <td>{{$plan->fifteen_price}}</td>
+                                                    <td>Rs. {{$plan->fifteen_price}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>30 Days</th>
-                                                    <td>{{$plan->month_price}}</td>
+                                                    <td>Rs. {{$plan->month_price}}</td>
                                                 </tr>
                                             </table>
                                         </div>

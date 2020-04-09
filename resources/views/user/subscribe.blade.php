@@ -77,11 +77,11 @@
                             <i class="icon_pencil"></i>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" disabled value="{{Auth::user()->email}}">
+                            <input class="form-control" id="email" disabled value="{{Auth::user()->email}}">
                             <i class="icon_mail"></i>
                         </div>
                         <div class="form-group add_bottom_15">
-                            <input class="form-control" disabled value="{{Auth::user()->phoneno}}">
+                            <input class="form-control" id="phoneno" disabled value="{{Auth::user()->phoneno}}">
                             <i class="icon_phone"></i>
                         </div>
                         {{-- <a href="CheckOut.html" class="btn_1 full-width mb_5">Subscribe Now</a>		                     --}}
@@ -104,17 +104,47 @@
                     <div class="main">
                         <div class="form-group  margin-2rem">
                             <label for="">Duration</label>
-                            <select class="form-control " name="duration">
-                                <option value="1">One Day</option>
-                                <option value="7">7 Days</option>
-                                <option value="15">15 Days</option>
-                                <option value="30">30 Days</option>
+                            <select class="form-control " name="duration" id="days">
+                                <option value="1" data-price="{{$plan->one_price}}">One Day -   ₹ {{$plan->one_price}}</option>
+                                <option value="7" data-price="{{$plan->seven_price}}">7 Days - ₹ {{$plan->seven_price}} </option>
+                                <option value="15" data-price="{{$plan->fifteen_price}}">15 Days - ₹  {{$plan->fifteen_price}} </option>
+                                <option value="30" data-price="{{$plan->month_price}}" >30 Days - ₹ {{$plan->month_price}} </option>
                             </select>
+                            <input type="hidden" name="price" value="" id="price">
                         </div>
                         <label for="">Dates</label>
-                        <input type="text" class="form-control date" name="date" placeholder="Pick the multiple dates">
+                        <input type="text" class="form-control date" name="date" id="dates" placeholder="Pick the Prefferred dates">
                     <br>
-                        <button type="submit" class="btn_1 full-width mb_5">Subscribe Now</button>		                    
+
+                    <label for="">Address</label>
+
+                 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="doorno" placeholder="Door no">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control"  id="street" placeholder="Street">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="city" placeholder="City">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="postelcode" placeholder="Postal Code">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn_1 buy_now full-width mb_5" data-id="{{$plan->id}}">Subscribe Now</button>		                    
                     </div>
                 </form>
                     
@@ -140,7 +170,87 @@
 <script>
 $('.date').datepicker({
 multidate: true,
-format: 'dd-mm-yyyy'
+format: 'dd-mm-yyyy',
+maxViewMode:0.3
 });
+
+
+
+$(document).ready(function(){
+   var email= $("#email").val();
+    var price = $("#days"). children("option:selected"). data('price');
+    $("#price").val(price);
+    $("#days").change(function(){
+        var price = $("#days"). children("option:selected"). data('price');
+    $("#price").val(price);
+    });
+});
+</script>
+
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+   var paymentid
+   var SITEURL = '{{URL::to('')}}';
+   $.ajaxSetup({
+     headers: {
+         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     }
+   }); 
+   $('body').on('click', '.buy_now', function(e){
+     var totalAmount = $('#price').val();
+     var product_id =  $(this).attr("data-id");
+     var duration =  $("#days").val();
+     var dates =  $("#dates").val();
+     var phone=$("#phoneno").val();
+     var email=$("#email").val();
+     var doorno=$("#doorno").val();
+     var street=$("#street").val();
+     var city=$("#city").val();
+     var postelcode=$("#postelcode").val();
+     var options = {
+     "key": "rzp_test_H0BJRSa7TCsNiQ",
+     "amount": (totalAmount*100), // 2000 paise = INR 20
+     "currency": "INR",
+     "description": "Payment",
+     "handler": async function (response){
+      paymentid = response.razorpay_payment_id
+      console.log(paymentid)
+           $.ajax({
+             url: SITEURL + '/checkout',
+             type: 'post',
+             dataType: 'json',
+             data: {
+            "_token": "{{ csrf_token() }}",  
+              razorpay_payment_id: response.razorpay_payment_id , 
+               totalAmount : totalAmount ,
+               product_id : product_id,
+               duration:duration,
+               dates:dates,
+               doorno:doorno,
+               street:street,
+               city:city,
+               postelcode:postelcode,
+             }, 
+             success: function (msg) {
+                // console.log(msg);
+                window.location.href="/confirmed";
+             },
+         });
+     },
+    "prefill": {
+         "contact": phone,
+         "email":   email,
+     },
+     "theme": {
+         "color": "#589442"
+     }
+   };
+   var rzp1 = new Razorpay(options);
+   rzp1.open();
+   e.preventDefault();
+   });
+  
 </script>
 @endsection
