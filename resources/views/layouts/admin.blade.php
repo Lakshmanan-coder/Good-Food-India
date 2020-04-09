@@ -29,16 +29,16 @@
                                 <i class="mdi mdi-menu"></i>
                             </button>
                         </li>
-                        <li class="hide-phone app-search float-left">
+                        {{-- <li class="hide-phone app-search float-left">
                             <form role="search" class="navbar-form">
                                 <input type="text" placeholder="Search..." class="form-control search-bar">
                                 <a href=""><i class="fa fa-search"></i></a>
                             </form>
-                        </li>
+                        </li> --}}
                     </ul>
 
                     <ul class="nav navbar-right float-right list-inline">
-                        <li class="dropdown d-none d-sm-block">
+                        {{-- <li class="dropdown d-none d-sm-block">
                             <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light notification-icon-box" data-toggle="dropdown" aria-expanded="true">
                                 <i class="fa fa-bell"></i> <span class="badge badge-xs badge-danger"></span>
                             </a>
@@ -69,7 +69,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="d-none d-sm-block">
                             <a href="#" id="btn-fullscreen" class="waves-effect waves-light notification-icon-box"><i class="fas fa-expand"></i></a>
                         </li>
@@ -78,11 +78,15 @@
                             <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                                 <img src="/assets/images/users/avatar-1.jpg" alt="user-img" class="rounded-circle">
                                 <span class="profile-username">
-                                        Kenny <span class="mdi mdi-chevron-down font-15"></span>
+                                        {{Auth::user()->name}} <span class="mdi mdi-chevron-down font-15"></span>
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)" class="dropdown-item"> Logout</a></li>
+                                <li><a href="/logout" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();" class="dropdown-item"> Logout</a></li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             </ul>
                         </li>
                     </ul>
@@ -102,9 +106,10 @@
                     </div>
                     <div class="user-info">
                         <div class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Kenny Rigdon</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)" class="dropdown-item"> Logout</a></li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{Auth::user()->name}}</a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="javascript:void(0)" class="dropdown-item" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();"> Logout</a></li>
                             </ul>
                         </div>
 

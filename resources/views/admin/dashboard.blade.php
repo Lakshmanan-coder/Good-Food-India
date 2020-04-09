@@ -19,10 +19,10 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">8952</h2>
-                                    <p class="text-muted mb-0 mt-2">Total Orders</p>
+                                {{-- <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="78" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" /> --}}
+                                <div class="text-center">
+                                    <h2 class="text-primary mb-0">{{count($subscriptions=App\Subscribe::all())}}</h2>
+                                    <p class="text-muted mb-0 mt-2">Total Subscriptions</p>
                                 </div>
                                 <!-- <p class="mt-4 mb-0 text-muted"><b>78% </b>From Last 24 Hours <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
                             </div>
@@ -34,10 +34,9 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="62" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">521</h2>
-                                    <p class="text-muted mb-0 mt-2">New Orders</p>
+                                <div class="text-center">
+                                    <h2 class="text-info mb-0">@php $lastsub=App\Subscribe::orderBy('id','desc')->first();@endphp {{$lastsub->totalamount}}</h2>
+                                    <p class="text-muted mb-0 mt-2">Last Subscription Amount</p>
                                 </div>
                                 <!-- <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
                             </div>
@@ -49,9 +48,8 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#6cbafa" value="42" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-primary mb-0">426</h2>
+                                <div class="text-center">
+                                    <h2 class="text-primary mb-0">{{count($users=App\User::all())}}</h2>
                                     <p class="text-muted mb-0 mt-2">Total Users</p>
                                 </div>
                             </div>
@@ -63,9 +61,8 @@
                     <div class="card">
                         <div class="card-heading p-4">
                             <div>
-                                <input class="knob" data-width="80" data-height="80" data-linecap=round data-fgColor="#61d7c7" value="25" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15" />
-                                <div class="float-right">
-                                    <h2 class="text-info mb-0">621</h2>
+                                <div class="text-center">
+                                    <h2 class="text-info mb-0">{{count($plans=App\Plans::all())}}</h2>
                                     <p class="text-muted mb-0 mt-2">Plans</p>
                                 </div>
                                 <!-- <span class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
