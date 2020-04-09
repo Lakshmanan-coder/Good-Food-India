@@ -62,7 +62,7 @@
                     </div>
                     
                 </div>
-                <div class="row pt-2 pb-2 styling-each-tabs">
+                {{-- <div class="row pt-2 pb-2 styling-each-tabs">
                     <div class="col-md-12 text-center p-2 ">
                        <a type="button" data-order>Order History</a>
                     </div>
@@ -73,7 +73,7 @@
                         <a type="button" data-transac>Transaction History</a>
                      </div>
                 
-              </div>
+              </div> --}}
                 <!-- /row-->
             </div>
                 <!-- /row-->
@@ -113,8 +113,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Total Orders</label>
-                            <p>6</p>
+                            <label>Total Subscriptions</label>
+                        <p>{{count($subscribes)}}</p>
                         </div>
                     </div>
                 </div>
@@ -137,143 +137,40 @@
 <div class="col-sm-8 active-2 d-none">
     <div class="card p-4 custom-card-profile">
        <div class="card-title">Subscription History</div>
-        <div class="row">
+        <div class="row table-responsive">
            
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped ">
                 <tr>
-                   <th>S.NO</th>
-                   <th>Plan Id</th>
                    <th>Plan Name</th>
-                   <th>Plan Start</th>
-                   <th>Plan End</th>
-                  
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>Hot Brunch</td>
-                  <td>02/3/2020</td>
-                  <td>12/3/2020</td>
-                 
-               </tr>
-               <tr>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>Andra Lunch</td>
-                  <td>22/3/2020</td>
-                  <td>27/3/2020</td>
-                 
-               </tr>
-               <tr>
-                  <td>3</td>
-                  <td>3</td>
-                  <td>Mugal Lunch</td>
-                  <td>27/3/2020</td>
-                  <td>05/4/2020</td>
-                 
-               </tr>
-            </table>
-                <!-- /row-->
-            </div>
-        </div>
-        
-    </div>
-
-
-
-<div class="col-sm-8 active-3 d-none">
-    <div class="card p-4 custom-card-profile">
-       <div class="card-title">Order History</div>
-        <div class="row">
-           
-            <table class="table table-bordered table-striped">
-                <tr>
-                   <th>S.NO</th>
-                   <th>Order Name</th>
-                   <th>Ordered ON</th>
-                   <th>Qty</th>
-                   <th>Status</th>
-                  
-                  
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Lunch Pack</td>
-                  <td>02/3/2020</td>
-                  <td>2</td>
-                  <td>completed</td>
-                 
-               </tr>
-               <tr>
-                <td>2</td>
-                <td>chicken dinner</td>
-                <td>12/3/2020</td>
-                <td>4</td>
-                <td>completed</td>
-               
-             </tr>
-             <tr>
-                <td>3</td>
-                <td>Winner Dinner</td>
-                <td>28/3/2020</td>
-                <td>2</td>
-                <td>upcoming </td>
-               
-             </tr>
-            </table>
-                <!-- /row-->
-            </div>
-        </div>
-        
-    </div>
-
-
-
-<div class="col-sm-8 active-4 d-none">
-    <div class="card p-4 custom-card-profile">
-       <div class="card-title">Transacation History</div>
-        <div class="row">
-           
-            <table class="table table-bordered table-striped">
-                <tr>
-                   <th>S.NO</th>
-                   <th>Order Name/Sub Name</th>
-                   <th>Ordered ON</th>
+                   <th>Duration</th>
+                   <th>Address</th>
+                   <th>Payment ID</th>
                    <th>Price</th>
-                   <th>Status</th>
-                  
-                  
                 </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Lunch Pack</td>
-                  <td>02/3/2020</td>
-                  <td>Rs 200</td>
-                  <td>completed</td>
-                 
-               </tr>
-               <tr>
-                <td>2</td>
-                <td>chicken dinner</td>
-                <td>12/3/2020</td>
-                <td>Rs.350</td>
-                <td>completed</td>
-               
-             </tr>
-             <tr>
-                <td>3</td>
-                <td>Winner Dinner</td>
-                <td>28/3/2020</td>
-                <td>Rs.400</td>
-                <td>upcoming </td>
-               
-             </tr>
+
+                @if (count($subscribes)>0)
+                    @foreach ($subscribes as $subscribe)
+                    <tr>
+                      @php $plan=App\Plans::find($subscribe->plan_id) @endphp  
+
+                    <td>{{$plan->plan_name}}</td>
+                    <td>{{$subscribe->duration}} Days</td>
+                    <td>{{$subscribe->doorno}}, {{$subscribe->street}}, {{$subscribe->city}}, {{$subscribe->postelcode}}</td>
+                    <td>{{$subscribe->payment_id}}</td>
+                    <td>Rs. {{$subscribe->totalamount}}</td>
+
+                </tr>
+                    @endforeach
+                @endif
+                
             </table>
                 <!-- /row-->
             </div>
         </div>
         
     </div>
+
+
 </div>
 
 </div>

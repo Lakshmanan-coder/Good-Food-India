@@ -52,7 +52,8 @@ class HomeController extends Controller
     }
     public function profile()
     {
-        return view('user.profile');
+        $subscribes=Subscribe::where('user_id',Auth::user()->id)->get();
+        return view('user.profile')->with('subscribes',$subscribes);
     }
     public function wallet()
     {
