@@ -21,12 +21,12 @@ Auth::routes();
 
 Route::prefix('admin')->group(function () {
     Route::get('/','AdminPagesController@dashboard');
-    Route::get('/orders', function () {
-        return view ('admin.orders.viewOrder');
-    });
-    Route::get('/order-detail', function () {
-        return view ('admin.orders.viewOrderDetail');
-    });
+    // Route::get('/orders', function () {
+    //     return view ('admin.orders.viewOrder');
+    // });
+    // Route::get('/order-detail', function () {
+    //     return view ('admin.orders.viewOrderDetail');
+    // });
 
 
     Route::get('/add-plan','PlanController@addPlan');

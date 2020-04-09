@@ -41,55 +41,49 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>User Name</th>
+                                        <th>Name</th>
                                         <th>Phone Number</th>
                                         <th>Pack Name</th>
-                                        <th>Requested Date</th>                                                   
-                                        <th>Status</th>
+                                        <th>Duration</th>
+                                        <th>Address</th>
+                                        <th>Payment Id</th>
+                                        <th>Price</th>
                                         <th>Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @if (count($subscribes)>0)
+                                        @foreach ($subscribes as $subscribe)
+
+                                        @php
+                                         $plan=App\Plans::find($subscribe->plan_id);
+                                         $user=App\User::find($subscribe->user_id);
+                                        $menus=App\Menu::where('plan_id',$subscribe->plan_id)->get();
+                                         $planpicture=App\PlanPictures::where('plan_id',$subscribe->plan_id)->first();
+                                         @endphp
+
+
                                     <tr>
-                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
-                                        <td>John doe</td>
-                                        <td>8052963147</td>
-                                        <td>Hot Brunch</td>
-                                        <td>02/01/2020</td>
-                                        <td class="bg-success">ACTIVE</td>
+                                    <td class="text-center"><img src="/storage/profile_picture/{{$user->profile_picture}}" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->phoneno}}</td>
+                                        <td>{{$plan->plan_name}}</td>
+                                        <td>{{$subscribe->duration}} Days</td>
+                                        <td>{{$subscribe->doorno}}, {{$subscribe->street}}, {{$subscribe->city}}, {{$subscribe->postelcode}}</td>
+                                        <td>{{$subscribe->payment_id}}</td>
+                                        <td>Rs. {{$subscribe->totalamount}}</td>
                                         <td>
-                                            <a href="view-subscription-detail" class="btn btn-primary">View Subscription</a>
-                                            <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
+                                        <a href="view-subscription-detail/{{$subscribe->id}}" class="btn btn-primary">View Subscription</a>
+                                        {{-- <button class="btn btn-outline-danger del-btn">Delete Subscription </button> --}}
                                         </td>
                                     </tr>
-                                 
-                                    <tr>
-                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
-                                        <td>John Snow</td>                                                    
-                                        <td>9852963147</td>
-                                        <td>ANDRA LUNCH</td>
-                                        <td>02/3/2020</td> 
-                                       
-                                        <td class="bg-danger text-white">INACTIVE</td>
-                                        <td>
-                                            <a href="view-subscription-detail" class="btn btn-primary">View Subscription</a>
-                                            <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"><img src="https://picsum.photos/200" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
-                                        <td>Tyrian Lanister</td>
-                                        
-                                        <td>8752963147</td>
-                                        <td>Mugal Lunch</td>
-                                        <td>02/3/2020</td> 
-                                     
-                                        <td class="bg-warning">END TODAY</td>
-                                        <td>
-                                            <a href="view-subscription-detail" class="btn btn-primary">View Subscription</a>
-                                            <button class="btn btn-outline-danger del-btn">Delete Subscription </button>
-                                        </td>
-                                    </tr>
+                                            
+                                        @endforeach
+                                    @endif
+
+
+                                    
+                              
 
                                   
                                    

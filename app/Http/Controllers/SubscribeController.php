@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Subscribe;
 
 class SubscribeController extends Controller
 {
     public function viewSubscriptions()
     {
-        return view ('admin.subscriptions.ViewSubscriptions');
+        $subscribes=Subscribe::all();
+        return view ('admin.subscriptions.ViewSubscriptions')
+        ->with([
+            'subscribes'=>$subscribes
+        ]);
     }
 }
