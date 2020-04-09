@@ -47,7 +47,7 @@
                 <a href="/profile" class="show-submenu">Profile</a>
             
             </li>
-            <li><a href="/wallet">Wallet</a></li>
+            {{-- <li><a href="/wallet">Wallet</a></li> --}}
             <li><a href="/calender">Calendar</a></li>
             @endauth
         </ul>

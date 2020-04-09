@@ -9,7 +9,7 @@
                         <li><a href="/plans">Plan</a></li>
                         @auth
                         <li><a href="/profile">My account</a></li>
-                        <li><a href="/wallet">Wallet</a></li>
+                        {{-- <li><a href="/wallet">Wallet</a></li> --}}
                         <li><a href="/calender">Calendar</a></li>
                         @else
                         <li><a href="/login">Login</a></li>
