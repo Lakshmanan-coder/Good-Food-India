@@ -44,13 +44,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/calender', function () {
         return view ('admin.calender.Calender');
     });
+    Route::get('/calender', 'CalenderController@adminCalender');
     
     
     
     Route::get('/subscriptions', 'SubscribeController@viewSubscriptions');
     Route::get('/view-subscription-detail/{id}', 'SubscribeController@ViewSubscribeDetail');
     
-    Route::get('/password','AdminPagesController@password');
     
 
     

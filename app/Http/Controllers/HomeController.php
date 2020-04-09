@@ -84,16 +84,29 @@ class HomeController extends Controller
         $sub->payment_id=$request->razorpay_payment_id;
         $sub->totalamount=$request->totalAmount;
         $sub->duration=$request->duration;
-        $sub->dates=$request->dates;
         $sub->doorno=$request->doorno;
         $sub->street=$request->street;
         $sub->city=$request->city;
         $sub->postelcode=$request->postelcode;
+        $results= explode(",",$request->dates);
+        $count=1;
+        $actualdate='';
+        foreach ($results as $result) {
+            if ($count==1) {
+                $actualdate=$result;   
+            }else{
+                $actualdate=$actualdate.','.$result;   
+            }
+         if ($count==$request->duration) {
+         break;
+         }
+         $count++;
+        }
+
+        $sub->dates=$actualdate;
+
         $sub->save();
-        // return redirect('/confirmed');
-        // return "success";
         return response()->json(['succes'=>'stored']);
-        // return view('user.checkout');
     }
     public function confirmed()
     {

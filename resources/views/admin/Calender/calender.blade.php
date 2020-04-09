@@ -68,6 +68,12 @@
 
 
 </div>
+@php
+$data=json_encode($datas)    
+
+@endphp
+
+
 @endsection
 
 
@@ -76,6 +82,22 @@
         <script src="/assets/plugins/moment/moment.js"></script>
         <script src='/assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
         {{-- <script src="/assets/pages/calendar-init.js"></script> --}}
+        @php
+                echo "<script>
+                    const events=";
+                    echo $data;
+                    echo"</script>";
+        @endphp
+
+        {{-- <script>
+         const events=[
+                    {
+                    title: 'Family Plan 04 - Praveenram Balachandran ',
+                    start: '2020-04-01'
+                    },
+              
+                ]
+        </script> --}}
         <script>
             $('#calendar').fullCalendar({
                 header: {
@@ -84,13 +106,7 @@
                     right: 'month,basicWeek,basicDay'
                 },
                 editable: false,
-                events: [
-                    {
-                    title: 'Family Plan 04 - Praveenram Balachandran ',
-                    start: '2020-04-01'
-                    },
-              
-                ]
+                events:events
             });
         </script>
 @endsection
