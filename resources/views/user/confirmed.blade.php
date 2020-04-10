@@ -1,4 +1,6 @@
 @extends('layouts.user')
+@section('pagetitle','Order Confirmed')
+
 @section('extra_styles')
 
   <!-- BASE CSS -->

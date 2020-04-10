@@ -1,4 +1,6 @@
 @extends('layouts.user')
+@section('pagetitle','Subscribe ')
+
 @section('extra_styles')
         <!-- SPECIFIC CSS -->
         <link href="/css/detail-page.css" rel="stylesheet">

@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">   
 <meta name="description" content="G.I.F - Discover & Book the best restaurants at the best price">
 <meta name="author" content="">
-<title>Good Indian Food - Discover & Book the best restaurants at the best price</title>
+<title>@yield('pagetitle') |  Eat Fresh Homemade Food Delivered to Your Doorstep in Chennai | Homely Fresh Foods</title>
 
 <!-- Favicons-->
 <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">

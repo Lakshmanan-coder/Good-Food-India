@@ -1,4 +1,6 @@
 @extends('layouts.user')
+@section('pagetitle','Checkout')
+
 @section('extra_styles')
 
     <!-- BASE CSS -->

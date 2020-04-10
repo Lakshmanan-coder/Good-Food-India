@@ -1,5 +1,7 @@
 @extends('layouts.user')
 @section('header_type','header_in')
+@section('pagetitle','Calender')
+
 @section('extra_styles')
 <!-- SPECIFIC CSS -->
 <link href="/css/home.css" rel="stylesheet">

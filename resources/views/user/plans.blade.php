@@ -1,4 +1,6 @@
 @extends('layouts.user')
+@section('pagetitle','Plans')
+
 @section('header_type','header element_to_stick')
 
 @section('content')

@@ -1,4 +1,6 @@
 @extends('layouts.user')
+@section('pagetitle','Profile')
+
 @section('header_type','header element_to_stick')
 @section('extra_styles')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
