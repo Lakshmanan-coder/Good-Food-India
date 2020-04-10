@@ -100,7 +100,7 @@
         <div class="left side-menu">
             <div class="sidebar-inner slimscrollleft">
 
-                <div class="user-details">
+                {{-- <div class="user-details">
                     <div class="text-center">
                         <img src="/assets/images/users/avatar-1.jpg" alt="" class="rounded-circle img-thumbnail">
                     </div>
@@ -114,7 +114,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
                 <!--- Divider -->
 
                 <div id="sidebar-menu">

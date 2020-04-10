@@ -2,30 +2,24 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <h3 data-target="#collapse_1">Quick Links</h3>
-                <div class="collapse dont-collapse-sm links" id="collapse_1">
+                <h3 data-target="#collapse_1">Contacts</h3>
+                <div class="collapse dont-collapse-sm contacts" id="collapse_1">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/plans">Plan</a></li>
-                        @auth
-                        <li><a href="/profile">My account</a></li>
-                        {{-- <li><a href="/wallet">Wallet</a></li> --}}
-                        <li><a href="/calender">Calendar</a></li>
-                        @else
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Register</a></li>
-                        @endauth
+                        <li><i class="icon_house_alt"></i>No.4 Raja Bather st T.Nagar - Chennai </li>
+                        <li><a href="tel:9962151204"><i class="icon_mobile"></i> +91 99621 51204 </a></li>
+                        <li><a href="mailto:homelyfreshfoods@gmail.com"><i class="icon_mail_alt"></i>homelyfreshfoods@gmail.com</a></li>
+
                     </ul>
                 </div>
             </div>
         
             <div class="col-lg-4 col-md-6">
-                    <h3 data-target="#collapse_3">Contacts</h3>
+                    <h3 data-target="#collapse_3">Delivery Timings</h3>
                 <div class="collapse dont-collapse-sm contacts" id="collapse_3">
                     <ul>
-                        <li><i class="icon_house_alt"></i>97845 Baker st. 567<br>Los Angeles - US</li>
-                        <li><i class="icon_mobile"></i>+94 423-23-221</li>
-                        <li><i class="icon_mail_alt"></i><a href="#0">info@domain.com</a></li>
+                        <li class="p-0"><i class="fas fa-clock mr-1"></i>Morning 6.30am - 9.00am</li>
+                        <li class="p-0"><i class="fas fa-clock mr-1"></i> Lunch 11.30am - 1.00pm
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -35,19 +29,17 @@
                     <div id="newsletter">
                         <div id="message-newsletter"></div>
                         <form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-                            <div class="form-group">
-                                <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
-                                <button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
-                            </div>
+                          <div class="form-group">
+                            <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+                            <button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
+                          </div>
                         </form>
-                    </div>
+                      </div>
                     <div class="follow_us">
                         <h5>Follow Us</h5>
                         <ul>
-                            <li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/img/twitter_icon.svg" alt="" class="lazy"></a></li>
-                            <li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/img/facebook_icon.svg" alt="" class="lazy"></a></li>
-                            <li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/img/instagram_icon.svg" alt="" class="lazy"></a></li>
-                            <li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/img/youtube_icon.svg" alt="" class="lazy"></a></li>
+                            <li><a href="https://www.facebook.com/homelyfreshfoods" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/facebook_icon.svg" alt="" class="lazy"></a></li>
+                            <li><a href="https://www.instagram.com/homelyfreshfoods/" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/instagram_icon.svg" alt="" class="lazy"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -57,33 +49,13 @@
         <hr>
         <div class="row add_bottom_25">
             <div class="col-lg-6">
-                {{-- <ul class="footer-selector clearfix">
-                    <li>
-                        <div class="styled-select lang-selector">
-                            <select>
-                                <option value="English" selected>English</option>
-                                <option value="French">French</option>
-                                <option value="Spanish">Spanish</option>
-                                <option value="Russian">Russian</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="styled-select currency-selector">
-                            <select>
-                                <option value="US Dollars" selected>US Dollars</option>
-                                <option value="Euro">Euro</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/cards_all.svg" alt="" width="198" height="30" class="lazy"></li>
-                </ul> --}}
+                <span class="" style=" color:#fff;">All Rights Reserved. Copyright ©️ 2020 Homely Fresh Foods.</span>
             </div>
             <div class="col-lg-6">
                 <ul class="additional_links">
-                    <li><a href="#0">Terms and conditions</a></li>
-                    <li><a href="#0">Privacy</a></li>
-                    <li><span>© 2019 Foogra</span></li>
+                    <li><a href="terms.html">Terms and conditions</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
                 </ul>
             </div>
         </div>

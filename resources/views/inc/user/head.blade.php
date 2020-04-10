@@ -25,5 +25,5 @@
 <!-- YOUR CUSTOM CSS -->
 <link href="/css/custom.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 @yield('extra_styles')
