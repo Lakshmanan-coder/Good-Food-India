@@ -74,6 +74,69 @@
 
 
 
+
+
+<!-- BEST DEALS -->
+
+<div class="bg_gray">
+    <div class="container margin_60_40">
+        <div class="main_title center">
+            <span><em></em></span>
+            <h2>How we Work ?</h2>
+        </div>
+        <!-- /main_title -->
+        <div class="owl-carousel owl-theme categories_carousel">
+            <div class="item">
+                <a href="#0">
+                    <img src="/img/how/login.png" alt="" style="width:100px; margin:auto; margin-bottom:10px;">
+                    <h3>Login/Register</h3>
+                    <small>Step 1</small>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#0">
+                    <img src="/img/how/selectplan.png" alt="" style="width:100px; margin:auto; margin-bottom:10px;">
+                    <h3>Choose Subscription Plan</h3>
+                    <small>Step 2</small>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#0">
+                    <img src="/img/how/choosedate.png" alt="" style="width:100px; margin:auto; margin-bottom:10px;">
+                    <h3>Pick Dates in Calendar </h3>
+                    <small>Step 3</small>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#0">
+                    <img src="/img/how/checkout.png" alt="" style="width:100px; margin:auto; margin-bottom:10px;">
+                    <h3>Checkout </h3>
+                    <small>Step 4</small>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#0">
+                    <img src="/img/how/doorstep.png" alt="" style="width:100px; margin:auto; margin-bottom:10px;">
+                    <h3>Collect Food in Doorstep</h3>
+                    <small>Step 5</small>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#0">
+                    <img src="/img/how/cook.png" alt="" style="width:100px; margin:auto; margin-bottom:10px;">
+                    <h3>Cook & Enjoy</h3>
+                    <small>Step 6</small>
+                </a>
+            </div>
+          
+        </div>
+        <!-- /carousel -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /bg_gray -->
+
+
 <!-- POPULAR PLANS -->
 
 <div class="container margin_60_40">
@@ -134,79 +197,7 @@
 <!-- /container -->
 
 
-<!-- BEST DEALS -->
 
-<div class="bg_gray">
-    <div class="container margin_60_40">
-        <div class="main_title center">
-            <span><em></em></span>
-            <h2>Best Deals</h2>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
-        </div>
-        <!-- /main_title -->
-        <div class="owl-carousel owl-theme categories_carousel">
-            <div class="item">
-                <a href="#0">
-                    <span>98</span>
-                    <i class="icon-food_icon_pizza"></i>
-                    <h3>Pizza - Italian</h3>
-                    <small>Avg price $40</small>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#0">
-                    <span>87</span>
-                    <i class="icon-food_icon_sushi"></i>
-                    <h3>Japanese - Sushi</h3>
-                    <small>Avg price $50</small>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#0">
-                    <span>96</span>
-                    <i class="icon-food_icon_burgher"></i>
-                    <h3>Burghers</h3>
-                    <small>Avg price $55</small>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#0">
-                    <span>78</span>
-                    <i class="icon-food_icon_vegetarian"></i>
-                    <h3>Vegetarian</h3>
-                    <small>Avg price $40</small>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#0">
-                    <span>65</span>
-                    <i class="icon-food_icon_cake_2"></i>
-                    <h3>Bakery</h3>
-                    <small>Avg price $60</small>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#0">
-                    <span>65</span>
-                    <i class="icon-food_icon_chinese"></i>
-                    <h3>Chinese</h3>
-                    <small>Avg price $40</small>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#0">
-                    <span>65</span>
-                    <i class="icon-food_icon_burrito"></i>
-                    <h3>Mexican</h3>
-                    <small>Avg price $35</small>
-                </a>
-            </div>
-        </div>
-        <!-- /carousel -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /bg_gray -->
 
 
 {{-- banner --}}

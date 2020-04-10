@@ -44,7 +44,7 @@ $('.custom_select select').niceSelect();
 			1340: {
 				nav: true,
 				dots:false,
-				items: 5
+				items: 6
 			}
 		}
 	});
