@@ -15,7 +15,7 @@
 
                 <div class="card-body">
                     <div class="text-center m-t-0 m-b-15">
-                            <a href="/" class="logo logo-admin"><img src="/assets/images/logo-dark.png" alt="" height="34"></a>
+                            <a href="/" class="logo logo-admin"><img src="/assets/images/logo-dark.png" alt="" height="70"></a>
                     </div>
                     <h4 class="text-muted text-center m-t-0"><b>@yield('pagetitle')</b></h4>
 
