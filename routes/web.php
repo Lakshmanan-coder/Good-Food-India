@@ -33,6 +33,11 @@ Route::prefix('admin')->group(function () {
     Route::post('/add-plan','PlanController@addPlanPost')->middleware('auth');
     Route::get('/view-plans', 'PlanController@ViewPlan')->middleware('auth');
     Route::get('/view-plan-detail/{id}', 'PlanController@ViewPlanDetail')->middleware('auth');
+    Route::get('/edit-plan-detail/{id}', 'PlanController@EditPlanDetail')->middleware('auth');
+    Route::get('/delete-plan/{id}', 'PlanController@DeletePlanDetail')->middleware('auth');
+    Route::post('/edit-plan-detail/{id}', 'PlanController@EditPlanDetailPost')->middleware('auth');
+    Route::get('/delete-plan-picture/{id}','PlanController@deletePlanPicture')->middleware('auth');
+    Route::get('/delete-menu-item/{id}','PlanController@deleteMenuItem')->middleware('auth');
     
     
     

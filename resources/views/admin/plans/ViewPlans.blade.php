@@ -53,6 +53,8 @@
                                                 <td>{{count($menus)}}</td>
                                                 <td>
                                                     <a href="view-plan-detail/{{$plan->id}}" class="btn btn-primary">View Detail</a>
+                                                    <a href="edit-plan-detail/{{$plan->id}}" class="btn btn-dark">Edit Detail</a>
+                                                    <a href="delete-plan/{{$plan->id}}" class="btn btn-danger">Delete Plan</a>
                                                 </td>
                                             </tr>
 
