@@ -88,25 +88,39 @@ class HomeController extends Controller
         $sub->street=$request->street;
         $sub->city=$request->city;
         $sub->postelcode=$request->postelcode;
-        $results= explode(",",$request->dates);
-        $count=1;
-        $actualdate='';
-        foreach ($results as $result) {
+        if ($request->duration!=30) {
+            $results= explode(",",$request->dates);
+            $count=1;
+            $actualdate='';
+            foreach ($results as $result) {
             if ($count==1) {
-                $actualdate=$result;   
+            $actualdate=$result;   
             }else{
-                $actualdate=$actualdate.','.$result;   
+            $actualdate=$actualdate.','.$result;   
             }
-         if ($count==$request->duration) {
-         break;
-         }
-         $count++;
+            if ($count==$request->duration) {
+            break;
+            }
+            $count++;
+            }
+            $sub->dates=$actualdate;
+            $sub->save();
+            return response()->json(['succes'=>'stored']);
+        }else{
+            // return response()->json(['123'=>'stored']);
+            $startDate=$request->dates;
+            // echo $startDate;
+            $dates=$startDate;
+            $newdate=$startDate;
+            for($i=1; $i<30; $i++){
+                $newdate=date('d-m-Y', strtotime($newdate. ' + 1 days'));
+                $dates=$dates.','.$newdate;
+            }
+            $sub->dates=$dates;
+            $sub->save();
+            return response()->json(['succes'=>'stored']);
         }
-
-        $sub->dates=$actualdate;
-
-        $sub->save();
-        return response()->json(['succes'=>'stored']);
+       
     }
     public function confirmed()
     {
