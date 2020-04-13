@@ -10,9 +10,12 @@
 
         <link href="/css/admin/admin.css" rel="stylesheet">
         <style>
-            footer h3, footer h5 {
-    color: #fff !important;
-}
+        footer h3, footer h5 {
+        color: #fff !important;
+        }
+        #edit-profile {
+        top: 15%;
+        }
         </style>
     
 @endsection
@@ -124,7 +127,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="container">
-                            <button id="btn" type="button"  class=" edit-button neu-light btn-action" onclick="location.href='/Profile.html'">Edit</button>
+                            <button id="btn" type="button"  class=" edit-button neu-light btn-action" data-toggle="modal" data-target="#edit-profile" >Edit</button>
                         </div>
                     </div>
                 </div>
@@ -184,26 +187,64 @@
   
 </main>
 
+
+
+<div id="edit-profile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+         {{-- <b class="card-title">Edit Profile</b>
+         <hr> --}}
+             @csrf
+             <div class="form-group">
+               <label for="">Name</label>
+               <input type="text" name="name" class="form-control" value="{{Auth::user()->name}}" >
+             </div>
+             <div class="form-group">
+               <label for="">Phone No</label>
+               <input type="text" name="phoneno" class="form-control" value="{{Auth::user()->phoneno}}" >
+             </div>
+             <div class="form-group">
+               <label for="">Profile Picture</label>
+               <input type="file" name="profile_picture" class="form-control"  >
+             </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Edit Profile" class="btn btn-primary">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+
+
+ 
+
 @endsection
 
 @section('extra_scripts')
-<script src="js/common_scripts.min.js"></script>
+{{-- <script src="js/common_scripts.min.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/common_func.js"></script>
-<script src="assets/validate.js"></script>
-
+<script src="assets/validate.js"></script> --}}
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
    const div1 =document.querySelector('.active-1')
    const div2 =document.querySelector('.active-2')
-   const div3 =document.querySelector('.active-3')
-   const div4 =document.querySelector('.active-4')
+
 
    document.querySelector('[data-profile]').addEventListener('click',()=>{
        if(div1.hasAttribute('class',"d-none")){
            div1.classList.remove('d-none')
            div2.classList.add('d-none')
-           div3.classList.add('d-none')
-           div4.classList.add('d-none')
        }else{
            return
        }
@@ -212,32 +253,11 @@
        if(div2.hasAttribute('class',"d-none")){
            div2.classList.remove('d-none')
            div1.classList.add('d-none')
-           div3.classList.add('d-none')
-           div4.classList.add('d-none')
        }else{
            return
        }
    })
-   document.querySelector('[data-order]').addEventListener('click',()=>{
-       if(div3.hasAttribute('class',"d-none")){
-           div3.classList.remove('d-none')
-           div1.classList.add('d-none')
-           div2.classList.add('d-none')
-           div4.classList.add('d-none')
-       }else{
-           return
-       }
-   })
-   document.querySelector('[data-transac]').addEventListener('click',()=>{
-       if(div4.hasAttribute('class',"d-none")){
-           div4.classList.remove('d-none')
-           div1.classList.add('d-none')
-           div3.classList.add('d-none')
-           div2.classList.add('d-none')
-       }else{
-           return
-       }
-   })
+  
 </script>
 
 @endsection

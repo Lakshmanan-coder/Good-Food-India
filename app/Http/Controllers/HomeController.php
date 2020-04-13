@@ -55,6 +55,23 @@ class HomeController extends Controller
         $subscribes=Subscribe::where('user_id',Auth::user()->id)->get();
         return view('user.profile')->with('subscribes',$subscribes);
     }
+    public function EditProfile(Request $request)
+    {
+        $user=User::find(Auth::user()->id);
+        $user->name=$request->name;
+        $user->phoneno=$request->phoneno;
+        if($file=$request->file('profile_picture')){
+                $filenameWithExt=$file->getClientOriginalName();
+                $filename= pathinfo($filenameWithExt,PATHINFO_FILENAME);
+                $extension=$file->getClientOriginalExtension();
+                $fileNameToStore=$filename.'_'.time().'.'.$extension;
+                $path=$file->storeAs('public/profile_picture/',$fileNameToStore);
+                $user->profile_picture=$fileNameToStore;
+        }
+        $user->save();
+        return redirect()->back()->with('success','Profile Updated');
+
+    }
     public function wallet()
     {
         return view('user.wallet');
