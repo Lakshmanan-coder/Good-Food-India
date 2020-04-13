@@ -10,6 +10,11 @@
         <!-- YOUR CUSTOM CSS -->
         <link href="/css/custom.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/date-picker.css">
+        <style>
+            .invalid-feedback{
+                color:tomato;
+            }
+        </style>
 @endsection
 @section('header_type','header_in element_to_stick')
 @section('content')
@@ -115,8 +120,9 @@
                             <input type="hidden" name="price" value="" id="price">
                         </div>
                         <label for="" >Dates <i class="fa fa-question-circle" data-toggle="tooltip" title="Select the days on which you want to receive our home made food. Select only number of  days per plan !" data-placement="right" aria-hidden="true"></i></label>
-                        <input type="text" class="form-control date" name="date" id="dates" placeholder="Pick the Prefferred dates">
-                    <br>
+                        <input type="text" class="form-control date" name="date"  id="dates" placeholder="Pick the Prefferred dates">
+                        <span id="dates-alert" class="invalid-feedback"></span>
+                        <br>
 
                     <label for="">Address</label>
 
@@ -145,6 +151,7 @@
                             </div>
                         </div>
                     </div>
+                    <span id="address-alert" class="invalid-feedback"></span>
                     <br>
                     <button type="button" class="btn_1 buy_now full-width mb_5" data-id="{{$plan->id}}">Subscribe Now</button>		                    
                     </div>
@@ -170,8 +177,36 @@
           <script src="/js/datepicker_func_1.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 <script>
+
+$(document).ready(function(){
+    $("#days").change(function(){
+
+            var multidate=$("#days").val();
+            if (multidate!=30) {
+                $(".date").datepicker('remove');
+                $('.date').datepicker({
+                format: 'dd-mm-yyyy',
+                maxViewMode:0,
+                multidate:multidate,
+                startDate: '+1d'
+                });
+            }else{
+                $(".date").attr('placeholder','Select the Start Date');
+                $(".date").datepicker('remove');
+                $('.date').datepicker({
+                format: 'dd-mm-yyyy',
+                maxViewMode:0,
+                startDate: '+1d'
+                });
+                
+            }
+           
+
+    });
+});
+
+
 $('.date').datepicker({
-multidate: true,
 format: 'dd-mm-yyyy',
 maxViewMode:0,
 startDate: '+1d'
@@ -212,6 +247,9 @@ $(document).ready(function(){
      var street=$("#street").val();
      var city=$("#city").val();
      var postelcode=$("#postelcode").val();
+
+     
+
      var options = {
      "key": "rzp_test_H0BJRSa7TCsNiQ",
      "amount": (totalAmount*100), // 2000 paise = INR 20
@@ -250,9 +288,109 @@ $(document).ready(function(){
          "color": "#589442"
      }
    };
-   var rzp1 = new Razorpay(options);
-   rzp1.open();
-   e.preventDefault();
+
+if (dates!="") {
+    length=dates.length;
+if (duration==1) {
+    if (length < 10) {
+        $("#dates-alert").text('Please select One Date');
+    }else{
+        if (doorno!="") {
+      if (street!="") {
+          if (city!="") {
+              if (postelcode!="") {
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open();
+                        e.preventDefault();
+              } else {
+                $("#address-alert").text('Please Enter Postel Code');
+              }
+          } else {
+            $("#address-alert").text('Please Enter your city');
+          }
+      } else {
+        $("#address-alert").text('Please Enter your Street Address');
+      }
+  }else{
+    $("#address-alert").text('Please Enter your Door No');
+  }
+    }
+}else if(duration==7){
+    if (length < 76) {
+        $("#dates-alert").text('Please select 7 Dates');
+    }else{
+        if (doorno!="") {
+      if (street!="") {
+          if (city!="") {
+              if (postelcode!="") {
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open();
+                        e.preventDefault();
+              } else {
+                $("#address-alert").text('Please Enter Postel Code');
+              }
+          } else {
+            $("#address-alert").text('Please Enter your city');
+          }
+      } else {
+        $("#address-alert").text('Please Enter your Street Address');
+      }
+  }else{
+    $("#address-alert").text('Please Enter your Door No');
+  }
+    }
+}else if(duration==15){
+    if (length < 164) {
+        $("#dates-alert").text('Please select 15 Dates');
+    }else{
+        if (doorno!="") {
+      if (street!="") {
+          if (city!="") {
+              if (postelcode!="") {
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open();
+                        e.preventDefault();
+              } else {
+                $("#address-alert").text('Please Enter Postel Code');
+              }
+          } else {
+            $("#address-alert").text('Please Enter your city');
+          }
+      } else {
+        $("#address-alert").text('Please Enter your Street Address');
+      }
+  }else{
+    $("#address-alert").text('Please Enter your Door No');
+  }
+    }
+}else if(duration==30){
+    if (length > 10) {
+        $("#dates-alert").text('Please select the Starting  Date Only');
+    }else{
+        if (doorno!="") {
+      if (street!="") {
+          if (city!="") {
+              if (postelcode!="") {
+                        var rzp1 = new Razorpay(options);
+                        rzp1.open();
+                        e.preventDefault();
+              } else {
+                $("#address-alert").text('Please Enter Postel Code');
+              }
+          } else {
+            $("#address-alert").text('Please Enter your city');
+          }
+      } else {
+        $("#address-alert").text('Please Enter your Street Address');
+      }
+  }else{
+    $("#address-alert").text('Please Enter your Door No');
+  }
+    }
+}
+}else{
+    $("#dates-alert").text('Please Select Prefrred Dates');
+}
    });
   
 </script>
@@ -260,5 +398,9 @@ $(document).ready(function(){
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
     });
+    </script>
+
+    <script>
+
     </script>
 @endsection
