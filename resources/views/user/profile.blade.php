@@ -198,7 +198,7 @@ foreach ($results as $result) {
 
 
 
-                    <button  data-dates="{{$dates}}" data-duration="{{$subscribe->duration}}" data-limit="{{$count}}" data-subid="{{$subscribe->id}}" type="button" data-toggle="modal" data-target="#myModel" class="date_model btn btn-dark">View Dates</button>
+                    <button  data-dates="{{$dates}}" data-duration="{{$subscribe->duration}}" data-limit="{{$count}}" data-subid="{{$subscribe->id}}" type="button" data-toggle="modal" data-target="#myModel" class="date_model btn btn-dark">Edit Dates</button>
                     </td>
 
                 </tr>
