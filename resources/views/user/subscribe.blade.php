@@ -216,7 +216,8 @@ $(document).ready(function(){
                 format: 'dd-mm-yyyy',
                 maxViewMode:0,
                 multidate:multidate,
-                startDate: '+1d'
+                startDate: '+1d',
+                maxDate: "+1m"
                 });
             }else{
                 $(".date").attr('placeholder','Select the Start Date');
@@ -224,7 +225,8 @@ $(document).ready(function(){
                 $('.date').datepicker({
                 format: 'dd-mm-yyyy',
                 maxViewMode:0,
-                startDate: '+1d'
+                startDate: '+1d',
+                maxDate: "+1m"
                 });
                 
             }
@@ -237,7 +239,8 @@ $(document).ready(function(){
 $('.date').datepicker({
 format: 'dd-mm-yyyy',
 maxViewMode:0,
-startDate: '+1d'
+startDate: '+1d',
+maxDate: "+1m"
 });
 
 

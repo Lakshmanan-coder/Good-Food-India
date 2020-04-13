@@ -4,7 +4,7 @@
 @section('header_type','header_in element_to_stick')
 @section('extra_styles')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-     
+<link rel="stylesheet" href="/css/date-picker.css">
         <!-- SPECIFIC CSS -->
         <link href="/css/home.css" rel="stylesheet">
 
@@ -13,7 +13,7 @@
         footer h3, footer h5 {
         color: #fff !important;
         }
-        #edit-profile {
+        #edit-profile,#myModel {
         top: 15%;
         }
         </style>
@@ -150,6 +150,7 @@
                    <th>Address</th>
                    <th>Payment ID</th>
                    <th>Price</th>
+                   <th>Actions</th>
                 </tr>
 
                 @if (count($subscribes)>0)
@@ -162,6 +163,43 @@
                     <td>{{$subscribe->doorno}}, {{$subscribe->street}}, {{$subscribe->city}}, {{$subscribe->postelcode}}</td>
                     <td>{{$subscribe->payment_id}}</td>
                     <td>Rs. {{$subscribe->totalamount}}</td>
+                    <td>
+                        @php 
+if ($subscribe->duration!=30) {
+$results= explode(",",$subscribe->dates);
+$count=0;
+$dates="";
+foreach ($results as $result) {
+    if(strtotime($result) > time()) {
+        if ($count==0) {
+            $dates=$result;
+        }else{
+            $dates=$dates.','.$result;
+        }
+        $count++;
+    }  
+}
+}else{
+    $results= explode(",",$subscribe->dates);
+    $count=0;
+    $dates="";
+    foreach ($results as $result) {
+        if(strtotime($result) > time()) {
+            if ($count==0) {
+                $dates=$result;
+            }
+            $count++;
+        }  
+    }
+}
+                  
+
+                        @endphp
+
+
+
+                    <button  data-dates="{{$dates}}" data-duration="{{$subscribe->duration}}" data-limit="{{$count}}" data-subid="{{$subscribe->id}}" type="button" data-toggle="modal" data-target="#myModel" class="date_model btn btn-dark">View Dates</button>
+                    </td>
 
                 </tr>
                     @endforeach
@@ -223,14 +261,49 @@
       </div>
   
     </div>
-  </div>
+</div>
 
-
+<div id="myModel" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <form action="/edit-days" method="post" enctype="multipart/form-data" id="date-update-form">
+        <div class="modal-body">
+         {{-- <b class="card-title">Edit Profile</b>
+         <hr> --}}
+             @csrf
+             <div class="form-group">
+               <label for="">Your  Dates</label>
+               <input type="hidden" name="sub_id"  id="sub_id">
+               <input type="hidden" name="duration"  id="dur">
+               <input type="hidden" name="count"  id="count">
+               <input type="hidden"   id="leng">
+               <input type="text" name="dates" class="form-control date"  id="dates" placeholder="Pick the Prefferred dates">
+               <span id="dates-alert" class="invalid-feedback"></span>
+             </div>
+             
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="submit-dates">Update Dates </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </form>
+      </div>
+  
+    </div>
+</div>
  
 
 @endsection
 
 @section('extra_scripts')
+<script src="/js/datepicker.min.js"></script>
+<script src="/js/datepicker_func_1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 {{-- <script src="js/common_scripts.min.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/common_func.js"></script>
@@ -259,5 +332,79 @@
    })
   
 </script>
+
+
+
+<script>
+    $(".date_model").click(function(){
+        // $('#myModel').modal('show');
+        var dates=$(this).data('dates');
+        var duration=$(this).data('duration');
+        var limit=$(this).data('limit');
+        var sub_id=$(this).data('subid');
+        $("#sub_id").val(sub_id);
+        $("#dur").val(duration);
+        $("#count").val(limit);
+        if (duration==30) {
+            multidate=false;
+            $(".date").datepicker('remove');
+            $('.date').datepicker({
+            format: 'dd-mm-yyyy',
+            maxViewMode:0,
+            multidate:multidate,
+            startDate: '+1d',
+            maxDate: "+1m"
+            });
+            $("#dates").val(dates);
+
+        }else{
+            multidate=limit;
+            $(".date").datepicker('remove');
+            $('.date').datepicker({
+            format: 'dd-mm-yyyy',
+            maxViewMode:0,
+            multidate:multidate,
+            startDate: '+1d',
+            maxDate: "+1m"
+            });
+            $("#dates").val(dates);
+        }
+        // alert(dates);
+       
+    });
+   
+    $('.date').on('changeDate', function(e) {  
+    // e.dates is an array
+    var leng=e.dates.length;
+    $("#leng").val(leng);
+});
+
+$("#submit-dates").click(function(){
+   var data= $(".date").val();
+   if (data!="") {
+    var leng=$("#leng").val();
+        var duration=$("#dur").val();
+        var limit=$("#count").val();
+        if (duration!=30) {
+            if (leng==limit) {
+                $("#date-update-form").submit();
+            }else{
+                alert("The required dates are not fulfilled");
+            }
+        }else{
+            if (leng==1) {
+                $("#date-update-form").submit();
+            }else{
+                alert("You must Give one Date");
+            }
+        }
+   }else{
+    alert("The required dates are not fulfilled");
+   }
+       
+    });
+   
+</script>
+
 
 @endsection

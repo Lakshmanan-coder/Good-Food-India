@@ -65,6 +65,7 @@ Route::get('/plans', 'HomeController@plans')->name('plans');
 Route::get('/plan-detail/{id}', 'HomeController@planDetail')->name('plandetail');
 Route::get('/profile', 'HomeController@profile')->name('profile')->middleware('auth');
 Route::post('/profile', 'HomeController@EditProfile')->name('profilePost')->middleware('auth');
+Route::post('/edit-days', 'HomeController@EditDays')->name('profilePost')->middleware('auth');
 Route::get('/wallet', 'HomeController@wallet')->name('wallet')->middleware('auth');
 Route::get('/calender', 'CalenderController@usercalender')->name('calender')->middleware('auth');
 Route::post('/subscribe', 'HomeController@subscribe')->name('subscribe')->middleware('auth');

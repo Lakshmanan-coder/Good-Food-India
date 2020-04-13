@@ -145,4 +145,46 @@ class HomeController extends Controller
     {
         return view('user.confirmed');
     }
+
+    public function EditDays(Request $request)
+    {
+        
+    //    return $request;
+       $sub=Subscribe::findOrFail($request->sub_id);
+       if ($request->duration!=30) {
+        $results= explode(",",$sub->dates);
+        $count=0;
+        $dates="";
+            foreach ($results as $result) {
+                    if(strtotime($result) < time()) {
+                        if ($count==0) {
+                            $dates=$result;
+                        }else{
+                            $dates=$dates.','.$result;
+                        }
+                        $count++;
+                    }  
+            }
+        $newdates=$dates.','.$request->dates;
+        $sub->dates=$newdates;
+        $sub->save();
+            return redirect()->back()->with('success','Updated');
+       }else{
+        $startDate=$request->dates;
+        // echo $startDate;
+        $dates=$startDate;
+        $newdate=$startDate;
+        for($i=1; $i<30; $i++){
+            $newdate=date('d-m-Y', strtotime($newdate. ' + 1 days'));
+            $dates=$dates.','.$newdate;
+            if ($i >= $request->count-1) {
+                break;
+            }
+        }
+        $sub->dates=$dates;
+        $sub->save();
+        return redirect()->back()->with('success','Updated');
+       }
+       
+    }
 }
