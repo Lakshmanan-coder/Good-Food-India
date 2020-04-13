@@ -68,10 +68,12 @@ class HomeController extends Controller
         $plan=Plans::findOrFail($request->plan_id); 
         $planpicture=PlanPictures::where('plan_id',$plan->id)->first();
         $menus=Menu::where('plan_id',$plan->id)->get();
+        $address=Subscribe::where('user_id',Auth::user()->id)->orderBy('id','desc')->first();
         return view('user.subscribe')->with([
             'plan'=>$plan,
             'picture'=>$planpicture,
             'menus'=>$menus,
+            'address'=>$address
 
         ]);
     }

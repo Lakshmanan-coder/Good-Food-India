@@ -126,31 +126,59 @@
 
                     <label for="">Address</label>
 
-                 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="doorno" placeholder="Door no">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control"  id="street" placeholder="Street">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="city" placeholder="City">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="postelcode" placeholder="Postal Code">
-                            </div>
-                        </div>
-                    </div>
+@if ($address)
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+        <input class="form-control" id="doorno" placeholder="Door no" value="{{$address->doorno}}">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input class="form-control"  id="street" placeholder="Street" value="{{$address->street}}">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <input class="form-control" id="city" placeholder="City" value="{{$address->city}}">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input class="form-control" id="postelcode" placeholder="Postal Code" value="{{$address->postelcode}}">
+        </div>
+    </div>
+</div> 
+@else
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" id="doorno" placeholder="Door no">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control"  id="street" placeholder="Street">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" id="city" placeholder="City">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" id="postelcode" placeholder="Postal Code">
+            </div>
+        </div>
+    </div>
+@endif 
+
+
                     <span id="address-alert" class="invalid-feedback"></span>
                     <br>
                     <button type="button" class="btn_1 buy_now full-width mb_5" data-id="{{$plan->id}}">Subscribe Now</button>		                    
