@@ -62,7 +62,7 @@
                     @if (count($planpictures)>0)
                         @foreach ($planpictures as $picture)
                         <div class="item">
-                        <a  title="Photo title" data-effect="mfp-zoom-in"><img src="/storage/plan_picture/{{$picture->path}}" alt=""></a>
+                        <a  title="{{$plan->plan_name}}" data-effect="mfp-zoom-in"><img src="/storage/plan_picture/{{$picture->path}}" alt=""></a>
                         </div>
                         @endforeach
                     @endif
@@ -74,10 +74,10 @@
                 <div class="tabs_detail">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                            <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Information</a>
+                            <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Description</a>
                         </li>
                         <li class="nav-item">
-                            <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Prices</a>
+                            <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Pricing</a>
                         </li>
                     </ul>
 
@@ -86,7 +86,7 @@
                             <div class="card-header" role="tab" id="heading-A">
                                 <h5>
                                     <a class="collapsed" data-toggle="collapse" href="#collapse-A" aria-expanded="true" aria-controls="collapse-A">
-                                        Information
+                                        Description
                                     </a>
                                 </h5>
                             </div>
@@ -213,7 +213,25 @@
 
                 <div class="box_booking " >
                     <div class="head">
-                        <h3>Recent Plans</h3>
+                        <h3>Menu</h3>
+                        {{-- <div class="offer">Up to -40% off</div> --}}
+                    </div>
+                    <!-- /head -->
+                    <div class="main">
+                        @if (count($menus)>0)
+                        @foreach ($menus as $menu)
+                        <div class="menu_item">
+                            <b>{{$menu->title}}</b>
+                            <p>{{$menu->description}}</p>
+                        </div>
+                        @endforeach
+                    @endif
+                    </div>
+                </div>
+
+                <div class="box_booking " >
+                    <div class="head">
+                        <h3>Other  Plans</h3>
                         {{-- <div class="offer">Up to -40% off</div> --}}
                     </div>
                     <!-- /head -->
