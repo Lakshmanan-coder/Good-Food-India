@@ -114,7 +114,7 @@
                             </select>
                             <input type="hidden" name="price" value="" id="price">
                         </div>
-                        <label for="">Dates</label>
+                        <label for="" >Dates <i class="fa fa-question-circle" data-toggle="tooltip" title="Select the days on which you want to receive our home made food. Select only number of  days per plan !" data-placement="right" aria-hidden="true"></i></label>
                         <input type="text" class="form-control date" name="date" id="dates" placeholder="Pick the Prefferred dates">
                     <br>
 
@@ -256,4 +256,9 @@ $(document).ready(function(){
    });
   
 </script>
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
 @endsection

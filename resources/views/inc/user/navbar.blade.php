@@ -10,15 +10,15 @@
         </a>
     </div>
     @guest
-    <ul id="top_menu">
+    {{-- <ul id="top_menu">
         <li><a href="#sign-in-dialog" id="sign-in" class="login">Sign In</a></li>
-    </ul>
+    </ul> --}}
 
     @else
-    <ul id="top_menu">
+    {{-- <ul id="top_menu">
         <li><a href="{{ route('logout') }}" id="sign-in" class="login" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">Sign In</a></li>
-    </ul>
+    </ul> --}}
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
@@ -44,14 +44,36 @@
                 <a href="/plans" class="show-submenu">Plan</a>
         
             </li>
-            @auth
             <li class="submenu">
-                <a href="/profile" class="show-submenu">Profile</a>
-            
+                <a href="/#how-we-work" class="show-submenu">How we work</a>
+        
             </li>
-            {{-- <li><a href="/wallet">Wallet</a></li> --}}
-            <li><a href="/calender">Calendar</a></li>
-            @endauth
+            <li class="submenu">
+                <a href="/#offers" class="show-submenu">Offers</a>
+        
+            </li>
+            <li class="submenu">
+                <a href="/#contact-us" class="show-submenu">Contact Us</a>
+        
+            </li>
+         @auth
+            
+         <li class="submenu">
+            <a href="#0" class="show-submenu"><span class="fa fa-user-circle"></span>   {{Auth::user()->name}}</a>
+            <ul>
+                <li><a href="/profile">My Profile</a></li>
+                <li><a href="/calender">My Calender</a></li>
+                <li><a href="/logout"  onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" >Logout</a></li>
+               
+            </ul>
+        </li>
+
+         @else
+         <li class="submenu">
+            <a  href="/login" class="btn_1  btn-color-custom-sub text-white" style="color:#fff;">Login / Sign Up</a>
+        </li>
+         @endauth
         </ul>
     </nav>
 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('pagetitle','Profile')
 
-@section('header_type','header element_to_stick')
+@section('header_type','header_in element_to_stick')
 @section('extra_styles')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
      
@@ -19,28 +19,27 @@
 @section('content')
 
     <!--hero section-->
-    <div class="hero_single inner_pages background-image" data-background="url(img/hero_submit.jpg)">
+    {{-- <div class="hero_single inner_pages background-image" data-background="url(img/hero_submit.jpg)">
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-10 col-md-8">
                         <h1 style="color:#fff !important">My Profile</h1>
-                        {{-- <p>More bookings from diners around the corner</p> --}}
                     </div>
                 </div>
                 <!-- /row -->
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- /hero_single -->
 
 
         <!-- View plans -->
-<main class="mt-4 mb-4">
-    <div class="container">
-    <div class="row">
+<main class="mt-5 mb-5 ">
+    <div class="container mt-5 mb-5">
+    <div class="row mb-5 mt-5">
         
-<div class="col-sm-3">
+<div class="col-sm-3" >
     <div class="card custom-card-profile">
        
         <div class="w-100 mt-3">
@@ -60,7 +59,7 @@
                 <!-- /row-->
                 <div class="row pt-2 pb-2 styling-each-tabs">
                     <div class="col-md-12 text-center p-2 ">
-                       <a type="button" data-sub>Subscription History</a>
+                       <a type="button" data-sub>My Subscriptions</a>
                     </div>
                     
                 </div>
@@ -138,7 +137,7 @@
 
 <div class="col-sm-8 active-2 d-none">
     <div class="card p-4 custom-card-profile">
-       <div class="card-title">Subscription History</div>
+       <div class="card-title">My Subscriptions</div>
         <div class="row table-responsive">
            
             <table class="table table-bordered table-striped ">
