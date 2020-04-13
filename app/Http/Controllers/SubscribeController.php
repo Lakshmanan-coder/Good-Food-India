@@ -47,4 +47,12 @@ class SubscribeController extends Controller
         ]);
 
     }
+
+    public function CancelSubscription($id)
+    {
+       $sub=Subscribe::findOrFail($id);
+       $sub->status="inactive";
+       $sub->save();
+       return redirect()->back()->with('success','Subscription Cancelled');
+    }
 }

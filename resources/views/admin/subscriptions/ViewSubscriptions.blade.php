@@ -61,10 +61,16 @@
                                          $user=App\User::find($subscribe->user_id);
                                         $menus=App\Menu::where('plan_id',$subscribe->plan_id)->get();
                                          $planpicture=App\PlanPictures::where('plan_id',$subscribe->plan_id)->first();
+                                         if ($subscribe->status=="inactive") {
+                                             $bg="bg-danger text-white";
+                                         }else{
+                                            $bg="";
+
+                                         }
                                          @endphp
 
 
-                                    <tr>
+                                        <tr class="{{$bg}}">
                                     <td class="text-center"><img src="/storage/profile_picture/{{$user->profile_picture}}" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->phoneno}}</td>
@@ -76,6 +82,10 @@
                                         <td>Rs. {{$subscribe->totalamount}}</td>
                                         <td>
                                         <a href="view-subscription-detail/{{$subscribe->id}}" class="btn btn-primary">View Subscription</a>
+                                        @if ($subscribe->status!="inactive")
+                                        <a href="cancel-subscription/{{$subscribe->id}}" class="btn btn-danger">Cancel Subscription</a>
+                                        @endif
+                                        
                                         {{-- <button class="btn btn-outline-danger del-btn">Delete Subscription </button> --}}
                                         </td>
                                     </tr>

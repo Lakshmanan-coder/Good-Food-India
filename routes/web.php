@@ -52,6 +52,7 @@ Route::prefix('admin')->group(function () {
     
     Route::get('/subscriptions', 'SubscribeController@viewSubscriptions')->middleware('auth');
     Route::get('/view-subscription-detail/{id}', 'SubscribeController@ViewSubscribeDetail')->middleware('auth');
+    Route::get('/cancel-subscription/{id}', 'SubscribeController@CancelSubscription')->middleware('auth');
     
     
 
