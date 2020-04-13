@@ -30,12 +30,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $plans=Plans::orderBy('id','desc')->paginate(6);
+        $plans=Plans::orderBy('id','desc')->where('status','active')->paginate(6);
         return view('user.home')->with('plans',$plans);
     }
     public function plans()
     {
-        $plans=Plans::orderBy('id','desc')->get();
+        $plans=Plans::orderBy('id','desc')->where('status','active')->get();
         return view('user.plans')->with('plans',$plans);
     }
     public function planDetail($id)
