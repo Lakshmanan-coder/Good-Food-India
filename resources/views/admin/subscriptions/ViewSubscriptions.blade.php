@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h4 class="m-b-30 m-t-0">View Subscription Detail</h4>
+                                    <h4 class="m-b-30 m-t-0">View Subscription</h4>
                                 </div>
                                 <div class="col-sm-4 text-right">
                                 </div>
@@ -45,6 +45,7 @@
                                         <th>Phone Number</th>
                                         <th>Pack Name</th>
                                         <th>Duration</th>
+                                        <th>Subscribed At</th>
                                         <th>Address</th>
                                         <th>Payment Id</th>
                                         <th>Price</th>
@@ -69,6 +70,7 @@
                                         <td>{{$user->phoneno}}</td>
                                         <td>{{$plan->plan_name}}</td>
                                         <td>{{$subscribe->duration}} Days</td>
+                                        <td>{{$subscribe->created_at}} </td>
                                         <td>{{$subscribe->doorno}}, {{$subscribe->street}}, {{$subscribe->city}}, {{$subscribe->postelcode}}</td>
                                         <td>{{$subscribe->payment_id}}</td>
                                         <td>Rs. {{$subscribe->totalamount}}</td>
