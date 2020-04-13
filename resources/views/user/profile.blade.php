@@ -155,7 +155,12 @@
 
                 @if (count($subscribes)>0)
                     @foreach ($subscribes as $subscribe)
+                    @if ($subscribe->status=="active")
                     <tr>
+                    @else
+                    <tr class="bg-danger text-white">
+                    @endif
+                    
                       @php $plan=App\Plans::find($subscribe->plan_id) @endphp  
 
                     <td>{{$plan->plan_name}}</td>
@@ -196,9 +201,13 @@ foreach ($results as $result) {
 
                         @endphp
 
+@if ($subscribe->status=="active")
+<button  data-dates="{{$dates}}" data-duration="{{$subscribe->duration}}" data-limit="{{$count}}" data-subid="{{$subscribe->id}}" type="button" data-toggle="modal" data-target="#myModel" class="date_model btn btn-dark">Edit Dates</button>
+@endif
+
+                   
 
 
-                    <button  data-dates="{{$dates}}" data-duration="{{$subscribe->duration}}" data-limit="{{$count}}" data-subid="{{$subscribe->id}}" type="button" data-toggle="modal" data-target="#myModel" class="date_model btn btn-dark">Edit Dates</button>
                     </td>
 
                 </tr>
