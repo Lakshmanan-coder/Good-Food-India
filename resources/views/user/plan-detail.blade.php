@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('pagetitle','Plan Detail')
 
-@section('header_type','header element_to_stick')
+@section('header_type','header_in element_to_stick')
 
 @section('extra_styles')
        <!-- SPECIFIC CSS -->
@@ -9,21 +9,7 @@
 @endsection
 @section('content')
 
-    <!--hero section-->
-    <div class="hero_single inner_pages background-image" data-background="url(/img/hero_submit.jpg)">
-        <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-9 col-lg-10 col-md-8">
-                        <h1>{{$plan->plan_name}}</h1>
-                        <p>More bookings from diners around the corner</p>
-                    </div>
-                </div>
-                <!-- /row -->
-            </div>
-        </div>
-    </div>
-    <!-- /hero_single -->
+   
 
 
 <main>
@@ -107,7 +93,6 @@
                                     
                                     <!-- /content_more -->
                                    
-                                    <div class="add_bottom_45"></div>
 
                                     
                                    
@@ -128,7 +113,7 @@
                             <div class="card-header" role="tab" id="heading-B">
                                 <h5>
                                     <a class="collapsed" data-toggle="collapse" href="#collapse-B" aria-expanded="true" aria-controls="collapse-A">
-                                        Prices
+                                        Pricing
                                     </a>
                                 </h5>
                             </div>
@@ -163,7 +148,6 @@
                                     
                                     <!-- /content_more -->
                                    
-                                    <div class="add_bottom_45"></div>
 
                                     
                                    
@@ -189,8 +173,8 @@
             </div>
             <!-- /col -->
 
-            <div class="col-lg-4" id="sidebar_fixed">
-                <div class="box_booking " style="margin-top:140px">
+            <div class="col-lg-4 mt-lg-5" id="sidebar_fixed">
+                <div class="box_booking " >
                     <div class="head">
                         <h3>Subscribe your Plan</h3>
                         {{-- <div class="offer">Up to -40% off</div> --}}

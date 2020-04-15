@@ -38,8 +38,8 @@
                     <div class="follow_us">
                         <h5>Follow Us</h5>
                         <ul>
-                            <li><a href="https://www.facebook.com/homelyfreshfoods" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/facebook_icon.svg" alt="" class="lazy"></a></li>
-                            <li><a href="https://www.instagram.com/homelyfreshfoods/" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/instagram_icon.svg" alt="" class="lazy"></a></li>
+                            <li><a href="https://www.facebook.com/homelyfreshfoods" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/img/facebook_icon.svg" alt="" class="lazy"></a></li>
+                            <li><a href="https://www.instagram.com/homelyfreshfoods/" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="/img/instagram_icon.svg" alt="" class="lazy"></a></li>
                         </ul>
                     </div>
                 </div>

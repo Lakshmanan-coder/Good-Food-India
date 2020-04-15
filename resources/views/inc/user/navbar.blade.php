@@ -5,8 +5,8 @@
         <a href="/">
             {{-- <img src="/img/logo.svg" width="140" height="35" alt="" class="logo_normal">
             <img src="/img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky"> --}}
-            <img src="assets/images/logo.png" width="140" height="" alt="" class="logo_normal pos-normal">
-				<img src="assets/images/logo2.png" width="140" height="" alt="" class="logo_sticky pos-absolute">
+            <img src="/assets/images/logo.png" width="140" height="" alt="" class="logo_normal pos-normal">
+				<img src="/assets/images/logo2.png" width="140" height="" alt="" class="logo_sticky pos-absolute">
         </a>
     </div>
     @guest
@@ -33,26 +33,26 @@
             <a href="#0" class="open_close">
                 <i class="icon_close"></i><span>Menu</span>
             </a>
-            <a href="/"><img src="/img/logo.svg" width="140" height="35" alt=""></a>
+            <a href="/"><img src="/assets/images/logo.png" width="140"  alt=""></a>
         </div>
         <ul>
-            <li class="submenu">
+            <li class="">
                 <a href="/" class="show-submenu">Home</a>
             
             </li>
-            <li class="submenu">
+            <li class="">
                 <a href="/plans" class="show-submenu">Plan</a>
         
             </li>
-            <li class="submenu">
+            <li class="">
                 <a href="/#how-we-work" class="show-submenu">How we work</a>
         
             </li>
-            <li class="submenu">
+            <li class="">
                 <a href="/#offers" class="show-submenu">Offers</a>
         
             </li>
-            <li class="submenu">
+            <li class="">
                 <a href="/#contact-us" class="show-submenu">Contact Us</a>
         
             </li>
