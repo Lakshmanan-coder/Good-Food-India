@@ -122,7 +122,9 @@
                         <div class="form-group  margin-2rem">
                             <label for="">Preferred Time Slot</label>
                             <select class="form-control " name="duration" id="timeslot">
-                                <option value="8.00 AM -11.00 PM" >8.00 AM -11.00 PM</option>
+                                <option value="06.30 AM - 09.00 AM" >06.30 AM - 09.00 AM</option>
+                                <option value="11.30 AM - 01.00 PM" >11.30 AM - 01.00 PM</option>
+                                <option value="06.30 PM - 09.00 PM" >06.30 PM - 09.00 PM</option>
                               
                             </select>
                             <input type="hidden" name="price" value="" id="price">
