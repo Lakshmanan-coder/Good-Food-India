@@ -18,21 +18,29 @@ class CalenderController extends Controller
         $data=[];
         foreach ($subscribes as $subscribe) {
             
-            $plan=Plans::findOrFail($subscribe->plan_id);
-            $planname=$plan->plan_name;
-            $user=User::findOrFail($subscribe->user_id);
-            $username=$user->name;
-            $subscribe->duration;
-            $results= explode(",",$subscribe->dates);
-            foreach ($results as $result) {
-                $date= explode("-",$result);
-                $actualdate="$date[2]-$date[1]-$date[0]";
-                $newdata=[
-                    'start'=>$actualdate,
-                    'title'=>$planname.'-'.$username
-                ];
-                array_push($data,$newdata);
-            }
+            if($plan=Plans::find($subscribe->plan_id)){
+
+                        if ($plan->status=="active") {
+                    
+                            $planname=$plan->plan_name;
+                            $user=User::findOrFail($subscribe->user_id);
+                            $username=$user->name;
+                            $subscribe->duration;
+                            $results= explode(",",$subscribe->dates);
+                            foreach ($results as $result) {
+                                if($result!="" && $result!=","){
+
+                                $date= explode("-",$result);
+                                $actualdate="$date[2]-$date[1]-$date[0]";
+                                $newdata=[
+                                    'start'=>$actualdate,
+                                    'title'=>$username.'-'.$planname
+                                ];
+                                array_push($data,$newdata);
+                            }
+                        }
+                    }
+                }   
             
             
             // echo $actualdate;
