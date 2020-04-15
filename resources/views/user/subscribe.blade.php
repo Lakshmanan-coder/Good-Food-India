@@ -119,6 +119,14 @@
                             </select>
                             <input type="hidden" name="price" value="" id="price">
                         </div>
+                        <div class="form-group  margin-2rem">
+                            <label for="">Preferred Time Slot</label>
+                            <select class="form-control " name="duration" id="timeslot">
+                                <option value="8.00 AM -11.00 PM" >8.00 AM -11.00 PM</option>
+                              
+                            </select>
+                            <input type="hidden" name="price" value="" id="price">
+                        </div>
                         <label for="" >Dates <i class="fa fa-question-circle" data-toggle="tooltip" title="Select the days on which you want to receive our home made food. Select only number of  days per plan !" data-placement="right" aria-hidden="true"></i></label>
                         <input type="text" class="form-control date" name="date"  id="dates" placeholder="Pick the Prefferred dates">
                         <span id="dates-alert" class="invalid-feedback"></span>
@@ -278,6 +286,7 @@ $(document).ready(function(){
      var street=$("#street").val();
      var city=$("#city").val();
      var postelcode=$("#postelcode").val();
+     var timeslot=$("#timeslot").val();
 
      
 
@@ -304,6 +313,7 @@ $(document).ready(function(){
                street:street,
                city:city,
                postelcode:postelcode,
+               timeslot:timeslot,
              }, 
              success: function (msg) {
                 // console.log(msg);

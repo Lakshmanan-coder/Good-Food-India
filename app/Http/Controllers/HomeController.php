@@ -107,6 +107,7 @@ class HomeController extends Controller
         $sub->street=$request->street;
         $sub->city=$request->city;
         $sub->postelcode=$request->postelcode;
+        $sub->timeslot=$request->timeslot;
         if ($request->duration!=30) {
             $results= explode(",",$request->dates);
             $count=1;
