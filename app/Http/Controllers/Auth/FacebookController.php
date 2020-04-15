@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Socialite;
 use Exception;
 use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 class FacebookController extends Controller
 {
     /**
