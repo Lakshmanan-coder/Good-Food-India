@@ -92,6 +92,7 @@
                                             <th>#</th>
                                             <th>Pack Name</th>
                                             <th>Duration</th>
+                                            <th>Time Slot</th>
                                             <th>Address</th>
                                             <th>Payment Id</th>
                                             <th>Price</th>
@@ -110,6 +111,7 @@
         
                                                     <td>{{$plan->plan_name}}</td>
                                                     <td>{{$subscribe->duration}} Days</td> 
+                                                    <td>{{$subscribe->timeslot}}</td> 
                                                     <td>{{$subscribe->doorno}}, {{$subscribe->street}}, {{$subscribe->city}}, {{$subscribe->postelcode}}</td>
                                                     <td>{{$subscribe->payment_id}}</td>
                                                     <td>Rs. {{$subscribe->totalamount}}</td>

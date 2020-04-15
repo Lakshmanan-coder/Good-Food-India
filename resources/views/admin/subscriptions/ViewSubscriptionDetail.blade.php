@@ -54,6 +54,10 @@
                                                     <td>{{$subscribe->duration}} Days</td>
                                                 </tr>
                                                 <tr>
+                                                    <th>Time Slot</th>
+                                                    <td>{{$subscribe->timeslot}}</td>
+                                                </tr>
+                                                <tr>
                                                     <th>Price</th>
                                                     <td>{{$subscribe->totalamount}}</td>
                                                 </tr>
