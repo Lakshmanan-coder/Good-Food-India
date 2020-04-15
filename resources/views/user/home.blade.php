@@ -341,4 +341,78 @@
     });
 
 </script>
+<script>
+    $(function () {
+      
+      $('#form1').on('submit', function (e) {
+    
+        e.preventDefault();
+    
+        $.ajax({
+          type: 'post',
+          url: 'form.php',
+          data: $('#form1').serialize(),
+          success: function (data) {
+            
+                swal("Good job!", "We will contact you asap !", "success");
+                document.getElementById("form1").reset();
+                console.log(data);
+            
+          }
+        });
+    //   alert("hi");
+      });
+    
+    });
+    
+    $(function () {
+      
+      $('#form2').on('submit', function (e) {
+    
+        e.preventDefault();
+    
+        $.ajax({
+          type: 'post',
+          url: 'form1.php',
+          data: $('#form2').serialize(),
+          success: function (data) {
+            
+                swal("Good job!", "We will contact you asap !", "success");
+                document.getElementById("form2").reset();
+
+             
+                console.log(data);
+            
+          }
+        });
+    //   alert("hi");
+      });
+    
+    });
+
+    $(function () {
+      
+      $('#contactform').on('submit', function (e) {
+    
+        e.preventDefault();
+    
+        $.ajax({
+          type: 'post',
+          url: 'form2.php',
+          data: $('#contactform').serialize(),
+          success: function (data) {
+            
+                swal("Good job!", "We will contact you asap !", "success");
+                document.getElementById("contactform").reset();
+                window.location.reload()
+             
+                console.log(data);
+            
+          }
+        });
+    //   alert("hi");
+      });
+    
+    });
+</script>
 @endsection
