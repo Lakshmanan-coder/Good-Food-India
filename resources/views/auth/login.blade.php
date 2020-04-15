@@ -139,6 +139,14 @@
             <a href="/register" class="text-muted">Create an account</a>
         </div>
     </div>
+
+    <div class="form-group mt-3">
+        <a href="{{ url('auth/facebook') }}" class="btn btn-lg btn-facebook btn-block" style="background:#3b5998; color:#fff;">
+
+            <strong>Login With Facebook</strong>
+
+        </a>   
+    </div>
    
 </form>
 

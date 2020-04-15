@@ -75,3 +75,15 @@ Route::get('/confirmed', 'HomeController@confirmed')->name('confirmed')->middlew
 Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
 Route::get('/privacy', 'HomeController@privacy')->name('privacy');
 Route::get('/refund', 'HomeController@refund')->name('refund');
+
+
+
+Route::get('facebook', function () {
+
+    return view('facebook');
+
+});
+
+Route::get('auth/facebook', 'Auth\FacebookController@redirectToFacebook');
+
+Route::get('auth/facebook/callback', 'Auth\FacebookController@handleFacebookCallback');
