@@ -25,7 +25,10 @@ class CreateSubscribesTable extends Migration
             $table->string('street');
             $table->string('city');
             $table->string('postelcode');
+            $table->string('status')->nullable()->default('active');
+            $table->string('timeslot')->nullable();
             $table->timestamps();
+            
         });
     }
 
