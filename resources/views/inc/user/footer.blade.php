@@ -17,9 +17,8 @@
                     <h3 data-target="#collapse_3">Delivery Timings</h3>
                 <div class="collapse dont-collapse-sm contacts" id="collapse_3">
                     <ul>
-                        <li class="p-0"><i class="fas fa-clock mr-1"></i>Morning 6.30am - 9.00am</li>
-                        <li class="p-0"><i class="fas fa-clock mr-1"></i> Lunch 11.30am - 1.00pm
-                        </li>
+                        <li><i class="icon_clock_alt"></i>Morning 6.30am - 9.00am</li>
+                        <li><i class="icon_clock_alt"></i>Lunch 11.30am - 1.00pm</li>
                     </ul>
                 </div>
             </div>
@@ -53,9 +52,9 @@
             </div>
             <div class="col-lg-6">
                 <ul class="additional_links">
-                    <li><a href="terms.html">Terms and conditions</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-                    <li><a href="refund.html">Refund Policy</a></li>
+                    <li><a href="/terms-conditions">Terms and conditions</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                    <li><a href="/refund">Refund Policy</a></li>
                 </ul>
             </div>
         </div>

@@ -72,3 +72,6 @@ Route::get('/calender', 'CalenderController@usercalender')->name('calender')->mi
 Route::post('/subscribe', 'HomeController@subscribe')->name('subscribe')->middleware('auth');
 Route::post('/checkout', 'HomeController@checkout')->name('checkout')->middleware('auth');
 Route::get('/confirmed', 'HomeController@confirmed')->name('confirmed')->middleware('auth');
+Route::get('/terms-conditions', 'HomeController@terms')->name('terms-conditions');
+Route::get('/privacy', 'HomeController@privacy')->name('privacy');
+Route::get('/refund', 'HomeController@refund')->name('refund');
