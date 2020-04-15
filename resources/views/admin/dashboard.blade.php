@@ -88,7 +88,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="m-t-0 m-b-30">Overall Statistics</h4>
-                            <div id="pie-chart-container" class="flot-chart" style="height: 360px">
+                            <div id="pie-chart-container" class="flot-chart m-t-30" style="height: 360px">
                                 <canvas id="userplansub"></canvas>
                             </div>
 
