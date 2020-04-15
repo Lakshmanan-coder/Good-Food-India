@@ -46,7 +46,7 @@ if(trim($name_register) == '') {
 }
 
 //$address = "HERE your email address";
-$address = "praveenrambalu@gmail.com";
+$address = "homelyfreshfoods@gmail.com";
 
 
 // Below the subject of the email

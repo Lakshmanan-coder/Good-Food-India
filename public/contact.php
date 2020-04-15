@@ -40,7 +40,7 @@ if(get_magic_quotes_gpc()) {
 
 
 //$address = "HERE your email address";
-$address = "praveenrambalu@gmail.com";
+$address = "homelyfreshfoods@gmail.com";
 
 
 // Below the subject of the email

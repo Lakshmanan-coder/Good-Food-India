@@ -76,8 +76,10 @@
                 <div class="col-xl-7">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="m-t-0 m-b-30">Overall Statistics</h4>
-                            <div id="combine-chart-container" class="flot-chart" style="height: 360px"></div>
+                            <h4 class="m-t-0 m-b-30">Subscription Plan Statistics</h4>
+                            <div id="combine-chart-container" class="flot-chart" style="height: 360px">
+                                <canvas id="planSub"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,8 +87,11 @@
                 <div class="col-xl-5">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="m-t-0 m-b-30">Sales Statistics</h4>
-                            <div id="pie-chart-container" class="flot-chart" style="height: 360px"></div>
+                            <h4 class="m-t-0 m-b-30">Overall Statistics</h4>
+                            <div id="pie-chart-container" class="flot-chart" style="height: 360px">
+                                <canvas id="userplansub"></canvas>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -100,7 +105,7 @@
 @endsection
 
 @section('extra_scripts')
-      <!--Morris Chart-->
+      {{-- <!--Morris Chart-->
       <script src="/assets/plugins/morris/morris.min.js"></script>
       <script src="/assets/plugins/raphael/raphael.min.js"></script>
   
@@ -114,7 +119,148 @@
       <script src="/assets/plugins/flot-chart/jquery.flot.pie.js"></script>
       <script src="/assets/plugins/flot-chart/jquery.flot.selection.js"></script>
       <script src="/assets/plugins/flot-chart/jquery.flot.stack.js"></script>
-      <script src="/assets/plugins/flot-chart/jquery.flot.crosshair.js"></script>
+      <script src="/assets/plugins/flot-chart/jquery.flot.crosshair.js"></script> --}}
   
-      <script src="/assets/pages/dashboard.js"></script>
+      {{-- <script src="/assets/pages/dashboard.js"></script> --}}
+
+      <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js" type="text/javascript"></script>
+  @php
+  echo " <script>
+          var data= {
+                labels: [";
+   $plans=App\Plans::where('status','active')->get();
+   foreach ($plans as $plan) {
+       
+       echo "'";
+       echo $plan->plan_name;
+       echo "',";
+   }   
+   echo "],
+                datasets: [{
+                    label: 'Subscriptions',
+                    data: [";
+                    foreach ($plans as $plan) {
+                     $sub=count(App\Subscribe::where('plan_id',$plan->id)->get());
+                     echo $sub;
+                     echo ",";
+                    }      
+            echo"],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+                    borderWidth: 1
+                }]
+            }        
+            </script>";
+  @endphp
+      <script>
+    var ctx = document.getElementById('planSub');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data:data,
+        options: {
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    gridLines:{
+                     display: false 
+                    },
+                        
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    gridLines:{
+                     display: false 
+                    },
+                        
+                   
+                }]
+            }
+        }
+    });
+    </script>
+
+
+
+
+@php
+$user=App\User::all();
+$subscriptions=App\Subscribe::all();
+$plans=App\Plans::all();
+echo " <script>
+        var data= {
+              labels: ['Users','Plans','Subscriptions'],
+              datasets: [{
+                  label: 'Subscriptions',
+                  data: [".count($user).",".count($plans).",".count($subscriptions)."],
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)'
+          ],
+          borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+          ],
+                  borderWidth: 1
+              }]
+          }        
+          </script>";
+@endphp
+
+
+
+
+
+<script>
+    var ctx = document.getElementById('userplansub');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data:data,
+        options: {
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    gridLines:{
+                     display: false 
+                    },
+                    ticks: {
+                    display: false
+                }
+                }],
+                xAxes: [{
+                    gridLines:{
+                     display: false 
+                    },
+                    ticks: {
+                    display: false
+                } 
+                   
+                }]
+            }
+        }
+    });
+    </script>
 @endsection
