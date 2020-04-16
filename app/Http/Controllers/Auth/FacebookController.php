@@ -50,11 +50,20 @@ class FacebookController extends Controller
         function createUser($getInfo,$provider){
         $user = User::where('facebook_id', $getInfo->id)->first();
         if (!$user) {
-             $user = User::create([
-                'name'     => $getInfo->name,
-                'email'    => $getInfo->email,
-                'facebook_id' => $getInfo->id
-            ]);
+
+            $newuser=User::where('email',$getInfo->email)->first();
+            if(!$newuser){
+                $user = User::create([
+                    'name'     => $getInfo->name,
+                    'email'    => $getInfo->email,
+                    'facebook_id' => $getInfo->id
+                ]);
+             }else{
+                 $newuser->facebook_id=$getInfo->id;
+                 $newuser->save();
+                 return $newuser;
+             }
+
           }
           return $user;
         }
