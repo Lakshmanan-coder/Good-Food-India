@@ -1777,10 +1777,12 @@ header.header.sticky {
   transition: all 0.3s ease-in-out;
   border-bottom: 1px solid #ededed;
   background-color: #fff;
+  padding:1.5rem;
 }
 @media (max-width: 991px) {
   header.header.sticky {
-    padding: 10px 15px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 header.header.sticky .logo_normal {
@@ -1853,7 +1855,13 @@ header.sticky a.open_close, .header_in a.open_close {
   }
   #logo img {
     width: auto;
-    height: 28px;
+    height: 100px;
+    margin-left:-5%;
+  }
+
+  .pos-absolute{
+    margin-top:-5.5% !important;
+    margin-left:-10% !important;
   }
 }
 
@@ -3929,7 +3937,7 @@ a.btn_1.gray:hover,
 }
 footer {
   background-color: #121921;
-  padding: 60px 0 35px 0;
+  padding: 60px 0 15px 0;
 }
 @media (max-width: 767px) {
   footer {

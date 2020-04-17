@@ -1,442 +1,887 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-    <meta name="description" content="G.I.F - Discover & Book the best restaurants at the best price">
-    <meta name="author" content="">
-    <title>Good Indian Food - Discover & Book the best restaurants at the best price</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Foogra - Discover & Book the best restaurants at the best price">
+    <meta name="author" content="Ansonika">
+    <title>Homely Fresh Foods- Eat Fresh, Eat healthy, Eat hygiene ,Eat Homely </title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./assets/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/fav/favicon-16x16.png">
+    <link rel="manifest" href="./assets/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- BASE CSS -->
-    <link href="css/bootstrap_customized.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- SPECIFIC CSS -->
     <link href="css/home.css" rel="stylesheet">
+    <link href="css/home1.css" rel="stylesheet">
+    <link href="css/contacts.css" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
     <link href="css/custom.css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+      <!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '906511059812366'); 
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+  <img height="1" width="1" 
+  src="https://www.facebook.com/tr?id=906511059812366&ev=PageView
+  &noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
 
 </head>
+
 <body>
-    
-    <!-- HEADER -->
-    <header class="header clearfix element_to_stick">
+				
+	<header class="header clearfix element_to_stick">
 		<div class="container">
 		<div id="logo">
 			<a href="index.html">
-				<img src="img/logo.svg" width="140" height="35" alt="" class="logo_normal">
-				<img src="img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky">
+				<img src="assets/images/logo.png" width="200" height="auto" alt="" class="logo_normal pos-normal">
+				<img src="assets/images/logo2.png" width="auto" height="120px" alt="" class="logo_sticky pos-absolute">
 			</a>
 		</div>
-		<ul id="top_menu">
-			<li><a href="#sign-in-dialog" id="sign-in" class="login">Sign In</a></li>
-			<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
-		</ul>
+		
 		<!-- /top_menu -->
-		<a href="#0" class="open_close">
+		<!-- <a href="#0" class="open_close">
 			<i class="icon_menu"></i><span>Menu</span>
-		</a>
+		</a> -->
 		<nav class="main-menu">
 			<div id="header_menu">
-				<a href="#0" class="open_close">
+				<!-- <a href="#0" class="open_close">
 					<i class="icon_close"></i><span>Menu</span>
-				</a>
-				<a href="index.html"><img src="img/logo.svg" width="140" height="35" alt=""></a>
-			</div>
-			<ul>
-				<li class="submenu">
-					<a href="#0" class="show-submenu">Home</a>
+				</a> -->
+				<a href="index.html"><img src="assets/images/logo.png" width="auto" height="70px" alt=""></a>
+            </div>
+            
+            <ul>
+              <li class="submenu">
+                <a href="#about" class="show-submenu">About</a>
+                
+              </li>
+              <li class="submenu">
+                <a href="#feature" class="show-submenu">Offers</a>
+                
+                  </li>
+                  <li class="submenu">
+                    <a href="#Plans" class="show-submenu">Plans</a>
+                    
+                      </li>
+                      <li class="submenu">
+                        <a href="#contact" class="show-submenu">Contact Us</a>
+                        
+                          </li>
+                         
+            
 				
-				</li>
-				<li class="submenu">
-					<a href="plan.html" class="show-submenu">Plan</a>
 			
-				</li>
-				<li class="submenu">
-					<a href="profile2.html" class="show-submenu">Profile</a>
-				
-				</li>
-				<li><a href="Wallet.html">Wallet</a></li>
-				<li><a href="Calender.html">Calendar</a></li>
-			</ul>
 		</nav>
 	</div>
-    </header>
-    
-    <!--SLIDER-->
-    <div id="carousel-home">
-        <div class="owl-carousel owl-theme">
-            <div class="owl-slide cover" style="background-image: url(img/slides/slide_home_2.jpg);">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <div class="container">
-                        <div class="row justify-content-center justify-content-md-end">
-                            <div class="col-lg-6 static">
-                                <div class="slide-text text-right white">
-                                    <h2 class="owl-slide-animated owl-slide-title">Enjoy<br>unique food</h2>
-                                    <p class="owl-slide-animated owl-slide-subtitle">
-                                        Huge variery of food at the best price
-                                    </p>
-                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="grid-listing-filterscol.html" role="button">Read more</a></div>
+	</header>
+	<!-- /header -->
+	
+	<main>
+    <a href="https://api.whatsapp.com/send?phone=919962151204&text=Send%21%20Message" class="float" target="_blank">
+    <i class="fab fa-whatsapp my-float"></i></a>
+		<div class="header-video">
+			<div id="hero_video">
+				<div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+					<div class="container">
+						<div class="row justify-content-center text-center">
+							<div class="col-xl-8 col-lg-10 col-md-8">
+								<h3>Eat fresh. Eat healthy. Eat hygiene. Eat homely</h3>
+								<p class="custom-font">Eat healthy food on daily basis at as low as <strong class="color-orange">8400 INR a month</strong> and we will deliver the food to your door steps at no additional cost.
+                                </p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img src="img/video_fix.png" alt="" class="header-video--media" data-video-src="video/intro" data-teaser-source="video/intro" data-provider="" data-video-width="1920" data-video-height="960">
+		</div>
+		<!-- /header-video -->
+		
+		<div class="bg_gray" id="about">
+			<div class="container margin_60_40">
+				<div class="main_title text-left">
+					<span><em></em></span>
+					<h2 class="font-size-2">Plans</h2>
+					
+				</div>
+				<!-- /main_title -->
+				  <div class="row ">
+                      <div class="col-lg-7 mt-4">
+                        <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                  <div class="card-header active-custom-accordion" id="headingOne">
+                                    <h2 class="mb-0">
+                                      <button class="btn custom-plan-button-active" type="button" id="button1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                         Breakfast Exclusive (Family Pack)
+                                      </button>
+                                    </h2>
+                                  </div>
+                              
+                                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      <div class="card-title d-flex">
+                                        <h6 class="pr-2">Menu</h6> (<i>For a family of 4</i>)</div>
+                                     <ul>
+                                         <li>Idly/dosa batter (1kg)</li>
+                                         <li>Sambhar (1ltr)</li>                          
+                                         <li>Free filter coffee decoction</li>
+                                         
+                                     </ul>
+
+                                     <h6>Rate for subscription</h6>
+                                     <ul class="flex-prop-plan">
+                                         <li>1 day: <strong>Rs.220</strong></li>
+                                         <li>7 days: <strong>Rs.1500</strong></li>
+                                         <li>15 days: <strong>Rs.2750</strong>
+                                        </li>
+                                         <li>30 days: <strong>Rs.4800</strong>
+                                        </li>
+
+                                     </ul>
+                                     <br>
+                                     <h6><b>Note:</b></h6>
+                                     <h6><b>We do not provide pre-cooked Idly/Dosa. We provide batter for individuals/ family to make it themselves as Idly / Dosa tastes best when it is served hot. </b></h6>
+                                    </div>
+                                  </div>
                                 </div>
+                                <div class="card">
+                                  <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                      <button class="btn btn-link collapsed custom-plan-button" id="button2" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                       Lunch Exclusive (Family Pack)
+                                      </button>
+                                    </h2>
+                                  </div>
+                                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="card-title d-flex">
+                                        <h6 class="pr-2">Lunch Menu</h6> (<i>For a family of 4</i>)</div>
+                                     <ul>
+                                         <li>Sambhar</li>
+                                         <li>Rasam</li>
+                                         <li>Kootu</li> 
+                                         <li>Poriyal</li>
+                                         
+                                     </ul>
+
+                                     <h6>Rate for subscription</h6>
+                                     <ul class="flex-prop-plan">
+                                      <li>1 day: <strong>Rs.250</strong></li>
+                                      <li>7 days: <strong>Rs.1500</strong></li>
+                                      <li>15 days: <strong>Rs.2750</strong>
+                                     </li>
+                                      <li>30 days: <strong>Rs.4800</strong>
+                                     </li>
+
+                                     </ul>
+                                     <br>
+                                     <h6><b>Note:</b></h6>
+                                     <h6><b>Wondering why isnt rice provided? Some prefer Half cooked, some prefer fully cooked. HFF, unlike other brands, will never force you to eat what you do not like.  Satisfactory food is one of the key to good health. </b></h6>
+                                     <br>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                      <button class="btn btn-link collapsed custom-plan-button" type="button" id="button3" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      Lunch Exclusive (Bachelor Pack)
+                                      </button>
+                                    </h2>
+                                  </div>
+                                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="card-title d-flex">
+                                        <h6 class="pr-2">Lunch Combo Menu</h6> (<i>For Singles</i>)</div>
+                                       
+                                     <ul>
+                                         
+                                         <li>3 Variety Lunch (Mixed Rice)</li>
+                                         
+                                     </ul>
+
+                                     <h6>Rate for subscription</h6>
+                                     <ul class="flex-prop-plan">
+                                         <li>1 day: <strong>Rs.120</strong></li>
+                                         <li>7 days: <strong>Rs.840</strong></li>
+                                         <li>15 days: <strong>Rs.1650</strong>
+                                        </li>
+                                         <li>30 days: <strong>Rs.3000</strong>
+                                        </li>
+
+                                     </ul>
+                                    </div>
+                                  
+                                  </div>
+                                </div>
+
+                                
+
+                              </div>
+                      </div>
+                      <div class="col-lg-5 p-3">
+                       
+                              <!-- <img class="img img-responsive" src="assets/images/katie-smith-uQs1802D0CQ-unsplash.jpg" width="60%" height="60%">-->
+                      <div class="card  sub-card">
+                        <h4 class="card-title text-center mt-5">Subscribe Now</h4>
+                        <div class="pl-5 pr-5 pb-5 pt-4">
+                        <form id="form1">
+                          <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">Name</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="name" id="colFormLabel" placeholder="ex.reba" required>
                             </div>
-                        </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">Phone</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="phone" id="colFormLabel" placeholder="ex.9874561231" required>
+                            </div>
+                          </div>
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" name="email" id="colFormLabel" placeholder="ex.reba21@gmail.com" required>
                     </div>
+                  </div>
+                  <div class="form-group row mt-3">
+                    <label for="colFormLabel" class="col-sm-3 col-form-label">Select Plan</label>
+                    <div class="col-sm-9">
+                      <select id="inputState" name="plan" class="form-control" required>
+                        <option value="BreakFast Exclusive Family Pack">Breakfast Exclusive Family Pack</option>
+                        <option value="Lunch Exclusive Family Pack">Lunch Exclusive Family Pack</option>
+                        <option value="Lunch Exclusive Bachelor Pack">Lunch Exclusive Bachelor Pack</option>
+                      
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row mt-3">
+                    <label for="colFormLabel" class="col-sm-3 col-form-label">Select Duration</label>
+                    <div class="col-sm-9">
+                      <select id="inputState" name="duration" class="form-control p-1" required>
+                        <option value="1 day">1 day</option>
+                        <option value="7 day">7 day</option>
+                        <option value="15 days">15 days</option>
+                        <option value="30 days">30 days</option>
+                      
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row mt-2">
+                    <label for="colFormLabel" class="col-sm-3 col-form-label">From Date</label>
+                    <div class="col-9">
+                      <input type="date" name="fromdate" class="form-control" placeholder="From date" required>
+                    </div>
+
+                  </div>
+                     <div class="form-row mt-3">
+                    <label for="colFormLabel" class="col-sm-3 col-form-label">To Date</label>
+                    <div class="col-9">
+                      <input type="date" name="todate" class="form-control" placeholder="To date" required>
+                  
+                  </div>
                 </div>
+            
+
+                <div class="form-row">
+                  <div class="col-lg-4 mt-3">
+                    <input type="text" name="city" class="form-control" placeholder="City">
+                  </div>
+                  <div class="col-lg-4 mt-3">
+                    <input type="text" name="state" class="form-control" placeholder="State">
+                  </div>
+                  <div class="col-lg-4 mt-3">
+                    <input type="text" name="zip" class="form-control" placeholder="Zip">
+                  </div>
+                </div>
+                  <button class="btn mt-4 text-center w-100 color-sub-btn" type="submit">Subscribe</button>
+
+              </form>
             </div>
-            <!--/owl-slide-->
-            <div class="owl-slide cover" style="background-image: url(img/slides/slide_home_1.jpg);">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <div class="container">
-                        <div class="row justify-content-center justify-content-md-start">
-                            <div class="col-lg-6 static">
-                                <div class="slide-text white">
-                                    <h2 class="owl-slide-animated owl-slide-title">Discover<br>and Reserve</h2>
-                                    <p class="owl-slide-animated owl-slide-subtitle">
-                                        The best restaurants at the best price
-                                    </p>
-                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="grid-listing-filterscol.html" role="button">Read more</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!--/owl-slide-->				
-            <div class="owl-slide cover" style="background-image: url(img/slides/slide_home_3.jpg);">
-                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.6)">
-                    <div class="container">
-                        <div class="row justify-content-center justify-content-md-start">
-                            <div class="col-lg-12 static">
-                                <div class="slide-text text-center white">
-                                    <h2 class="owl-slide-animated owl-slide-title">Enjoy<br>a friends dinner</h2>
-                                    <p class="owl-slide-animated owl-slide-subtitle">
-                                        The best restaurants at the best price
-                                    </p>
-                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="grid-listing-filterscol.html" role="button">Read more</a></div>
-                                </div>
-                            </div>
+                      </div>
+                  </div>
+				<!-- /carousel -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bg_gray -->
+		
+		
+					
+			
+				<!-- /main_title -->
+                <div class="bg_gray" id="feature">
+                  
+                        <div class="main_title center">
+                            <span><em></em></span>
+                            <h2>Offers</h2>
+                          
                         </div>
-                    </div>
+
+
+                        <div class="container-fluid">
+                            
+                                 <div class="display-class-1">
+                                <img src="./assets/images/banner.jpg" class="img img-responsive" alt="offers" width="100%" /></div>
+                                <div class="display-class">
+                                
+                                <img src="./assets/images/mobile-banner.jpg" class="img img-responsive" alt="offers" width="100%" /></div>
+                              
+                                <!-- <div class="col-sm-3">
+                                  <div class="card feature-card">
+                                      <img src="./assets/icons/diet.svg" class="img img-responsive alter-feature-image"/>
+                                      <h3>Home Made Fresh Food</h3>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="card feature-card">
+                                        <img src="./assets/icons/contract.svg" class="img img-responsive alter-feature-image alter-contract"/>
+                                        <h3>Monthly Subscription Model</h3>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="card feature-card">
+                                        <img src="./assets/icons/pay.svg" class="img img-responsive alter-feature-image"/>
+                                        <h3>Secure Payment Platform</h3>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 ">
+                                    <div class="card feature-card">
+                                        <img src="./assets/icons/delivery.svg" class="img img-responsive alter-feature-image alter-contract"/>
+                                        <h3>Delivered At Your Doorsteps</h3>
+                                    </div>
+                                </div>
+                              -->
+                            
+                        </div>
+                   
+                    <!-- /container -->
                 </div>
-                <!--/owl-slide-->
+               <!-- /bg_gray
+                 -->
+                <div class="bg_gray"  id="Plans">
+                    <div class="container margin_60_40">
+               
+                <div class="main_title center">
+                    <span><em></em></span>
+                    <h2>About</h2>
+                  
+                </div> 
+				<!-- /main_title -->
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7 mt-4">
+                            <img src="assets/images/logo3.png" width="50%" height="auto" alt="" class="logo_normal margin-center">
+                          <h5 class="text-justify">Homely Fresh Foods is a new venture of Arusuvai Arasu group of companies, we have experience in the industry since 60+ years. We deliver homemade food to your door step across Chennai.</h5>
+                            
+                        </div>
+
+                        <div class="col-sm-5">
+                                <img src="assets/images/mockup.png" class="img img-responsive position-absol-2 width-changes"   />
+                      
+                        </div>
+                        </div>
+                       </div>
+                    
+				<!-- /carousel -->
+                  </div></div>
+                  
+			<!-- /container -->
+		
+   <div class="container-fluid" >
+    <div class="banner version_2">
+        <div class="wrapper d-flex align-items-center opacity-mask justify-content-center text-center" data-opacity-mask="rgba(0, 0, 0, 0)">
+            <div>
+                <small>Homely Fresh Foods</small>
+              
+                <h3 >Subscribe Now</h3>
+
+              <small class="m-3">Subscribe to Homely Fresh Foods Online for immediate informations on plans and offers</small><br/>
+                <a href="grid-listing-filterscol.html" class="btn_1 gray margin-top-2"  data-toggle="modal" data-target="#exampleModalCenter">Subscribe</a>
             </div>
         </div>
-        <div id="icon_drag_mobile"></div>
+        <!-- /wrapper -->
     </div>
-    <!--/carousel-->
 
+   </div>
 
+   <!-- Button trigger modal -->
 
-    <!-- POPULAR PLANS -->
+  </main>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Subscribe Now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="form2">
+                <div class="form-group row">
+                  <label for="colFormLabel" class="col-sm-3 col-form-label">Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="name" id="colFormLabel" placeholder="ex.reba" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="colFormLabel" class="col-sm-3 col-form-label">Phone</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="phone" id="colFormLabel" placeholder="ex.9874561231" required>
+                  </div>
+                </div>
+      <div class="form-group row">
+          <label for="colFormLabel" class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" name="email" id="colFormLabel" placeholder="ex.reba21@gmail.com" required>
+          </div>
+        </div>
+        <div class="form-group row mt-3">
+          <label for="colFormLabel" class="col-sm-3 col-form-label">Select Plan</label>
+          <div class="col-sm-9">
+            <select id="inputState" name="plan" class="form-control" required>
+              <option value="BreakFast Exclusive Family Pack">Breakfast Exclusive Family Pack</option>
+              <option value="Lunch Exclusive Family Pack">Lunch Exclusive Family Pack</option>
+              <option value="Lunch Exclusive Bachelor Pack">Lunch Exclusive Bachelor Pack</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row mt-3">
+          <label for="colFormLabel" class="col-sm-3 col-form-label">Select Duration</label>
+          <div class="col-sm-9">
+            <select id="inputState" name="duration" class="form-control p-1" required>
+              <option value="1 day">1 day</option>
+              <option value="7 day">7 day</option>
+              <option value="15 days">15 days</option>
+              <option value="30 days">30 days</option>
+            
+              
+            </select>
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <label for="colFormLabel" class="col-sm-3 col-form-label">From Date</label>
+          <div class="col-9">
+            <input type="date" name="fromdate" class="form-control" placeholder="From date" required>
+          </div>
 
-    <div class="container margin_60_40">
+        </div>
+           <div class="form-row mt-3">
+          <label for="colFormLabel" class="col-sm-3 col-form-label">To Date</label>
+          <div class="col-9">
+            <input type="date" name="todate" class="form-control" placeholder="To date" required>
+        
+        </div>
+      </div>
+  
+
+      <div class="form-row mt-3">
+        <div class="col-lg-4">
+          <input type="text" name="city" class="form-control" placeholder="City">
+        </div>
+        <div class="col-lg-4">
+          <input type="text" name="state" class="form-control" placeholder="State">
+        </div>
+        <div class="col-lg-4">
+          <input type="text" name="zip" class="form-control" placeholder="Zip">
+        </div>
+      </div>
         
 
-        <div class="row">
-            <div class="col-12">
-                <div class="main_title version_2">
-                    <span><em></em></span>
-                    <h2>Popular Plans</h2>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-                    <a href="#0">View All</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="list_home">
-                    <ul>
-                        <li>
-                            <a href="detail-restaurant.html">
-                                <figure>
-                                    <img src="img/location_list_placeholder.png" data-src="img/location_list_1.jpg" alt="" class="lazy">
-                                </figure>
-                                <div class="score"><strong>9.5</strong></div>
-                                <em>Italian</em>
-                                <h3>La Monnalisa</h3>
-                                <small>8 Patriot Square E2 9NF</small>
-                                <ul>
-                                    <li><span class="ribbon off">-30%</span></li>
-                                    <li>Average price $35</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="detail-restaurant.html">
-                                <figure>
-                                    <img src="img/location_list_placeholder.png" data-src="img/location_list_2.jpg" alt="" class="lazy">
-                                </figure>
-                                <div class="score"><strong>8.0</strong></div>
-                                <em>Mexican</em>
-                                <h3>Alliance</h3>
-                                <small>27 Old Gloucester St, 4563</small>
-                                <ul>
-                                    <li><span class="ribbon off">-40%</span></li>
-                                    <li>Average price $30</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="detail-restaurant.html">
-                                <figure>
-                                    <img src="img/location_list_placeholder.png" data-src="img/location_list_3.jpg" alt="" class="lazy">
-                                </figure>
-                                <div class="score"><strong>9.0</strong></div>
-                                <em>Sushi - Japanese</em>
-                                <h3>Sushi Gold</h3>
-                                <small>Old Shire Ln EN9 3RX</small>
-                                <ul>
-                                    <li><span class="ribbon off">-25%</span></li>
-                                    <li>Average price $20</li>
-                                </ul>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="list_home">
-                    <ul>
-                        <li>
-                            <a href="detail-restaurant.html">
-                                <figure>
-                                    <img src="img/location_list_placeholder.png" data-src="img/location_list_4.jpg" alt="" class="lazy">
-                                </figure>
-                                <div class="score"><strong>9.5</strong></div>
-                                <em>Vegetarian</em>
-                                <h3>Mr. Pepper</h3>
-                                <small>27 Old Gloucester St, 4563</small>
-                                <ul>
-                                    <li><span class="ribbon off">-30%</span></li>
-                                    <li>Average price $20</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="detail-restaurant.html">
-                                <figure>
-                                    <img src="img/location_list_placeholder.png" data-src="img/location_list_5.jpg" alt="" class="lazy">
-                                </figure>
-                                <div class="score"><strong>8.0</strong></div>
-                                <em>Chinese</em>
-                                <h3>Dragon Tower</h3>
-                                <small>22 Hertsmere Rd E14 4ED</small>
-                                <ul>
-                                    <li><span class="ribbon off">-50%</span></li>
-                                    <li>Average price $35</li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="detail-restaurant.html">
-                                <figure>
-                                    <img src="img/location_list_placeholder.png" data-src="img/location_list_6.jpg" alt="" class="lazy">
-                                </figure>
-                                <div class="score"><strong>8.5</strong></div>
-                                <em>Pizza - Italian</em>
-                                <h3>Bella Napoli</h3>
-                                <small>135 Newtownards Road BT4</small>
-                                <ul>
-                                    <li><span class="ribbon off">-45%</span></li>
-                                    <li>Average price $25</li>
-                                </ul>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- /row -->
-        <p class="text-center d-block d-md-block d-lg-none"><a href="grid-listing-filterscol.html" class="btn_1">View All</a></p>
-        <!-- /button visibile on tablet/mobile only -->
 
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="bg_gray" >
+  <div class="container margin_60_40">
+      <div class="row justify-content-center">
+        
+          <div class="col-lg-7 m-auto">
+              <div class="box_contacts">
+                  <i class="icon_pin_alt"></i>
+                  <h2>Address</h2>
+                  <div>No 4, Rajabather Street near Rathna Fan House</div>
+                  <small>T Nagar Chennai, India 600017</small>
+                  <strong>Contact :  +91 99621 51204</strong>
+              </div>
+          </div>
+          
+      </div>
+      <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /bg_gray -->
+
+<div class="container margin_60_40">
+  <h5 class="mb_5">Drop Us a Line</h5>
+  <div class="row">
+      <div class="col-lg-4 col-md-6 add_bottom_25">
+          <div id="message-contact"></div>
+          <form method="post" id="contactform" autocomplete="off">
+              <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Name" id="name_contact" name="name">
+              </div>
+              <div class="form-group">
+                  <input class="form-control" type="email" placeholder="Email" id="email_contact" name="email">
+              </div>
+              <div class="form-group">
+                  <textarea class="form-control" style="height: 150px;" placeholder="Message" id="message_contact" name="message"></textarea>
+              </div>
+              
+              <div class="form-group">
+                  <input class="btn_1 full-width  btn-color-custom-sub" type="submit">
+              </div>
+      </div>
+      </form>
+      <div class="col-lg-8 col-md-6 add_bottom_25">
+              <iframe class="map_contact" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9118788419196!2d80.2343218147713!3d13.041280890810162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526656a9a01ca1%3A0x1713f347d157d75!2s4%2C%20Raja%20Bather%20St%2C%20Parthasarathi%20Puram%2C%20T.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600017!5e0!3m2!1sen!2sin!4v1586167113377!5m2!1sen!2sin"  allowfullscreen aria-hidden="false" tabindex="0"></iframe>		        </div>
+  </div>
+  <!-- /row -->
+</div>
+<!-- /container -->
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-lg-4 col-md-6">
+        <h3 data-target="#collapse_1">Quick Links</h3>
+        <div class="collapse dont-collapse-sm links" id="collapse_1">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="plan.html">Plan</a></li>
+            <li><a href="profile.html">My account</a></li>
+            <li><a href="wallet.html">Wallet</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            
+          </ul>
+        </div> -->
      
-       
+    
+   
+      <div class="col-lg-4 col-md-4">
+        <h3 data-target="#collapse_3">Contacts</h3>
+      <div class="collapse dont-collapse-sm contacts" id="collapse_3">
+        <ul>
+          <li><i class="icon_house_alt"></i>No.4 Raja Bather st T.Nagar - Chennai</li>
+          <li><i class="icon_mobile"></i> +91 99621 51204
+          </li>
+        </ul>
+      </div>
     </div>
-    <!-- /container -->
 
-
-    <!-- BEST DEALS -->
-
-    <div class="bg_gray">
-        <div class="container margin_60_40">
-            <div class="main_title center">
-                <span><em></em></span>
-                <h2>Best Deals</h2>
-                <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
-            </div>
-            <!-- /main_title -->
-            <div class="owl-carousel owl-theme categories_carousel">
-                <div class="item">
-                    <a href="#0">
-                        <span>98</span>
-                        <i class="icon-food_icon_pizza"></i>
-                        <h3>Pizza - Italian</h3>
-                        <small>Avg price $40</small>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#0">
-                        <span>87</span>
-                        <i class="icon-food_icon_sushi"></i>
-                        <h3>Japanese - Sushi</h3>
-                        <small>Avg price $50</small>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#0">
-                        <span>96</span>
-                        <i class="icon-food_icon_burgher"></i>
-                        <h3>Burghers</h3>
-                        <small>Avg price $55</small>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#0">
-                        <span>78</span>
-                        <i class="icon-food_icon_vegetarian"></i>
-                        <h3>Vegetarian</h3>
-                        <small>Avg price $40</small>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#0">
-                        <span>65</span>
-                        <i class="icon-food_icon_cake_2"></i>
-                        <h3>Bakery</h3>
-                        <small>Avg price $60</small>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#0">
-                        <span>65</span>
-                        <i class="icon-food_icon_chinese"></i>
-                        <h3>Chinese</h3>
-                        <small>Avg price $40</small>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#0">
-                        <span>65</span>
-                        <i class="icon-food_icon_burrito"></i>
-                        <h3>Mexican</h3>
-                        <small>Avg price $35</small>
-                    </a>
-                </div>
-            </div>
-            <!-- /carousel -->
+    <div class="col-lg-4 col-md-4">
+      <h3 data-target="#collapse_3">Delivery Timings</h3>
+    <div class="collapse dont-collapse-sm contacts" id="collapse_3">
+      <ul>
+        <li class="p-0"><i class="fas fa-clock mr-1"></i>Morning 6.30am - 9.00am</li>
+        <li class="p-0"><i class="fas fa-clock mr-1"></i> Lunch 11.30am - 1.00pm
+        </li>
+      </ul>
+    </div>
+  </div>
+      <div class="col-lg-4 col-md-4">
+          <h3 data-target="#collapse_4">Keep in touch</h3>
+        <div class="collapse dont-collapse-sm" id="collapse_4">
+          <div id="newsletter">
+            <div id="message-newsletter"></div>
+            <form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
+              <div class="form-group">
+                <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+                <button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
+              </div>
+            </form>
+          </div>
         </div>
-        <!-- /container -->
+          <div class="follow_us">
+            <h5>Follow Us</h5>
+            <ul>
+              <!-- <li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/twitter_icon.svg" alt="" class="lazy"></a></li> -->
+              <li><a href="https://www.facebook.com/homelyfreshfoods" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/facebook_icon.svg" alt="" class="lazy"></a></li>
+              <li><a href="https://www.instagram.com/homelyfreshfoods/" target="_blank"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/instagram_icon.svg" alt="" class="lazy"></a></li>
+              <!-- <li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/youtube_icon.svg" alt="" class="lazy"></a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /bg_gray -->
-
-
-
-
-
-    <footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<h3 data-target="#collapse_1">Quick Links</h3>
-					<div class="collapse dont-collapse-sm links" id="collapse_1">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="plan.html">Plan</a></li>
-							<li><a href="profile.html">My account</a></li>
-							<li><a href="wallet.html">Wallet</a></li>
-							<li><a href="calendar.html">Calendar</a></li>
-							
-						</ul>
-					</div>
-				</div>
-			
-				<div class="col-lg-4 col-md-6">
-						<h3 data-target="#collapse_3">Contacts</h3>
-					<div class="collapse dont-collapse-sm contacts" id="collapse_3">
-						<ul>
-							<li><i class="icon_house_alt"></i>97845 Baker st. 567<br>Los Angeles - US</li>
-							<li><i class="icon_mobile"></i>+94 423-23-221</li>
-							<li><i class="icon_mail_alt"></i><a href="#0">info@domain.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-						<h3 data-target="#collapse_4">Keep in touch</h3>
-					<div class="collapse dont-collapse-sm" id="collapse_4">
-						<div id="newsletter">
-							<div id="message-newsletter"></div>
-							<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-								<div class="form-group">
-									<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
-									<button type="submit" id="submit-newsletter"><i class="arrow_carrot-right"></i></button>
-								</div>
-							</form>
-						</div>
-						<div class="follow_us">
-							<h5>Follow Us</h5>
-							<ul>
-								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/twitter_icon.svg" alt="" class="lazy"></a></li>
-								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/facebook_icon.svg" alt="" class="lazy"></a></li>
-								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/instagram_icon.svg" alt="" class="lazy"></a></li>
-								<li><a href="#0"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/youtube_icon.svg" alt="" class="lazy"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /row-->
-			<hr>
-			<div class="row add_bottom_25">
-				<div class="col-lg-6">
-					<ul class="footer-selector clearfix">
-						<li>
-							<div class="styled-select lang-selector">
-								<select>
-									<option value="English" selected>English</option>
-									<option value="French">French</option>
-									<option value="Spanish">Spanish</option>
-									<option value="Russian">Russian</option>
-								</select>
-							</div>
-						</li>
-						<li>
-							<div class="styled-select currency-selector">
-								<select>
-									<option value="US Dollars" selected>US Dollars</option>
-									<option value="Euro">Euro</option>
-								</select>
-							</div>
-						</li>
-						<li><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/cards_all.svg" alt="" width="198" height="30" class="lazy"></li>
-					</ul>
-				</div>
-				<div class="col-lg-6">
-					<ul class="additional_links">
-						<li><a href="#0">Terms and conditions</a></li>
-						<li><a href="#0">Privacy</a></li>
-						<li><span>© 2019 Foogra</span></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <!-- /row-->
+    <hr>
+    <div class="">
+      <div class="d-flex justify-content-between position-absol-2">
+        <div class="dummy-container">
+        <ul class="footer-selector clearfix text-center">
+          
+          <li><span class="copy-text text-center">All Rights Reserved. Copyright ©️ 2020 Homely Fresh Foods.</span></li>
+          
+                 </ul>
+                </div>
+      
+      <div class="dummy-container text-center">
+        <ul class="additional_links">
+          <li><a href="terms.html">Terms and conditions</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</footer>
 	<!--/footer-->
 
-    <!-- COMMON SCRIPTS -->
-    <script src="js/common_scripts.min.js"></script>
-    <script src="js/slider.js"></script>
+	<div id="toTop"></div><!-- Back to top button -->
+	
+	<div class="layer"></div><!-- Opacity Mask Menu Mobile -->
+	
+	<!-- Sign In Modal -->
+	<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+		<div class="modal_header">
+			<h3>Sign In</h3>
+		</div>
+		<form>
+			<div class="sign-in-wrapper">
+				<a href="#0" class="social_bt facebook">Login with Facebook</a>
+				<a href="#0" class="social_bt google">Login with Google</a>
+				<div class="divider"><span>Or</span></div>
+				<div class="form-group">
+					<label>Email</label>
+					<input type="email" class="form-control" name="email" id="email">
+					<i class="icon_mail_alt"></i>
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" class="form-control" name="password" id="password" value="">
+					<i class="icon_lock_alt"></i>
+				</div>
+				<div class="clearfix add_bottom_15">
+					<div class="checkboxes float-left">
+						<label class="container_check">Remember me
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
+				</div>
+				<div class="text-center">
+					<input type="submit" value="Log In" class="btn_1 full-width mb_5">
+					Don’t have an account? <a href="account.html">Sign up</a>
+				</div>
+				<div id="forgot_pw">
+					<div class="form-group">
+						<label>Please confirm login email below</label>
+						<input type="email" class="form-control" name="email_forgot" id="email_forgot">
+						<i class="icon_mail_alt"></i>
+					</div>
+					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+				</div>
+			</div>
+		</form>
+		<!--form -->
+	</div>
+	<!-- /Sign In Modal -->
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="js/common_scripts.js"></script>
     <script src="js/common_func.js"></script>
     <script src="assets/validate.js"></script>
+
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/video_header.min.js"></script>
+    <script>
+		// Video Header
+		// HeaderVideo.init({
+		// 	container: $('.header-video'),
+		// 	header: $('.header-video--media'),
+		// 	videoTrigger: $("#video-trigger"),
+		// 	autoPlayVideo: true
+		// });
+
+    
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" ></script>
+  <script>
+   $('#collapseOne').on('show.bs.collapse', function () {
+      $('#headingOne').addClass('active-custom-accordion')
+      $('#button1').addClass('custom-plan-button-active')
+})
+$('#collapseOne').on('hide.bs.collapse', function () {
+      $('#headingOne').removeClass('active-custom-accordion')
+      $('#button1').removeClass('custom-plan-button-active')
+      $('#button1').addClass('custom-plan-button')
+})
+
+$('#collapseTwo').on('show.bs.collapse', function () {
+      $('#headingTwo').addClass('active-custom-accordion')
+      $('#button2').addClass('custom-plan-button-active')
+})
+$('#collapseTwo').on('hide.bs.collapse', function () {
+      $('#headingTwo').removeClass('active-custom-accordion')
+      $('#button2').removeClass('custom-plan-button-active')
+      $('#button2').addClass('custom-plan-button')
+})
+
+$('#collapseThree').on('show.bs.collapse', function () {
+      $('#headingThree').addClass('active-custom-accordion')
+      $('#button3').addClass('custom-plan-button-active')
+})
+$('#collapseThree').on('hide.bs.collapse', function () {
+      $('#headingThree').removeClass('active-custom-accordion')
+      $('#button3').removeClass('custom-plan-button-active')
+      $('#button3').addClass('custom-plan-button')
+})
+
+// $('#collapseFour').on('show.bs.collapse', function () {
+//       $('#headingFour').addClass('active-custom-accordion')
+//       $('#button4').addClass('custom-plan-button-active')
+// })
+// $('#collapseFour').on('hide.bs.collapse', function () {
+//       $('#headingFour').removeClass('active-custom-accordion')
+//       $('#button4').removeClass('custom-plan-button-active')
+//       $('#button4').addClass('custom-plan-button')
+// })
+
+// $('#collapseFive').on('show.bs.collapse', function () {
+//       $('#headingFive').addClass('active-custom-accordion')
+//       $('#button5').addClass('custom-plan-button-active')
+// })
+// $('#collapseFive').on('hide.bs.collapse', function () {
+//       $('#headingFive').removeClass('active-custom-accordion')
+//       $('#button5').removeClass('custom-plan-button-active')
+//       $('#button5').addClass('custom-plan-button')
+// })
+
+$(function () {
+      
+      $('#form1').on('submit', function (e) {
+    
+        e.preventDefault();
+    
+        $.ajax({
+          type: 'post',
+          url: 'form.php',
+          data: $('#form1').serialize(),
+          success: function (data) {
+            
+                swal("Good job!", "We will contact you asap !", "success");
+                document.getElementById("form1").reset();
+                console.log(data);
+            
+          }
+        });
+    //   alert("hi");
+      });
+    
+    });
+    
+    $(function () {
+      
+      $('#form2').on('submit', function (e) {
+    
+        e.preventDefault();
+    
+        $.ajax({
+          type: 'post',
+          url: 'form1.php',
+          data: $('#form2').serialize(),
+          success: function (data) {
+            
+                swal("Good job!", "We will contact you asap !", "success");
+                document.getElementById("form2").reset();
+
+             
+                console.log(data);
+            
+          }
+        });
+    //   alert("hi");
+      });
+    
+    });
+
+    $(function () {
+      
+      $('#contactform').on('submit', function (e) {
+    
+        e.preventDefault();
+    
+        $.ajax({
+          type: 'post',
+          url: 'form2.php',
+          data: $('#contactform').serialize(),
+          success: function (data) {
+            
+                swal("Good job!", "We will contact you asap !", "success");
+                document.getElementById("contactform").reset();
+                window.location.reload()
+             
+                console.log(data);
+            
+          }
+        });
+    //   alert("hi");
+      });
+    
+    });
+  </script>
+
 </body>
 </html>

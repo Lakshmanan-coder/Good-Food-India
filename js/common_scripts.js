@@ -873,9 +873,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 	 * @public
 	 */
 	Owl.Defaults = {
-		items: 3,
+		items: 4,
 		loop: false,
-		center: false,
+		center: true,
 		rewind: false,
 		checkVisibility: true,
 

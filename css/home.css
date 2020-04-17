@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+}
+
+
 .owl-theme.categories_carousel {
   margin-top: 30px;
 }
@@ -217,6 +222,7 @@
 }
 
 #hero_video {
+  background: #ededed url(../assets/images/dan-gold.jpg) center center no-repeat;
   position: relative;
   background-size: cover;
   color: #fff;
@@ -251,7 +257,7 @@ video {
 
 @media (max-width: 1024px) {
   #hero_video {
-    background: #ededed url(../img/home_section_1.jpg) center center no-repeat;
+    background: #ededed url(../assets/images/dan-gold.jpg) center center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -259,6 +265,9 @@ video {
     background-position: center;
   }
 
+  .pos-absolute{
+    top:10% !important;
+  }
   .header-video {
     background: none;
   }
@@ -814,4 +823,198 @@ video {
 }
 .call_section .box_1 h3 {
   color: #fff;
+}
+
+.custom-plan-button{
+  border:none;
+  background:none;
+  color:black;
+  outline:none !important;
+  padding:1rem;
+  font-size:1.2rem;
+  width: 100%;
+    text-align: left;
+
+}
+
+.feature-card{
+  background-color: #fff;
+  padding: 70px 20px;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 25px;
+  border:none!important;
+
+}
+
+.feature-card:hover{
+  -webkit-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.25);
+}
+
+.feature-card h3{
+  font-size: 18px;
+  font-size: 1.125rem;
+  margin-top: 1rem;
+}
+
+.alter-feature-image{
+  width:60%;
+  height:60%;
+  margin-left:20%;
+}
+
+.alter-contract{
+  width:51% !important;
+  margin-left:24%;
+}
+
+.margin-top-2{
+  margin-top:1rem;
+}
+
+.active-custom-accordion{
+  background:#589442;
+ 
+}
+
+.custom-plan-button-active{
+  border:none;
+  background:#589442;
+  color:white;
+  outline:none !important;
+  padding:1rem;
+  font-size:1.2rem;
+  width: 100%;
+    text-align: left;
+
+}
+
+.pos-normal{
+position:absolute;
+top:-90%
+}
+.pos-absolute{
+  position:absolute;
+  top:-28%
+  }
+
+  .position-relative{
+    position: relative;
+    
+  }
+
+ 
+
+  .sub-card{
+    box-shadow: 0px 20px 20px -17px rgba(0, 0, 0, 0.25);
+  }
+
+  .color-sub-btn{
+    background:rgba(249,94,33,0.9);
+    color:white;
+  }
+
+  .copy-text{
+    color:white!important;
+    margin-left: 11px;
+    padding-left:11px;
+   
+  }
+.width-changes{
+  width:130%;
+  transform:translate(-7.5%,-7.5%);
+
+}
+ html,  body{
+    overflow-x:hidden !important;
+  }
+
+  .btn-color-custom-sub{
+    background:rgba(249,94,33,0.9) !important;
+    color:white !important;
+  }
+
+  .color-orange{
+    color:rgba(249,94,33,0.9);
+  }
+
+  @media screen and (max-width:768px){
+    .position-absol-2{
+      display:block !important;
+     
+    }
+    .width-changes{
+      width:100%;
+      transform:none;
+    }
+
+ 
+  }
+
+  .float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:11%;
+    right:1%;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+  }
+  
+  .my-float{
+    margin-top:16px;
+  }
+
+  .font-size-2{
+    font-size:2.2rem !important;
+  }
+
+  .margin-center{
+    margin-left:25%;
+  }
+
+  .display-class{
+    display:none;
+  }
+
+  .display-class-1{
+    display:block;
+  }
+.flex-prop-plan{
+  display:flex;
+  justify-content: space-between;
+}
+ 
+  @media screen and (max-width:768px){
+    .display-class{
+      display:block ;
+    }
+    .display-class-1{
+      display:none ;
+    }
+
+    .custom-plan-button, .custom-plan-button-active{
+      font-size:1rem;
+    }
+    .flex-prop-plan{
+      display:block;
+     
+    }
+  }
+
+@media screen and (max-width:374px){
+  .custom-plan-button, .custom-plan-button-active{
+    font-size:0.8rem;
+  }
 }
