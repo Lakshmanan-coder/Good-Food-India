@@ -70,7 +70,7 @@
         </li>
 
          @else
-         <li class="submenu">
+         <li class="">
             <a  href="/login" class="btn_1  btn-color-custom-sub text-white" style="color:#fff;">Login / Sign Up</a>
         </li>
          @endauth
