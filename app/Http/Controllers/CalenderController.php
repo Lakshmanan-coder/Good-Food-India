@@ -61,6 +61,7 @@ class CalenderController extends Controller
             $subscribe->duration;
             $results= explode(",",$subscribe->dates);
             foreach ($results as $result) {
+                if($result!="" && $result!=","){
                 $date= explode("-",$result);
                 $actualdate="$date[2]-$date[1]-$date[0]";
                 $newdata=[
@@ -68,6 +69,7 @@ class CalenderController extends Controller
                     'title'=>$planname
                 ];
                 array_push($data,$newdata);
+            }
             }
             
             
