@@ -220,7 +220,7 @@
                     </div>
                     <!-- /head -->
                     <div class="main">
-                        @if (count($plans=App\Plans::orderBy('id','desc')->paginate(3)))
+                        @if (count($plans=App\Plans::orderBy('id','desc')->where('status','active')->paginate(3)))
                         @foreach ($plans as $plan)
                 @php $menus=App\Menu::where('plan_id',$plan->id)->get();  if($planpicture=App\PlanPictures::where('plan_id',$plan->id)->first()){$path=$planpicture->path;}else{$path='no_plan_picture.jpg';} @endphp
     
