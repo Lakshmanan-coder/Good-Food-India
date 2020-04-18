@@ -136,14 +136,17 @@ class PlanController extends Controller
         $plan->tags=$request->tags;
         $plan->save();
 
-        $menus=$request->menu;
 
+            $menus=$request->menu;
         foreach ($menus as $menuitem) {
-            $menu=new Menu;
+            if ($menuitem['title']!=null&&$menuitem['title']!="") {
+                $menu=new Menu;
             $menu->plan_id=$plan->id;
             $menu->title=$menuitem["title"];
             $menu->description=$menuitem["description"];
-            $menu->save();
+            $menu->save(); # code...
+            }
+           
         }
 
 
