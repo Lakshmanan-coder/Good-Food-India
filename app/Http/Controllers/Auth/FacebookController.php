@@ -41,7 +41,7 @@ class FacebookController extends Controller
             $user = $this->createUser($getInfo,$provider); 
             auth()->login($user); 
             // return $user;
-            return redirect()->to('/');
+            return redirect()->to('/plans');
         } catch (Exception $e) {
             return redirect('/auth/facebook');
         }

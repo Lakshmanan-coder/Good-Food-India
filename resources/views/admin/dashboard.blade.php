@@ -49,7 +49,7 @@
                         <div class="card-heading p-4">
                             <div>
                                 <div class="text-center">
-                                    <h2 class="text-primary mb-0">{{count($users=App\User::all())}}</h2>
+                                    <h2 class="text-primary mb-0">{{count($users=App\User::where('user_type','user')->get())}}</h2>
                                     <p class="text-muted mb-0 mt-2">Total Users</p>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                         <div class="card-heading p-4">
                             <div>
                                 <div class="text-center">
-                                    <h2 class="text-info mb-0">{{count($plans=App\Plans::all())}}</h2>
+                                    <h2 class="text-info mb-0">{{count($plans=App\Plans::where('status','active')->get())}}</h2>
                                     <p class="text-muted mb-0 mt-2">Plans</p>
                                 </div>
                                 <!-- <span class="mt-4 mb-0 text-muted"><b>25% </b>From Last 1 Month <span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
@@ -199,12 +199,12 @@
 
 
 @php
-$user=App\User::all();
-$subscriptions=App\Subscribe::all();
-$plans=App\Plans::all();
+$user=App\User::where('user_type','user')->get();
+$subscriptions=App\Subscribe::where('status','active')->get();
+$plans=App\Plans::where('status','active')->get();
 echo " <script>
         var data= {
-              labels: ['Users','Plans','Subscriptions'],
+              labels: ['Users','Active Plans','Active Subscriptions'],
               datasets: [{
                   label: 'Subscriptions',
                   data: [".count($user).",".count($plans).",".count($subscriptions)."],

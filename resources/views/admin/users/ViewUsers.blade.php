@@ -41,7 +41,7 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->phoneno}}</td>
-            <td>12</td>
+            <td>{{count(App\Subscribe::where('user_id',$user->id)->get())}}</td>
             <td>
                 <a href="view-user/{{$user->id}}" class="btn btn-primary">View Detail</a>
             </td>

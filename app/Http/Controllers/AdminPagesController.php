@@ -15,7 +15,7 @@ class AdminPagesController extends Controller
           if (Auth::user()->user_type=='admin') {
             return redirect('/admin');
           }else{
-           return redirect('/');
+           return redirect('/plans');
           }
        }else{
            return redirect('/');
