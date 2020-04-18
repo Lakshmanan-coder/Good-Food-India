@@ -1,5 +1,5 @@
 @extends('layouts.user')
-@section('header_type','header_in')
+@section('header_type','header_in element_to_stick')
 @section('pagetitle','Calender')
 
 @section('extra_styles')

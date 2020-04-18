@@ -222,14 +222,14 @@
                     <div class="main">
                         @if (count($plans=App\Plans::orderBy('id','desc')->paginate(3)))
                         @foreach ($plans as $plan)
-                @php $menus=App\Menu::where('plan_id',$plan->id)->get(); $planpicture=App\PlanPictures::where('plan_id',$plan->id)->first(); @endphp
+                @php $menus=App\Menu::where('plan_id',$plan->id)->get();  if($planpicture=App\PlanPictures::where('plan_id',$plan->id)->first()){$path=$planpicture->path;}else{$path='no_plan_picture.jpg';} @endphp
     
                         <div class="list_home">
                             <ul>
                                 <li>
                                     <a href="/plan-detail/{{$plan->id}}">
                                         <figure>
-                                            <img src="/storage/plan_picture/{{$planpicture->path}}" data-src="/storage/plan_picture/{{$planpicture->path}}" alt=""
+                                            <img src="/storage/plan_picture/{{$path}}" data-src="/storage/plan_picture/{{$path}}" alt=""
                                                 class="lazy" style=" ">
                                         </figure>
                                         {{-- <div class="score"><strong>9.5</strong></div> --}}

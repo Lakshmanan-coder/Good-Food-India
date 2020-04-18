@@ -83,9 +83,9 @@
                                         <td>{{$subscribe->payment_id}}</td>
                                         <td>Rs. {{$subscribe->totalamount}}</td>
                                         <td>
-                                        <a href="view-subscription-detail/{{$subscribe->id}}" class="btn btn-primary">View Subscription</a>
+                                        <a href="/admin/view-subscription-detail/{{$subscribe->id}}" class="btn btn-primary">View Subscription</a>
                                         @if ($subscribe->status!="inactive")
-                                        <a href="cancel-subscription/{{$subscribe->id}}" class="btn btn-danger">Cancel Subscription</a>
+                                        <a href="/admin/cancel-subscription/{{$subscribe->id}}" class="btn btn-danger">Cancel Subscription</a>
                                         @endif
                                         
                                         {{-- <button class="btn btn-outline-danger del-btn">Delete Subscription </button> --}}

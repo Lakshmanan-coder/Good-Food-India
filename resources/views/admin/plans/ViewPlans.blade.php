@@ -40,10 +40,11 @@
                                    
                                     @if (count($plans)>0)
                                         @foreach ($plans as $plan)
-                                            @php $menus=App\Menu::where('plan_id',$plan->id)->get(); $planpicture=App\PlanPictures::where('plan_id',$plan->id)->first(); @endphp
+                                            @php $menus=App\Menu::where('plan_id',$plan->id)->get();
+                                             if($planpicture=App\PlanPictures::where('plan_id',$plan->id)->first()){$path=$planpicture->path;}else{$path='no_plan_picture.jpg';} @endphp
 
                                             <tr>
-                                            <td class="text-center"><img src="/storage/plan_picture/{{$planpicture->path}}" class="img img-thumbnail img-responsive img-circle" style="height:50px; width:50px;" alt=""></td>
+                                            <td class="text-center"><img src="/storage/plan_picture/{{$path}}" class="img img-thumbnail img-responsive img-circle" style="height:50px; width:50px;" alt=""></td>
                                                 <td>{{$plan->plan_name}}</td>
                                                 <td>{{$plan->tags}}</td>
                                                 <td>{{$plan->one_price}}</td>
@@ -52,9 +53,9 @@
                                                 <td>{{$plan->month_price}}</td>
                                                 <td>{{count($menus)}}</td>
                                                 <td>
-                                                    <a href="view-plan-detail/{{$plan->id}}" class="btn btn-primary">View Detail</a>
-                                                    <a href="edit-plan-detail/{{$plan->id}}" class="btn btn-dark">Edit Detail</a>
-                                                    <a href="delete-plan/{{$plan->id}}" class="btn btn-danger">Delete Plan</a>
+                                                    <a href="/admin/view-plan-detail/{{$plan->id}}" class="btn btn-primary">View Detail</a>
+                                                    <a href="/admin/edit-plan-detail/{{$plan->id}}" class="btn btn-dark">Edit Detail</a>
+                                                    <a href="/admin/delete-plan/{{$plan->id}}" class="btn btn-danger">Delete Plan</a>
                                                 </td>
                                             </tr>
 

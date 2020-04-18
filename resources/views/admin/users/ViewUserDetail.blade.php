@@ -104,10 +104,10 @@
                                             @if (count($subscribes)>0)
                                                 @foreach ($subscribes as $subscribe)
                                                 @php $plan=App\Plans::find($subscribe->plan_id);
-                                                $menus=App\Menu::where('plan_id',$subscribe->plan_id)->get(); $planpicture=App\PlanPictures::where('plan_id',$subscribe->plan_id)->first(); @endphp
+                                                $menus=App\Menu::where('plan_id',$subscribe->plan_id)->get(); if($planpicture=App\PlanPictures::where('plan_id',$plan->id)->first()){$path=$planpicture->path;}else{$path='no_plan_picture.jpg';}  @endphp
 
                                                 <tr>
-                                                <td class="text-center"><img src="/storage/plan_picture/{{$planpicture->path}}" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
+                                                <td class="text-center"><img src="/storage/plan_picture/{{$path}}" class="img  img-responsive img-circle" style="height:30px; width: 30px;"></td>
         
                                                     <td>{{$plan->plan_name}}</td>
                                                     <td>{{$subscribe->duration}} Days</td> 
@@ -116,7 +116,7 @@
                                                     <td>{{$subscribe->payment_id}}</td>
                                                     <td>Rs. {{$subscribe->totalamount}}</td>
                                                     <td>
-                                                    <a href="view-subscription-detail/{{$subscribe->id}}" class="btn btn-primary">View Subscription</a>
+                                                    <a href="/admin/view-subscription-detail/{{$subscribe->id}}" class="btn btn-primary">View Subscription</a>
                                                         {{-- <button class="btn btn-outline-danger del-btn">Delete Subscription </button> --}}
                                                     </td>
                                                 </tr>

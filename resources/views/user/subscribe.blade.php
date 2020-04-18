@@ -34,7 +34,8 @@
                     <div class="main">
                         <h6>Pack  Detail</h6>
                         <div class="text-center">
-                        <img src="/storage/plan_picture/{{$picture->path}}" class="img-circle img img-responsive img-thumbnail" style="height:150px; width:150px; border-radius:50%" alt="">
+                            @php  if($planpicture=App\PlanPictures::where('plan_id',$plan->id)->first()){$path=$planpicture->path;}else{$path='no_plan_picture.jpg';}  @endphp
+                        <img src="/storage/plan_picture/{{$path}}" class="img-circle img img-responsive img-thumbnail" style="height:150px; width:150px; border-radius:50%" alt="">
                         </div>
                         <div class="form-group">
                             <label for="">Plan Name</label>

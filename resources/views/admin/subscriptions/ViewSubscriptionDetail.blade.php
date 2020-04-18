@@ -112,7 +112,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td colspan="2">
-                                                                 <a href="view-user/{{$user->id}}" class="btn btn-outline-primary">View More Details</a>    
+                                                                 <a href="/admin/view-user/{{$user->id}}" class="btn btn-outline-primary">View More Details</a>    
                                                             </td>
                                                         </tr>
                                                       

@@ -70,7 +70,7 @@
                                         <div class="form-group row col-sm-6">
                                             <label class="col-sm-2 control-label" for="example-text-input">Photos </label>
                                             <div class="col-sm-10">
-                                                <input type="file" class="filestyle" name="pictures[]" multiple data-buttonname="btn-secondary">
+                                                <input type="file" class="filestyle" required name="pictures[]" multiple data-buttonname="btn-secondary">
 
                                             </div>
                                         </div>
