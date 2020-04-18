@@ -65,7 +65,7 @@
                                     Fresh, ready-to-cook homemade food with subscription plans!
                                 </p>
                                 <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"
-                                        href="grid-listing-filterscol.html" role="button">Read more</a></div>
+                                        href="/plans" role="button">Subscribe Now</a></div>
                             </div>
                         </div>
                     </div>
