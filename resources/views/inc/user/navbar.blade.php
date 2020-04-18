@@ -56,7 +56,7 @@
                 <a href="/#contact-us" class="show-submenu">Contact Us</a>
         
             </li>
-         @auth
+        @auth
             
          <li class="submenu">
             <a href="#0" class="show-submenu"><span class="fa fa-user-circle"></span>   {{Auth::user()->name}}</a>
