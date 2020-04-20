@@ -263,7 +263,9 @@
                 </div>
             </div>
             <div class="col-lg-5 pl-lg-5 text-center d-none d-lg-block">
-                <img src="/img/logo.png" alt="" class="img-fluid" width="350" height="350">
+                <img src="/assets/images/about-hff-logo.png" alt="" class="img-fluid" width="350" >
+                <img src="/assets/images/arusuvai-logo.png" alt="" class="img-fluid" width="200">
+
             </div>
         </div>
 
