@@ -35,7 +35,7 @@
                         <div class="card-heading p-4">
                             <div>
                                 <div class="text-center">
-                                    <h2 class="text-info mb-0">@php $lastsub=App\Subscribe::orderBy('id','desc')->first();@endphp {{$lastsub->totalamount}}</h2>
+                                    <h2 class="text-info mb-0">@php $lastsub=App\Subscribe::orderBy('id','desc')->first();@endphp {{$lastsub->totalamount ?? '0'}}</h2>
                                     <p class="text-muted mb-0 mt-2">Last Subscription Amount</p>
                                 </div>
                                 <!-- <p class="mt-4 mb-0 text-muted"><b>62% </b>Orders Last 10 months<span class="float-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p> -->
