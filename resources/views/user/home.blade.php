@@ -149,16 +149,15 @@ body,.bg-green{
 
 
 <!-- /main_title -->
-<div class="bg_gray bg-green" id="offers">
+<div class="" id="offers">
     <div class="main_title center">
         <span><em></em></span>
         <h2>Offers</h2>
     </div>
-    <div class="container-fluid">
         <div class="display-class-1">
-            <img src="./assets/images/banner.jpg" class="img img-responsive" alt="offers" width="100%" /></div>
+            <img src="./assets/images/banner.jpg" class="img img-responsive" alt="offers" width="100%" />
+        </div>
         <!-- /container -->
-    </div>
 </div>
 
 <!-- POPULAR PLANS -->
@@ -227,7 +226,13 @@ body,.bg-green{
 
 
 {{-- banner --}}
-<div class="container-fluid">
+<div class="bg_gray">
+
+
+</div>
+{{-- banner --}}
+
+<div class="bg_gray">
     <div class="banner version_2">
         <div class="wrapper d-flex align-items-center opacity-mask justify-content-center text-center"
             data-opacity-mask="rgba(0, 0, 0, 0)">
@@ -243,11 +248,7 @@ body,.bg-green{
         </div>
         <!-- /wrapper -->
     </div>
-
-</div>
-{{-- banner --}}
-
-<div class="bg_gray">
+    
     <div class="container margin_60_40">
         <div class="main_title center">
             <span><em></em></span>

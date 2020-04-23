@@ -116,7 +116,7 @@
                                 <option value="1" data-price="{{$plan->one_price}}">One Day -   ₹ {{$plan->one_price}}</option>
                                 <option value="7" data-price="{{$plan->seven_price}}">7 Days - ₹ {{$plan->seven_price}} </option>
                                 <option value="15" data-price="{{$plan->fifteen_price}}">15 Days - ₹  {{$plan->fifteen_price}} </option>
-                                <option value="30" data-price="{{$plan->month_price}}" >30 Days - ₹ {{$plan->month_price}} </option>
+                                {{-- <option value="30" data-price="{{$plan->month_price}}" >30 Days - ₹ {{$plan->month_price}} </option> --}}
                             </select>
                             <input type="hidden" name="price" value="" id="price">
                         </div>
