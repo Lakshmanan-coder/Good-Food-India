@@ -1,6 +1,19 @@
 @extends('layouts.user')
 @section('pagetitle','Plans')
-
+@section('extra_styles')
+<!-- SPECIFIC CSS -->
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+body,.bg-green{
+    background: #c9e28d;
+}
+.list_home ul li a{
+    background:#fff;
+}
+</style>
+@endsection
 @section('header_type','header_in element_to_stick')
 
 @section('content')

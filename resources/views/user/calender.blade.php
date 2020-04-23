@@ -14,6 +14,7 @@
     border: #589442;
     color: #fff;
 }
+
 </style>
 @endsection
 @section('content')

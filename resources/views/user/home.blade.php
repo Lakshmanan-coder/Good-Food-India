@@ -7,7 +7,12 @@
     html {
         scroll-behavior: smooth;
     }
-
+body,.bg-green{
+    background: #c9e28d;
+}
+.list_home ul li a{
+    background:#fff;
+}
 </style>
 @endsection
 @section('pagetitle','Home')
@@ -84,7 +89,7 @@
 
 <!-- BEST DEALS -->
 
-<div class="bg_gray" id="how-we-work">
+<div class="bg_gray bg-green" id="how-we-work">
     <div class="container margin_60_40">
         <div class="main_title center">
             <span><em></em></span>
@@ -144,7 +149,7 @@
 
 
 <!-- /main_title -->
-<div class="bg_gray" id="offers">
+<div class="bg_gray bg-green" id="offers">
     <div class="main_title center">
         <span><em></em></span>
         <h2>Offers</h2>
@@ -167,7 +172,7 @@
                 <span><em></em></span>
                 <h2>Our Exclusive Subscription Plans</h2>
                 {{-- <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p> --}}
-                <a href="/plans">View All</a>
+                <a href="/plans" class="text-white">View All</a>
             </div>
         </div>
 

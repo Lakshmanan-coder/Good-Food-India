@@ -16,7 +16,17 @@
         #edit-profile,#myModel {
         top: 15%;
         }
+        body,.bg-green{
+            background: #c9e28d;
+        }
+        .list_home ul li a{
+            background:#fff;
+        }
+        .custom-card-profile{
+            box-shadow: none;
+        }
         </style>
+       
     
 @endsection
 @section('content')
