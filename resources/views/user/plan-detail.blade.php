@@ -135,10 +135,10 @@
                                                     <th>15 Days</th>
                                                     <td>Rs. {{$plan->fifteen_price}}</td>
                                                 </tr>
-                                                <tr>
+                                                {{-- <tr>
                                                     <th>30 Days</th>
                                                     <td>Rs. {{$plan->month_price}}</td>
-                                                </tr>
+                                                </tr> --}}
                                             </table>
                                         </div>
                                     </div>
@@ -170,6 +170,13 @@
                     <!-- /tab-content -->
                 </div>
                 <!-- /tabs_detail -->
+
+                <form action="/subscribe" method="post">
+                    @csrf
+                   <input type="hidden" value="{{$plan->id}}" name="plan_id">
+                    <button type="submit" class="btn_1 full-width mb_5">Subscribe Now</button>
+                    </form>
+
             </div>
             <!-- /col -->
 

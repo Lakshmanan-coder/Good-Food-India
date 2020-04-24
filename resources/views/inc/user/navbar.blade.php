@@ -8,15 +8,15 @@
             <img src="/img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky"> --}}
             {{-- <img src="/assets/images/logo.png" width="140" height="" alt="" class="logo_normal pos-normal"> --}}
             <img src="/assets/images/logo.png" width="140" height="" alt="" class="logo_normal pos-normal">
-				<img src="/assets/images/logo2.png" width="140" height="" alt="" class="logo_sticky pos-absolute">
+				<img src="/assets/images/about-hff-logo.png" width="140" height="" alt="" class="logo_sticky pos-absolute">
         </a>
         <a href="/">
             {{-- <img src="/img/logo.svg" width="140" height="35" alt="" class="logo_normal">
             <img src="/img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky"> --}}
             {{-- <img src="/assets/images/logo.png" width="140" height="" alt="" class="logo_normal pos-normal"> --}}
             
+            <img src="/assets/images/arusuvai-logo-light.png" width="140" height="" class="logo_normal pos-normal" >
 				<img src="/assets/images/arusuvai-logo.png" width="140" height="" alt="" class="logo_sticky pos-absolute">
-				<img src="/assets/images/arusuvai-logo-light.png" width="140" height="" class="logo_normal pos-normal" >
         </a>
         @else
         <a href="/">
