@@ -4108,4 +4108,14 @@ File: Responsive
   border-bottom: 1px dashed #b3a7a7;
   margin-bottom: 20px;
 }
+
+td {
+  word-break: break-all !important;
+}
+
+.dtr-data {
+  width: 80% !important;
+  overflow: scroll !important;
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */

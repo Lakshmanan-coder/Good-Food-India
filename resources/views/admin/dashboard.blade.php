@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row hide-phone">
                 <div class="col-xl-7">
                     <div class="card">
                         <div class="card-body">

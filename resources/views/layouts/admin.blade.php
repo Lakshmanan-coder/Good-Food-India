@@ -138,7 +138,7 @@
         <!-- content -->
 
         <footer class="footer">
-            ©2020 Good Indian Food <span class="d-none d-md-inline-block"> - Designed by Nyx Wolves</span>
+            ©2020 Homely Fresh Foods <span class="d-none d-md-inline-block"> - Designed by Nyx Wolves</span>
         </footer>
 
     </div>
